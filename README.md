@@ -3,7 +3,7 @@
 Disability Rights Data Portal is a React web app which allows users to quickly access, explore, interact, and understand data of disability rights of different US states through provided customizable reports and data visualizations.
 
 ## Table of content
-- [Problem Statement](#Problem Statement)
+- [Problem Statement](#problem-statement)
 
 
 ## Problem Statement
