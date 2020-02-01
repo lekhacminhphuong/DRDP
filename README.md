@@ -50,5 +50,9 @@ These instructions will get you a copy of the project up for developing and cont
 
 
 ## Contact Information
-Email us: lkmp@uw.edu
+Email us: 
+lkmp@uw.edu
+bmaxwell99@gmail.com
+jtcanton@gmail.com
+beckmillet@gmail.com
 
