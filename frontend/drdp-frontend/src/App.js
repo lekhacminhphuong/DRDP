@@ -1,11 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import NavBar from './components/NavBar';
 
-function App() {
-  return (
-    <p>hello DRDP team (:</p>
-  );
+// render every component for the website
+export default class App extends Component {
+    render() {        
+        return (
+            <div>
+                <NavBar />
+            </div>
+        )
+    }
 }
-
-export default App;
