@@ -1,0 +1,9 @@
+tblQuestion
+	added FK to tblOrganization
+	added FK to tblVersion
+	changed QuestionDesc to varchar(200)
+
+tblVersion
+	removed FK to tblOrganization
+	removed FK to tblAnswer
+
