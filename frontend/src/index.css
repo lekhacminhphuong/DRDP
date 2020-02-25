@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#dataPageDiv {
+  width: 1;
+}
+
+#graphSpace {
+  position: absolute;
+  top: 10vh;
+  left: 25vw;
+  width: 45vw;
+  height: 40vh;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  display: grid;
+}
+
+#tableSpace {
+  position: absolute;
+  top: 60vh;
+  left: 25vw;
+  width: 65vw;
+  height: 30vh;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  display: grid;
+}
+
+#filterSpace {
+  position: absolute;
+  top: 10vh;
+  left: 1vw;
+  width: 20vw;
+  height: 70vh;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  display: grid;
+}
+
+#descSpace {
+  position: absolute;
+  top: 10vh;
+  left: 74vw;
+  width: 20vw;
+  height: 40vh;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  display: grid;
+}

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default class GraphSpace extends Component {
     render() {        
         return (
-            <div>
+            <div id='graphSpace'>
                 <p>graph space</p>
             </div>
         )

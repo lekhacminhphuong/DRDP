@@ -59,14 +59,14 @@ export default function SimpleTabs() {
         <Tabs value={value} onChange={handleChange} aria-label="navbar tabs">
           <Tab label="Home Page" {...a11yProps(0)} />
           <Tab label="Data" {...a11yProps(1)} />
-          <Tab label="Visualization" {...a11yProps(2)} />
+          <Tab label="Visualizations" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         Landing Page will be shown here
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Disability Right Data (2000-2020)
+        {/* Disability Right Data (2000-2020) */}
         <Main />
       </TabPanel>
       <TabPanel value={value} index={2}>

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default class FilterSpace extends Component {
     render() {        
         return (
-            <div>
+            <div id='filterSpace'>
                 <p>filter space</p>
             </div>
         )

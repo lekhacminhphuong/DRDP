@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default class TableSpace extends Component {
     render() {        
         return (
-            <div>
+            <div id='tableSpace'>
                 <p>table space</p>
             </div>
         )
