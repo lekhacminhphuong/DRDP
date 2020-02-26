@@ -60,18 +60,18 @@ INSERT INTO `Jurisdiction` (`JurisdictionID`, `JurisdictionName`) VALUES
 INSERT INTO `Organization` (`OrganizationID`, `OrganizationName`, `OrganizationDesc`) VALUES
 (1, 'NDRN', 'National Disability Rights Network');
 
+INSERT INTO `Report` (`ReportID`, `ReportParentID`, `ReportName`, `ReportDesc`) VALUES
+(1, NULL, 'One PPR', 'Annual Program Performance Report'),
+(2, 1, 'PAAT', 'whatever this stands for'),
+(3, 1, 'PATBI', 'whatever this stands for'),
+(4, 1, 'PAVA', 'whatever this stands for');
+
 INSERT INTO `Question` (`QuestionID`, `ReportID`, `QuestionCode`, `QuestionDesc`, `QuestionType`) VALUES
 (1, 1, 'A1', 'Individuals served as of October 1 (Carried over from previous FY).', 'NUMBER'),
 (2, 1, 'A2', 'Additional individuals served during the year.', 'NUMBER'),
 (3, 1, 'A3', 'Total individuals served during the year (A1 + A2).', 'NUMBER'),
 (4, 1, 'A4', 'Individuals with more than one (1) intervention opened/closed FY.', 'NUMBER'),
 (5, 1, 'A5', 'Individuals served as of September 30 (Carry over to next FY; <= A3).', 'NUMBER');
-
-INSERT INTO `Report` (`ReportID`, `ReportParentID`, `ReportName`, `ReportDesc`) VALUES
-(1, NULL, 'One PPR', 'Annual Program Performance Report'),
-(2, 1, 'PAAT', 'whatever this stands for'),
-(3, 1, 'PATBI', 'whatever this stands for'),
-(4, 1, 'PAVA', 'whatever this stands for');
 
 INSERT INTO `ReportInstance` (`ReportInstanceID`, `ReportID`, `JurisdictionID`, `OrganizationID`, `ReportInstanceYear`) VALUES 
 (1, 1, 1, 1, '2011'), 
