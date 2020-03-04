@@ -4,6 +4,9 @@ import GraphSpace from './GraphSpace';
 import DescriptionSpace from './DescriptionSpace';
 import TableSpace from './TableSpace';
 import * as $ from 'jquery';
+import TabPanel from './TabPanel';
+
+
 
 
 // render every component for the website
@@ -41,8 +44,13 @@ export default class DataPage extends Component {
             <div>
                 <DescriptionSpace />
                 <FilterSpace />
-                <GraphSpace data={this.state.dat} />
-                <TableSpace data={this.state.dat}/>
+
+                <div id='tabSpace'>
+                <TabPanel data={this.state.dat}/>
+                </div>
+
+                {/* <GraphSpace data={this.state.dat} />
+                <TableSpace data={this.state.dat}/> */}
             </div>
         )
     }

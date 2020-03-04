@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-#graphSpace {
+#tabSpace {
   position: absolute;
   top: 7vh;
   left: 27vw;
@@ -21,10 +21,19 @@ code {
   border: 1px solid black;
 }
 
+#graphSpace {
+  position: absolute;
+  top: 7vh;
+  left: 1vw;
+  width: 68vw;
+  height: 80vh;
+  border: 1px solid black;
+}
+
 #tableSpace {
   position: absolute;
-  top: 12vh;
-  left: 28vw;
+  top: 7vh;
+  left: 1vw;
   width: 68vw;
   height: 80vh;
   border: 1px solid black;
