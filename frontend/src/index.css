@@ -14,9 +14,39 @@ code {
 
 #graphSpace {
   position: absolute;
-  top: 15vh;
-  left: 40vw;
-  width: 50vw;
-  height: 60vh;
+  top: 7vh;
+  left: 27vw;
+  width: 70vw;
+  height: 89vh;
+  border: 1px solid black;
+}
+
+#tableSpace {
+  position: absolute;
+  top: 12vh;
+  left: 28vw;
+  width: 68vw;
+  height: 80vh;
+  border: 1px solid black;
+  overflow: scroll;
+}
+
+#descSpace {
+  overflow: hidden;
+  position: absolute;
+  top: 7vh;
+  left: 1vw;
+  width: 25vw;
+  height: 30vh;
+  border: 1px solid black;
+}
+
+#filterSpace {
+  overflow: hidden;
+  position: absolute;
+  top: 39vh;
+  left: 1vw;
+  width: 25vw;
+  height: 57vh;
   border: 1px solid black;
 }

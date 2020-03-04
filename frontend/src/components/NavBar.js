@@ -66,7 +66,7 @@ export default function SimpleTabs() {
         Landing Page will be shown here
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Disability Right Data (2000-2020)
+        {/* Disability Right Data (2000-2020) */}
         <Main />
       </TabPanel>
       <TabPanel value={value} index={2}>

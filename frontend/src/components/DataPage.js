@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, handleChange, value } from 'react';
 import FilterSpace from './FilterSpace';
 import GraphSpace from './GraphSpace';
 import DescriptionSpace from './DescriptionSpace';
 import TableSpace from './TableSpace';
 import * as $ from 'jquery';
 
+
 // render every component for the website
 export default class DataPage extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             dat: []
-         };
+        };
     }
 
     componentDidMount() {
@@ -21,12 +22,12 @@ export default class DataPage extends Component {
             dataType: "json",
             success: function (data) {
                 console.log('success');
-                this.setState({dat: data});
+                this.setState({ dat: data });
                 //console.log("state set"); // will print "message"
             }.bind(this),
             error: function (xhr, status, err) {
                 console.log('error: ' + err);
-                this.setState({dat: 'bleh'});
+                this.setState({ dat: 'bleh' });
             }.bind(this)
         });
     }
@@ -40,7 +41,7 @@ export default class DataPage extends Component {
             <div>
                 <DescriptionSpace />
                 <FilterSpace />
-                <GraphSpace data={this.state.dat}/>
+                <GraphSpace data={this.state.dat} />
                 <TableSpace data={this.state.dat}/>
             </div>
         )

@@ -10,8 +10,8 @@ export default class TableSpace extends Component {
         //console.log(this.props.data)
 
         return (
-            <div>
-                <JsonToTable json={this.props.data} />
+            <div id='tableSpace'>
+                <JsonToTable json={mockupdata} />
             </div>
         )
     }

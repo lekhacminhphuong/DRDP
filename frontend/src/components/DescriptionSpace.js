@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default class DescriptionSpace extends Component {
     render() {        
         return (
-            <div>
+            <div id='descSpace'>
                 <p>This is the description of the graph shown below</p>
             </div>
         )

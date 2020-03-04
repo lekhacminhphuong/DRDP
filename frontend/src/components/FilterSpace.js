@@ -53,7 +53,7 @@ export default function NativeSelects() {
     };
 
     return (
-        <div>
+        <div id='filterSpace'>
             <p>Search Bar</p>
             <div className={classes.search}>
                 <InputBase

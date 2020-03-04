@@ -8,7 +8,7 @@ export default class GraphSpace extends Component {
 
         return (
             <div id="graphSpace">graph space
-                <p>graph space</p>
+                {/* <p>graph space</p>
                 <div style={{ width: 500 }}>
                     <VictoryChart domainPadding={20}>
                         
@@ -39,7 +39,7 @@ export default class GraphSpace extends Component {
                             label={'Total Served'}
                         />
                     </VictoryChart>
-                </div>
+                </div> */}
             </div>
         )
     }
