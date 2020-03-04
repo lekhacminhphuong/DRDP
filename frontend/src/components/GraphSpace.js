@@ -1,45 +1,28 @@
 import React, { Component } from 'react';
-import data from '../mockupdata.json';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTooltip } from 'victory';
 
 // render every component for the website
 export default class GraphSpace extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            dat: []
-        };
-    }
-
-    componentDidMount() {
-        this.setState({ dat: data })
-        //console.log(this.state.dat)   
-    }
 
     render() {
 
-        let years = data.map(d => d['Fiscal Year']);
-        let served = data.map(d => d['Total individuals served']);
-
-        //create a json object formatted for victoryChart
-        let str = '['
-        for (let i = 0; i < years.length; i++) {
-            str += '{"year": ' + years[i] + ',"served": ' + served[i] + '},';
-        }
-        let str2 = str.substr(0, str.length - 1);
-        str2 += "]";
-        console.log(str2);
-
-        let obj1 = JSON.parse(str2);
-        //console.log("obj1: " + obj1);
-
-
-
         return (
-            <div id="graphSpace">
+            <div id="graphSpace">graph space
                 <p>graph space</p>
                 <div style={{ width: 500 }}>
                     <VictoryChart domainPadding={20}>
+                        
+                        <VictoryBar
+                            barRatio={15}
+                            data={this.props.data}
+                            //tooltip
+                            labels={({ datum }) => `${datum.ansIntVal}`}
+                            labelComponent={<VictoryTooltip dy={0} centerOffset={{ x: 0 }} />}
+                            // data accessor for x values
+                            x="year"
+                            // data accessor for y values
+                            y="ansIntVal"
+                        />
                         <VictoryAxis
                             // tickValues specifies both the number of ticks and where
                             // they are placed on the axis
@@ -50,21 +33,10 @@ export default class GraphSpace extends Component {
                         <VictoryAxis
                             dependentAxis
                             // tickFormat specifies how ticks should be displayed
-                            tickFormat={(x) => (`${x}`)}
+                            domain={[0, 70]}
+                            fixLabelOverlap={true}
+                            //tickFormat={(x) => (`${x}`)}
                             label={'Total Served'}
-                        />
-                        <VictoryBar
-                            barRatio={25}
-                            data={obj1}
-                            //tooltip
-                            labels={({ datum }) => `${datum.served}`}
-                            labelComponent={<VictoryTooltip dy={0} centerOffset={{ x: 0 }} />}
-
-
-                            // data accessor for x values
-                            x="year"
-                            // data accessor for y values
-                            y="served"
                         />
                     </VictoryChart>
                 </div>

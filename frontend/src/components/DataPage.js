@@ -22,24 +22,25 @@ export default class DataPage extends Component {
             success: function (data) {
                 console.log('success');
                 this.setState({dat: data});
-                console.log("state set"); // will print "message"
+                //console.log("state set"); // will print "message"
             }.bind(this),
             error: function (xhr, status, err) {
                 console.log('error: ' + err);
+                this.setState({dat: 'bleh'});
             }.bind(this)
         });
     }
 
     render() {
-        
-        console.log("state contents:");
-        console.log(this.state.dat);
+
+        //console.log("state contents:");
+        //console.log(this.state.dat);
 
         return (
             <div>
                 <DescriptionSpace />
                 <FilterSpace />
-                <GraphSpace />
+                <GraphSpace data={this.state.dat}/>
                 <TableSpace data={this.state.dat}/>
             </div>
         )
