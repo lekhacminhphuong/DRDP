@@ -59,7 +59,7 @@ export default function SimpleTabs() {
         <Tabs value={value} onChange={handleChange} aria-label="navbar tabs">
           <Tab label="Home Page" {...a11yProps(0)} />
           <Tab label="Data" {...a11yProps(1)} />
-          <Tab label="Visualizations" {...a11yProps(2)} />
+          <Tab label="Gallery" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
