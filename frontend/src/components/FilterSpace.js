@@ -54,7 +54,6 @@ export default function NativeSelects() {
 
     return (
         <div id='filterSpace'>
-            <p>Search Bar</p>
             <div className={classes.search}>
                 <InputBase
                     placeholder="Search"
@@ -65,7 +64,6 @@ export default function NativeSelects() {
                     inputProps={{ 'aria-label': 'search' }}
                 />
             </div>
-            <p>Filter By</p>
             <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel ref={inputLabel} htmlFor="outlined-age-native-simple">
                     State
