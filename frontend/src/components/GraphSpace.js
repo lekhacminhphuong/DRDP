@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTooltip } from 'victory';
+import mockupdata from "../mockupdata"; 
 
 // render every component for the website
 export default class GraphSpace extends Component {
@@ -7,21 +8,21 @@ export default class GraphSpace extends Component {
     render() {
 
         return (
-            <div id="graphSpace">graph space
-                {/* <p>graph space</p>
-                <div style={{ width: 500 }}>
+            <div id="graphSpace">
+                <p>graph space</p>
+                <div style={{ width: 700 }}>
                     <VictoryChart domainPadding={20}>
                         
                         <VictoryBar
-                            barRatio={15}
-                            data={this.props.data}
+                            barRatio={25}
+                            data={mockupdata}
                             //tooltip
                             labels={({ datum }) => `${datum.ansIntVal}`}
                             labelComponent={<VictoryTooltip dy={0} centerOffset={{ x: 0 }} />}
                             // data accessor for x values
-                            x="year"
+                            x="Fiscal Year"
                             // data accessor for y values
-                            y="ansIntVal"
+                            y="Total individuals served"
                         />
                         <VictoryAxis
                             // tickValues specifies both the number of ticks and where
@@ -36,10 +37,10 @@ export default class GraphSpace extends Component {
                             domain={[0, 70]}
                             fixLabelOverlap={true}
                             //tickFormat={(x) => (`${x}`)}
-                            label={'Total Served'}
+                            // label={'Total Served'}
                         />
                     </VictoryChart>
-                </div> */}
+                </div>
             </div>
         )
     }

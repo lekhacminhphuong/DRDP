@@ -19,15 +19,15 @@ code {
   width: 70vw;
   height: 89vh;
   border: 1px solid black;
+  overflow: hidden;
 }
 
 #graphSpace {
   position: absolute;
   top: 7vh;
-  left: 1vw;
+  left: 2vw;
   width: 68vw;
   height: 80vh;
-  border: 1px solid black;
 }
 
 #tableSpace {

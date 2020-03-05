@@ -7,7 +7,7 @@ export default class TableSpace extends Component {
 
     render() {  
         
-        //console.log(this.props.data)
+        console.log("table space says: " + this.props.data)
 
         return (
             <div id='tableSpace'>

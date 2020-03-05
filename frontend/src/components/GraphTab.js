@@ -6,10 +6,21 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Main from './Main';
+
+import GraphSpace from './GraphSpace';
+import TableSpace from './TableSpace';
+
+
+class GraphTab extends React.Component{
+
+
+}
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+
+  console.log(props)
 
   return (
     <Typography
@@ -56,22 +67,18 @@ export default function SimpleTabs() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="navbar tabs">
-          <Tab label="Home Page" {...a11yProps(0)} />
+        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+          <Tab label="Graph" {...a11yProps(0)} />
           <Tab label="Data" {...a11yProps(1)} />
-          <Tab label="Gallery" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Landing Page will be shown here
+        <GraphSpace/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {/* Disability Right Data (2000-2020) */}
-        <Main />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Visualization Gallery will be shown here
+        <TableSpace data={value.data}/>
       </TabPanel>
     </div>
   );
 }
+

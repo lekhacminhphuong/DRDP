@@ -10,8 +10,12 @@ import Box from '@material-ui/core/Box';
 import GraphSpace from './GraphSpace';
 import TableSpace from './TableSpace';
 
+let PROPS = '';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+
+  PROPS = props;
 
   return (
     <Typography
@@ -67,7 +71,7 @@ export default function SimpleTabs() {
         <GraphSpace/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <TableSpace />
+        <TableSpace data={PROPS.data}/>
       </TabPanel>
     </div>
   );
