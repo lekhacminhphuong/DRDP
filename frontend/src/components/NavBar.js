@@ -6,7 +6,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Main from './Main';
+import DataPage from './DataPage';
+import GalleryPage from './GalleryPage';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -66,11 +67,10 @@ export default function SimpleTabs() {
         Landing Page will be shown here
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {/* Disability Right Data (2000-2020) */}
-        <Main />
+        <DataPage />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Visualization Gallery will be shown here
+        <GalleryPage />
       </TabPanel>
     </div>
   );
