@@ -1,10 +1,8 @@
-import React, { Component, handleChange, value } from 'react';
+import React, { Component } from 'react';
 import FilterSpace from './FilterSpace';
-import GraphSpace from './GraphSpace';
 import DescriptionSpace from './DescriptionSpace';
-import TableSpace from './TableSpace';
 import * as $ from 'jquery';
-import TabPanel from './TabPanel';
+import GraphTab from './GraphTab';
 
 
 
@@ -37,20 +35,14 @@ export default class DataPage extends Component {
 
     render() {
 
-        //console.log("state contents:");
-        //console.log(this.state.dat);
-
         return (
             <div>
                 <DescriptionSpace />
                 <FilterSpace />
-
                 <div id='tabSpace'>
-                <TabPanel data={this.state.dat}/>
+                    <GraphTab data={this.state.dat}/>
+                    <button id='dl-button'>Download</button>
                 </div>
-
-                {/* <GraphSpace data={this.state.dat} />
-                <TableSpace data={this.state.dat}/> */}
             </div>
         )
     }

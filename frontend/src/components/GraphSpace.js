@@ -7,6 +7,9 @@ export default class GraphSpace extends Component {
 
     render() {
 
+        console.log('graph space says:');
+        console.log(this.props.data);
+
         return (
             <div id="graphSpace">
                 <p>graph space</p>
