@@ -11,7 +11,7 @@ export default class GraphSpace extends Component {
         //console.log(this.props.data);
 
         return (
-            <div id="graphSpace">
+            <div id='graphSpace'>
                 <p>graph space</p>
                 <div style={{ width: 700 }}>
                     <VictoryChart domainPadding={20}>

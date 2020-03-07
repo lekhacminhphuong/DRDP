@@ -1,0 +1,55 @@
+CREATE VIEW `vData`
+ AS SELECT
+    `a`.`AnswerID` AS `AnswerID`,
+    `o`.`OrganizationName` AS `OrganizationName`,
+    `o`.`OrganizationDesc` AS `OrganizationDesc`,
+    `r`.`ReportName` AS `ReportName`,
+    `r`.`ReportDesc` AS `ReportDesc`,
+    `i`.`ReportInstanceYear` AS `ReportInstanceYear`,
+    `j`.`JurisdictionName` AS `JurisdictionName`,
+    `q`.`QuestionCode` AS `QuestionCode`,
+    `q`.`QuestionDesc` AS `QuestionDesc`,
+    `q`.`QuestionType` AS `QuestionType`,
+    `a`.`IntAnswerValue` AS `IntAnswerValue`,
+    `a`.`CharAnswerValue` AS `CharAnswerValue`
+FROM
+    (
+        (
+            (
+                (
+                    (
+                        `beck_test`.`Answer` `a`
+                    JOIN `beck_test`.`Question` `q`
+                    ON
+                        ((`a`.`QuestionID` = `q`.`QuestionID`))
+                    )
+                JOIN `beck_test`.`ReportInstance` `i`
+                ON
+                    (
+                        (
+                            `a`.`ReportInstanceID` = `i`.`ReportInstanceID`
+                        )
+                    )
+                )
+            JOIN `beck_test`.`Report` `r`
+            ON
+                ((`q`.`ReportID` = `r`.`ReportID`))
+            )
+        JOIN `beck_test`.`Jurisdiction` `j`
+        ON
+            (
+                (
+                    `i`.`JurisdictionID` = `j`.`JurisdictionID`
+                )
+            )
+        )
+    JOIN `beck_test`.`Organization` `o`
+    ON
+        (
+            (
+                `i`.`OrganizationID` = `o`.`OrganizationID`
+            )
+        )
+    )
+ORDER BY
+    `a`.`AnswerID`
