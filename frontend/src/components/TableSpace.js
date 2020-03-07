@@ -1,19 +1,93 @@
 import React, { Component } from 'react';
 import { JsonToTable } from "react-json-to-table";
-import mockupdata from "../mockupdata"; 
+import mockupdata from "../mockupdata";
+import DataTable from 'react-data-table-component';
 
 // render every component for the website
 export default class TableSpace extends Component {
 
-    render() {  
+    render() {
+
+        //console.log("table space says: ")
+        //console.log(this.props.data)
+
         
-        console.log("table space says: ")
-        console.log(this.props.data)
+        	
+        	
+        	
+        	
+        
+
+        const columns = [
+            {
+                name: 'Answer ID',
+                selector: 'AnswerID',
+                sortable: true,
+            },
+            {
+                name: 'Organization Name',
+                selector: 'OrganizationName',
+                sortable: true,
+            },
+            {
+                name: 'Organization Description',
+                selector: 'OrganizationDesc',
+                sortable: true,
+            },
+            {
+                name: 'Report Name',
+                selector: 'ReportName',
+                sortable: true,
+            },
+            {
+                name: 'Report Description',
+                selector: 'ReportDesc',
+                sortable: true,
+            },
+            {
+                name: 'Year',
+                selector: 'ReportInstanceYear',
+                sortable: true,
+            },
+            {
+                name: 'Jurisdiction',
+                selector: 'JurisdictionName',
+                sortable: true,
+            },
+            {
+                name: 'Question Code',
+                selector: 'QuestionCode',
+                sortable: true,
+            },
+            {
+                name: 'Question Description',
+                selector: 'QuestionDesc',
+                sortable: true,
+            },
+            {
+                name: 'Question Type',
+                selector: 'QuestionType',
+                sortable: true,
+            },
+            {
+                name: 'Count',
+                selector: 'IntAnswerValue',
+                sortable: true,
+            }
+        ];
 
         return (
             <div id='tableSpace'>
-                <JsonToTable json={mockupdata} />
+                <DataTable
+                    columns={columns}
+                    data={this.props.data}
+                    pagination
+                />
             </div>
+
+            // <div id='tableSpace'>
+            //     <JsonToTable json={this.props.data} />
+            // </div>
         )
     }
 }

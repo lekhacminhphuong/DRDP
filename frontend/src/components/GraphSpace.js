@@ -7,8 +7,8 @@ export default class GraphSpace extends Component {
 
     render() {
 
-        console.log('graph space says:');
-        console.log(this.props.data);
+        //console.log('graph space says:');
+        //console.log(this.props.data);
 
         return (
             <div id="graphSpace">
@@ -18,14 +18,14 @@ export default class GraphSpace extends Component {
                         
                         <VictoryBar
                             barRatio={25}
-                            data={mockupdata}
+                            data={this.props.data}
                             //tooltip
                             labels={({ datum }) => `${datum.ansIntVal}`}
                             labelComponent={<VictoryTooltip dy={0} centerOffset={{ x: 0 }} />}
                             // data accessor for x values
-                            x="Fiscal Year"
+                            x="ReportInstanceYear"
                             // data accessor for y values
-                            y="Total individuals served"
+                            y="IntAnswerValue"
                         />
                         <VictoryAxis
                             // tickValues specifies both the number of ticks and where
