@@ -18,7 +18,7 @@ export default class GraphSpace extends Component {
                         
                         <VictoryBar
                             barRatio={25}
-                            data={this.props.data}
+                            data={mockupdata}
                             //tooltip
                             labels={({ datum }) => `${datum.ansIntVal}`}
                             labelComponent={<VictoryTooltip dy={0} centerOffset={{ x: 0 }} />}

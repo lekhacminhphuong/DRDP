@@ -5,7 +5,12 @@ import Cards from './Cards';
 export default class GalleryPage extends Component {
     render() {
         return (           
-            <div>
+            <div id='gallerySpace'>
+                <Cards />
+                <Cards />
+                <Cards />
+                <Cards />
+                <Cards />
                 <Cards />
             </div>
         )
