@@ -63,7 +63,7 @@ code {
   overflow-wrap: break-word;
   hyphens: auto;
   margin: 10px;
-  width: 20vw;
+  width: 21vw;
   position: relative;
   background-color: white;
 }
@@ -83,8 +83,8 @@ code {
 
 #dl-button{
   position: absolute;
-  top: 1%;
-  left: 88%;
+  top: .3%;
+  left: 85%;
 }
 
 #gallerySpace {
