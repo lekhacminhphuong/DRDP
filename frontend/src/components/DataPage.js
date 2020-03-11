@@ -3,7 +3,7 @@ import FilterSpace from './FilterSpace';
 import DescriptionSpace from './DescriptionSpace';
 import * as $ from 'jquery';
 import GraphTab from './GraphTab';
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 
 
 
@@ -42,7 +42,7 @@ export default class DataPage extends Component {
                 <FilterSpace />
                 <div id='tabSpace'>
                     <GraphTab data={this.state.dat}/>
-                    <Button variant="outline-dark" id='dl-button'>Download CSV</Button>
+                    {/* <Button variant="outline-dark" id='dl-button'>Download CSV</Button> */}
                 </div>
             </div>
         )

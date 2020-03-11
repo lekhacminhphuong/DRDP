@@ -60,6 +60,7 @@ code {
 }
 
 #descSpace p {
+  overflow: scroll;
   overflow-wrap: break-word;
   hyphens: auto;
   margin: 10px;

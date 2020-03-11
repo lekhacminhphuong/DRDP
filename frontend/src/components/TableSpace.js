@@ -2,21 +2,12 @@ import React, { Component } from 'react';
 import { JsonToTable } from "react-json-to-table";
 import mockupdata from "../mockupdata";
 import DataTable from 'react-data-table-component';
+import Button from 'react-bootstrap/Button';
 
 // render every component for the website
 export default class TableSpace extends Component {
 
     render() {
-
-        //console.log("table space says: ")
-        //console.log(this.props.data)
-
-        
-        	
-        	
-        	
-        	
-        
 
         const columns = [
             {
@@ -78,6 +69,7 @@ export default class TableSpace extends Component {
 
         return (
             <div id='tableSpace'>
+                <Button variant="outline-dark" id='dl-button'>Download CSV</Button>
                 <DataTable
                     columns={columns}
                     data={this.props.data}

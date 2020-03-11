@@ -1,49 +1,58 @@
 import React, { Component } from 'react';
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryTooltip } from 'victory';
-import mockupdata from "../mockupdata"; 
+import {
+    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+} from 'recharts';
 
 // render every component for the website
 export default class GraphSpace extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            State: '',
+            GraphData: []
+        };
+    }
+
+    componentDidMount() {
+        this.setState({ State: "Alabama" });
+    }
 
     render() {
 
-        //console.log('graph space says:');
-        //console.log(this.props.data);
+        let filtData = this.props.data.filter(d => d['JurisdictionName'] == this.state.State &&
+            d['QuestionDesc'] == "Total individuals served during the year (A1 + A2).");
+
+        if (this.props.data.length == 0) {
+            return null;
+        }
+
+        let gData = [{ "x": filtData[0]["ReportInstanceYear"], "y": filtData[0]["IntAnswerValue"] },
+        { "x": filtData[1]["ReportInstanceYear"], "y": filtData[1]["IntAnswerValue"] },
+        { "x": filtData[2]["ReportInstanceYear"], "y": filtData[2]["IntAnswerValue"] },
+        { "x": filtData[3]["ReportInstanceYear"], "y": filtData[3]["IntAnswerValue"] },
+        { "x": filtData[4]["ReportInstanceYear"], "y": filtData[4]["IntAnswerValue"] },
+        { "x": filtData[5]["ReportInstanceYear"], "y": filtData[5]["IntAnswerValue"] },
+        { "x": filtData[6]["ReportInstanceYear"], "y": filtData[6]["IntAnswerValue"] },
+        { "x": filtData[7]["ReportInstanceYear"], "y": filtData[7]["IntAnswerValue"] }
+        ]
+
 
         return (
             <div id='graphSpace'>
-                <p>graph space</p>
-                <div style={{ width: 700 }}>
-                    <VictoryChart domainPadding={20}>
-                        
-                        <VictoryBar
-                            barRatio={25}
-                            data={mockupdata}
-                            //tooltip
-                            labels={({ datum }) => `${datum.ansIntVal}`}
-                            labelComponent={<VictoryTooltip dy={0} centerOffset={{ x: 0 }} />}
-                            // data accessor for x values
-                            x="ReportInstanceYear"
-                            // data accessor for y values
-                            y="IntAnswerValue"
-                        />
-                        <VictoryAxis
-                            // tickValues specifies both the number of ticks and where
-                            // they are placed on the axis
-                            tickValues={[2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018]}
-                            tickFormat={['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018']}
-                            label={'year'}
-                        />
-                        <VictoryAxis
-                            dependentAxis
-                            // tickFormat specifies how ticks should be displayed
-                            domain={[0, 70]}
-                            fixLabelOverlap={true}
-                            //tickFormat={(x) => (`${x}`)}
-                            // label={'Total Served'}
-                        />
-                    </VictoryChart>
-                </div>
+            <LineChart
+                width={800}
+                height={600}
+                data={gData}
+                margin={{
+                    top: 5, right: 30, left: 20, bottom: 5,
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Line type="monotone" dataKey="y" stroke="#8884d8" activeDot={{ r: 8 }} />
+            </LineChart>
             </div>
         )
     }

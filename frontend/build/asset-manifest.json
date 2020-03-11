@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/capstone2020/live1/build/static/css/main.dd282fd3.chunk.css",
-    "main.js": "/capstone2020/live1/build/static/js/main.aae42f14.chunk.js",
-    "main.js.map": "/capstone2020/live1/build/static/js/main.aae42f14.chunk.js.map",
+    "main.css": "/capstone2020/live1/build/static/css/main.28a12476.chunk.css",
+    "main.js": "/capstone2020/live1/build/static/js/main.308870e9.chunk.js",
+    "main.js.map": "/capstone2020/live1/build/static/js/main.308870e9.chunk.js.map",
     "runtime-main.js": "/capstone2020/live1/build/static/js/runtime-main.e8bc9c4c.js",
     "runtime-main.js.map": "/capstone2020/live1/build/static/js/runtime-main.e8bc9c4c.js.map",
     "static/css/2.b0808a21.chunk.css": "/capstone2020/live1/build/static/css/2.b0808a21.chunk.css",
-    "static/js/2.9f282f8e.chunk.js": "/capstone2020/live1/build/static/js/2.9f282f8e.chunk.js",
-    "static/js/2.9f282f8e.chunk.js.map": "/capstone2020/live1/build/static/js/2.9f282f8e.chunk.js.map",
+    "static/js/2.cfe51c0f.chunk.js": "/capstone2020/live1/build/static/js/2.cfe51c0f.chunk.js",
+    "static/js/2.cfe51c0f.chunk.js.map": "/capstone2020/live1/build/static/js/2.cfe51c0f.chunk.js.map",
     "index.html": "/capstone2020/live1/build/index.html",
-    "precache-manifest.cc659e4df3e2d302cb5a1482fd22291e.js": "/capstone2020/live1/build/precache-manifest.cc659e4df3e2d302cb5a1482fd22291e.js",
+    "precache-manifest.a994a2bcbd8ab2900b56b6e9426deb6d.js": "/capstone2020/live1/build/precache-manifest.a994a2bcbd8ab2900b56b6e9426deb6d.js",
     "service-worker.js": "/capstone2020/live1/build/service-worker.js",
     "static/css/2.b0808a21.chunk.css.map": "/capstone2020/live1/build/static/css/2.b0808a21.chunk.css.map",
-    "static/css/main.dd282fd3.chunk.css.map": "/capstone2020/live1/build/static/css/main.dd282fd3.chunk.css.map",
-    "static/js/2.9f282f8e.chunk.js.LICENSE.txt": "/capstone2020/live1/build/static/js/2.9f282f8e.chunk.js.LICENSE.txt"
+    "static/css/main.28a12476.chunk.css.map": "/capstone2020/live1/build/static/css/main.28a12476.chunk.css.map",
+    "static/js/2.cfe51c0f.chunk.js.LICENSE.txt": "/capstone2020/live1/build/static/js/2.cfe51c0f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e8bc9c4c.js",
     "static/css/2.b0808a21.chunk.css",
-    "static/js/2.9f282f8e.chunk.js",
-    "static/css/main.dd282fd3.chunk.css",
-    "static/js/main.aae42f14.chunk.js"
+    "static/js/2.cfe51c0f.chunk.js",
+    "static/css/main.28a12476.chunk.css",
+    "static/js/main.308870e9.chunk.js"
   ]
 }
