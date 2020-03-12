@@ -58,18 +58,18 @@ export default function SimpleTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="navbar tabs">
-          <Tab label="Home Page" {...a11yProps(0)} />
-          <Tab label="Data" {...a11yProps(1)} />
-          <Tab label="Gallery" {...a11yProps(2)} />
+          {/* <Tab label="Home Page" {...a11yProps(0)} /> */}
+          <Tab label="Data" {...a11yProps(0)} />
+          <Tab label="Gallery" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
+      {/* <TabPanel value={value} index={0}>
         Landing Page will be shown here
-      </TabPanel>
-      <TabPanel value={value} index={1}>
+      </TabPanel> */}
+      <TabPanel value={value} index={0}>
         <DataPage />
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={1}>
         <GalleryPage />
       </TabPanel>
     </div>

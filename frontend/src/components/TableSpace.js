@@ -69,17 +69,13 @@ export default class TableSpace extends Component {
 
         return (
             <div id='tableSpace'>
-                <Button variant="outline-dark" id='dl-button'>Download CSV</Button>
+                {/* <Button variant="outline-dark" id='dl-button'>Download CSV</Button> HIDDEN for MVP, will hook up later */}
                 <DataTable
                     columns={columns}
                     data={this.props.data}
                     pagination
                 />
             </div>
-
-            // <div id='tableSpace'>
-            //     <JsonToTable json={this.props.data} />
-            // </div>
         )
     }
 }

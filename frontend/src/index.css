@@ -46,9 +46,8 @@ code {
 }
 
 #descSpace {
-  /* overflow-wrap: break-word;
-  hyphens: auto; */
-  padding: 10px;
+  /* overflow: scroll; (uncomment later potentially) */
+  padding: 20px;
   position: absolute;
   top: 8vh;
   left: 1vw;
@@ -60,11 +59,9 @@ code {
 }
 
 #descSpace p {
-  overflow: scroll;
   overflow-wrap: break-word;
   hyphens: auto;
-  margin: 10px;
-  width: 21vw;
+  width: 22vw;
   position: relative;
   background-color: white;
 }
@@ -90,8 +87,8 @@ code {
 
 #gallerySpace {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  grid-gap: 30px;
+  grid-template-columns: repeat(4, 2fr); 
+  grid-gap: 20px;
 }
 
 #root {

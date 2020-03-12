@@ -42,7 +42,6 @@ export default class DataPage extends Component {
                 <FilterSpace />
                 <div id='tabSpace'>
                     <GraphTab data={this.state.dat}/>
-                    {/* <Button variant="outline-dark" id='dl-button'>Download CSV</Button> */}
                 </div>
             </div>
         )

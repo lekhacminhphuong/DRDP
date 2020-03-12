@@ -13,11 +13,11 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 140
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
@@ -25,15 +25,15 @@ export default function MediaCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
+        >
+          <img src={props.img} height="150" width="345"></img>
+        </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Data Name
+            {props.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            This graph shows the information about Data Name
+            {props.desc}
           </Typography>
         </CardContent>
       </CardActionArea>

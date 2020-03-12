@@ -60,6 +60,7 @@ export default function NativeSelects() {
 
     return (
         <div id='filterSpace'>
+            {/* HIDDEN for MVP
             <div className={classes.search}>
                 <InputBase
                     placeholder="Search"
@@ -69,7 +70,7 @@ export default function NativeSelects() {
                     }}
                     inputProps={{ 'aria-label': 'search' }}
                 />
-            </div>
+            </div> */}
             <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel ref={inputLabel} htmlFor="outlined-age-native-simple">
                     State
@@ -91,7 +92,7 @@ export default function NativeSelects() {
                     <option value={30}>Arizona</option>
                     <option value={30}>Arkansas</option>
                 </Select>
-            </FormControl><br/>
+            </FormControl><br />
             <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel ref={inputLabel} htmlFor="outlined-age-native-simple">
                     Year
