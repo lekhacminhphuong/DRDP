@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Aquarium Project Dashboard
 
-## Available Scripts
+The Aquarium Project Dashboard is a maintainable, easy to use, and extensible tool that enables an Aquarium user (researcher, lab manager) to track the progress of a project in an Aquarium instance, where a project is defined as a set of linked plans (complementary workflows) to be executed on given samples and may be linked to an experimental request. This tool will be integrated with Aquarium as possible. Different types of projects (e.g., protein design, strain construction) will utilize visualizations.
 
-In the project directory, you can run:
+Although Aquarium has no internal representation of the expected project schedule, the dashboard will have such a representation and some ability of comparing expected and actual completion dates.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. From the terminal, clone this repository to your local machine
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+   ```bash
+   git clone https://github.com/klavinslab/project-dashboard.git
+   ```
 
-### `npm test`
+2. Within the local repository folder, install the necessary dependencies
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   npm install` or `yarn
+   ```
 
-### `npm run build`
+3. Within the same folder, start your local server
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm run start` or `yarn start
+   ```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+4. Open your browser and navigate to `localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Built with Devias Material Kit Pro
 
-### `npm run eject`
+- React
+- Material-UI
+- Redux
+- DraftJS
+- ChartJS
+- PrismJS
+- React Markdown
+- React Full Calendar
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### Installing Devias Kit Pro
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Unzip the zip file that you have downloaded from Material-Ui. Inside the zip file, you will find the the source file (exactly this demo project) (react-material-kit-pro-x.x.x-.zip) and design folder where you will find two more folders for figma and sketch source files.
+2. Extract the contents of the zip file (react-material-kit-pro-x.x.x-.zip) into a folder that you will work within. For this documentation, we will refer that as "your work folder".
+3. Open your machine console application (Terminal, Command Prompt etc.), navigate into your work folder and run the following command and wait for it to finish:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. After the installation is complete write in the terminal
 
-## Learn More
+```bash
+npm run start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+5. Open your browser and navigate to `localhost:3000`
