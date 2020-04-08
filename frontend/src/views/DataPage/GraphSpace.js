@@ -3,7 +3,7 @@ import {
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
-export function GraphSpace (){
+export function GraphSpace (props){
         // UNCOMMENT THIS BEFORE BUIDLING
         // let filtData = this.props.data.filter(d => d['JurisdictionName'] == this.state.State &&
         //     d['QuestionDesc'] == "Total individuals served during the year (A1 + A2).");
@@ -22,6 +22,9 @@ export function GraphSpace (){
         // { "x": filtData[7]["ReportInstanceYear"], "y": filtData[7]["IntAnswerValue"] }
         // ]
 
+        let filtData = props.dat.filter(d => d['State'] == 'Alaska');
+        console.log(filtData)
+
         return (
             <div id='graphSpace'>
 
@@ -29,16 +32,16 @@ export function GraphSpace (){
             <LineChart
                 width={800}
                 height={600}
-                // data={gData}
+                data={filtData}
                 margin={{
                     top: 5, right: 30, left: 20, bottom: 5,
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="x" />
+                <XAxis dataKey="Fiscal Year" />
                 <YAxis />
                 <Tooltip />
-                <Line type="monotone" dataKey="y" stroke="#8884d8" activeDot={{ r: 8 }} />
+                <Line type="monotone" dataKey="Total individuals served" stroke="#8884d8" activeDot={{ r: 8 }} />
             </LineChart>
             </div>
         )

@@ -1,7 +1,7 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
 
-export function TableSpace() {
+export function TableSpace(props) {
     const columns = [
         {
             name: 'Answer ID',
@@ -64,6 +64,7 @@ export function TableSpace() {
         <div id='tableSpace'>
             <DataTable
                 columns={columns}
+                data={props.dat}
                 pagination
             />
         </div>

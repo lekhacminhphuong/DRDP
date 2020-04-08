@@ -46,12 +46,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export function GraphTab() {
+export function GraphTab(props) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <div>
       <AppBar position="static">
@@ -61,10 +62,10 @@ export function GraphTab() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <GraphSpace />
+        <GraphSpace dat={props.dat}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        < TableSpace />
+        < TableSpace dat={props.dat}/>
       </TabPanel>
     </div>
   )
