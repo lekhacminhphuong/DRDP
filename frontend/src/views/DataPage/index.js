@@ -5,7 +5,7 @@ import Page from 'src/components/Page';
 import { DescriptionSpace } from './DescriptionSpace';
 import { FilterSpace } from './FilterSpace';
 import { GraphTab } from './GraphTab';
-import mockdata from './mockupdata.json';
+//import mockdata from './mockupdata.json';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,7 +32,8 @@ function DataPage() {
         <DescriptionSpace />
         <FilterSpace />
         <div id='tabSpace'>
-          <GraphTab dat={mockdata}/>
+          {/* <GraphTab dat={mockdata}/> */}
+          <GraphTab />
         </div>
       </Container>
     </Page>

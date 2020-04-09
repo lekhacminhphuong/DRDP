@@ -64,7 +64,7 @@ export function TableSpace(props) {
         <div id='tableSpace'>
             <DataTable
                 columns={columns}
-                data={props.dat}
+                //data={props.dat}
                 pagination
             />
         </div>

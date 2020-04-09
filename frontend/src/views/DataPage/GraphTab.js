@@ -62,10 +62,12 @@ export function GraphTab(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <GraphSpace dat={props.dat}/>
+        {/* <GraphSpace dat={props.dat}/> */}
+        <GraphSpace />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        < TableSpace dat={props.dat}/>
+        {/* < TableSpace dat={props.dat}/> */}
+        < TableSpace />
       </TabPanel>
     </div>
   )

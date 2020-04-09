@@ -22,8 +22,8 @@ export function GraphSpace (props){
         // { "x": filtData[7]["ReportInstanceYear"], "y": filtData[7]["IntAnswerValue"] }
         // ]
 
-        let filtData = props.dat.filter(d => d['State'] == 'Alaska');
-        console.log(filtData)
+        //let filtData = props.dat.filter(d => d['State'] == 'Alaska');
+        //console.log(filtData)
 
         return (
             <div id='graphSpace'>
@@ -32,7 +32,7 @@ export function GraphSpace (props){
             <LineChart
                 width={800}
                 height={600}
-                data={filtData}
+                //data={filtData}
                 margin={{
                     top: 5, right: 30, left: 20, bottom: 5,
                 }}

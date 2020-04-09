@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
+import fire from '../../config/Fire';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,7 +26,7 @@ function HomePage() {
   return (
     <Page className={classes.root} title="Home">
       <Container maxWidth="lg">
-        This is Home Page
+        <p>This is Home Page</p>
       </Container>
     </Page>
   );

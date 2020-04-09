@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { createBrowserHistory } from 'history';
@@ -19,11 +19,31 @@ import './mixins/moment';
 import './mixins/validate';
 import './mixins/prismjs';
 import './assets/scss/main.scss';
+import fire from './config/Fire';
+import Login from './views/Login/Login'
 
 const history = createBrowserHistory();
 const store = configureStore();
 
 function App() {
+
+  const [user, setUser] = useState(true);
+
+  useEffect(()=>{
+    authListener();
+  })
+
+  function authListener(){
+    fire.auth().onAuthStateChanged((user) =>{
+      console.log(user);
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    })
+  }
+
   return (
     <StoreProvider store={store}>
       <ThemeProvider theme={theme}>
@@ -33,7 +53,8 @@ function App() {
               <ScrollReset />
               <GoogleAnalytics />
               <CookiesNotification />
-              {renderRoutes(routes)}
+              {user ? (renderRoutes(routes)) : (<Login/>)}
+              {/* {renderRoutes(routes)} */}
             </Router>
           </MuiPickersUtilsProvider>
         </StylesProvider>
