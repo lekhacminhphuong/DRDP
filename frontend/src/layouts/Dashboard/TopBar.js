@@ -29,6 +29,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import axios from 'src/utils/axios';
 import { logout } from 'src/actions';
+import fire from '../../config/Fire';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -108,8 +109,9 @@ function TopBar({ onOpenNavBarMobile, className, ...rest }) {
   const [notifications, setNotifications] = useState([]);
 
   const handleLogout = () => {
-    history.push('/auth/login');
+    //history.push('/auth/login');
     // dispatch(logout());
+    fire.auth().signOut();
   };
 
   const handleSearchChange = event => {
@@ -162,14 +164,14 @@ function TopBar({ onOpenNavBarMobile, className, ...rest }) {
         <div className={classes.flexGrow} />
         <Hidden smDown>
           <div className={classes.search} ref={searchRef}>
-            <SearchIcon className={classes.searchIcon} />
-            <Input
+            {/* <SearchIcon className={classes.searchIcon} /> */}
+            {/* <Input
               className={classes.searchInput}
               disableUnderline
               onChange={handleSearchChange}
               placeholder="Search people &amp; places"
               value={searchValue}
-            />
+            /> */}
           </div>
           <Popper
             anchorEl={searchRef.current}
