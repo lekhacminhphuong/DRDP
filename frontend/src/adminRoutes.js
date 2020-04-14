@@ -2,8 +2,6 @@ import React, { lazy } from 'react';
 import { Redirect } from 'react-router-dom';
 import DashboardLayout from './layouts/Dashboard';
 
-
-
 export default [
   {
     path: '/',
@@ -28,6 +26,11 @@ export default [
         path: '/gallery',
         exact: true,
         component: lazy(() => import('src/views/GalleryPage')),
+      },
+      {
+        path: '/admin',
+        exact: true,
+        component: lazy(() => import('src/views/AdminPage')),
       },
     ],
   },

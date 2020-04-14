@@ -19,24 +19,46 @@ import './mixins/moment';
 import './mixins/validate';
 import './mixins/prismjs';
 import './assets/scss/main.scss';
-import fire from './config/Fire';
-import Login from './views/Login/Login'
+import Login from './views/Login/Login';
+import {db, auth} from './config/Fire';
+import firebase from './config/Fire';
+import adminRoutes from './adminRoutes';
 
 const history = createBrowserHistory();
 const store = configureStore();
 
 function App() {
 
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(()=>{
+    if(user == null){
+      setIsAdmin(false);
+    }
     authListener();
   })
 
+  function getRole(uid){
+    db.collection('users')
+      .get().then( snapshot => {
+        //console.log('snap')
+        snapshot.forEach( doc => {
+          if(doc.id == uid){
+            //console.log(doc.data().isAdmin);
+            setIsAdmin(doc.data().isAdmin);
+          }
+        })
+        //console.log('/snap')
+      })
+      .catch(error => console.log(error));
+  }
+
   function authListener(){
-    fire.auth().onAuthStateChanged((user) =>{
-      console.log(user);
+    firebase.auth().onAuthStateChanged((user) =>{
       if (user) {
+        //console.log(user.uid);
+        getRole(user.uid);
         setUser(user);
       } else {
         setUser(null);
@@ -44,23 +66,47 @@ function App() {
     })
   }
 
-  return (
-    <StoreProvider store={store}>
-      <ThemeProvider theme={theme}>
-        <StylesProvider>
-          <MuiPickersUtilsProvider utils={MomentUtils}>
-            <Router history={history}>
-              <ScrollReset />
-              <GoogleAnalytics />
-              <CookiesNotification />
-              {user ? (renderRoutes(routes)) : (<Login/>)}
-              {/* {renderRoutes(routes)} */}
-            </Router>
-          </MuiPickersUtilsProvider>
-        </StylesProvider>
-      </ThemeProvider>
-    </StoreProvider>
-  );
+  console.log('is admin:' + isAdmin)
+
+  if(isAdmin){
+    return (
+      <StoreProvider store={store}>
+        <ThemeProvider theme={theme}>
+          <StylesProvider>
+            <MuiPickersUtilsProvider utils={MomentUtils}>
+              <Router history={history}>
+                <ScrollReset />
+                <GoogleAnalytics />
+                <CookiesNotification />
+                {user ? ( renderRoutes(adminRoutes) ) : (<Login/>)}
+                {/* {renderRoutes(routes)} */}
+              </Router>
+            </MuiPickersUtilsProvider>
+          </StylesProvider>
+        </ThemeProvider>
+      </StoreProvider>
+    );
+  } else {
+    return (
+      <StoreProvider store={store}>
+        <ThemeProvider theme={theme}>
+          <StylesProvider>
+            <MuiPickersUtilsProvider utils={MomentUtils}>
+              <Router history={history}>
+                <ScrollReset />
+                <GoogleAnalytics />
+                <CookiesNotification />
+                {user ? ( renderRoutes(routes)  ) : (<Login/>)}
+                {/* {renderRoutes(routes)} */}
+              </Router>
+            </MuiPickersUtilsProvider>
+          </StylesProvider>
+        </ThemeProvider>
+      </StoreProvider>
+    );
+  }
+
+  
 }
 
 export default App;
