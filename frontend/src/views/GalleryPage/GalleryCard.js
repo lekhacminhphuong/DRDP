@@ -24,7 +24,7 @@ export function GalleryCard(props) {
       <CardActionArea to="/data" component={RouterLink} >
         <CardMedia
           className={classes.media}>
-          <img src={props.img} height="150" width="345"></img>
+          <img src={props.img} height="150" width="345" alt="card"></img>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

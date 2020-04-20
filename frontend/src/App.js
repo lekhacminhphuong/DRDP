@@ -20,7 +20,7 @@ import './mixins/validate';
 import './mixins/prismjs';
 import './assets/scss/main.scss';
 import Login from './views/Login/Login';
-import {db, auth} from './config/Fire';
+import {db} from './config/Fire';
 import firebase from './config/Fire';
 import adminRoutes from './adminRoutes';
 
@@ -44,7 +44,7 @@ function App() {
       .get().then( snapshot => {
         //console.log('snap')
         snapshot.forEach( doc => {
-          if(doc.id == uid){
+          if(doc.id === uid){
             //console.log(doc.data().isAdmin);
             setIsAdmin(doc.data().isAdmin);
           }
