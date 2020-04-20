@@ -21,12 +21,7 @@ export default [
         title: 'Gallery',
         href: '/gallery',
         icon: BarChartIcon
-      },
-      {
-        title: 'Admin',
-        href: '/admin',
-        icon: BarChartIcon
-      },
+      }
     ]
   }
 ];

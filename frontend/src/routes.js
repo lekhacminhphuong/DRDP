@@ -1,8 +1,6 @@
 import React, { lazy } from 'react';
 import { Redirect } from 'react-router-dom';
-import DashboardLayout from './layouts/Dashboard';
-
-
+import DashboardLayout from './layouts/UserDashboard';
 
 export default [
   {
