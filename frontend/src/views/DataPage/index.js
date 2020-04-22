@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
 import { DescriptionSpace } from './DescriptionSpace';
 import { FilterSpace } from './FilterSpace';
 import { GraphTab } from './GraphTab';
-//import mockdata from './mockupdata.json';
+import {db} from '../../config/Fire';
+import firebase from '../../config/Fire';
+import mockdata from '../../testie.json';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,6 +26,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function DataPage() {
+
   const classes = useStyles();
 
   return (
@@ -32,8 +35,8 @@ function DataPage() {
         <DescriptionSpace />
         <FilterSpace />
         <div id='tabSpace'>
-          {/* <GraphTab dat={mockdata}/> */}
-          <GraphTab />
+          <GraphTab mockdata={mockdata}/>
+          {/* <GraphTab /> */}
         </div>
       </Container>
     </Page>

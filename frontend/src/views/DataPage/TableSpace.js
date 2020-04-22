@@ -60,11 +60,13 @@ export function TableSpace(props) {
         }
     ];
 
+    console.log(props.mockdata)
+
     return (
         <div id='tableSpace'>
             <DataTable
                 columns={columns}
-                //data={props.dat}
+                data={props.mockdata}
                 pagination
             />
         </div>
