@@ -15,7 +15,7 @@ export default [
       {
         path: '/home',
         exact: true,
-        component: lazy(() => import('src/views/HomePage')),
+        component: lazy(() => import('src/views/OverviewPage')),
       },
       {
         path: '/data',

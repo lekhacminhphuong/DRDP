@@ -2,33 +2,30 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
+import Main from './Main';
+import Statistics from './Statistics'
 
 const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
   },
-  header: {
-    marginBottom: theme.spacing(3),
-  },
-  filter: {
+  statistics: {
     marginTop: theme.spacing(3),
-  },
-  results: {
-    marginTop: theme.spacing(6),
-  },
+  }
 }));
 
-function HomePage() {
+function OverviewPage() {
   const classes = useStyles();
 
   return (
     <Page className={classes.root} title="Home">
       <Container maxWidth="lg">
-        <p>This is Home Page</p>
+        <Main />
+        <Statistics className={classes.statistics} />
       </Container>
     </Page>
   );
 }
 
-export default HomePage;
+export default OverviewPage;
