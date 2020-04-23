@@ -5,14 +5,14 @@ const white = '#FFFFFF';
 export default {
   primary: {
     contrastText: white,
-    dark: colors.indigo[900],
-    main: colors.indigo[500],
+    dark: '#12384E',
+    main: '#05486F',
     light: colors.indigo[100]
   },
   secondary: {
     contrastText: white,
-    dark: colors.blue[900],
-    main: colors.blue.A700,
+    dark: '#12384E',
+    main: '#05486F',
     light: colors.blue.A400
   },
   error: {
@@ -22,12 +22,12 @@ export default {
     light: colors.red[400]
   },
   text: {
-    primary: colors.blueGrey[900],
-    secondary: colors.blueGrey[600],
+    primary: colors.grey[900],
+    secondary: colors.grey[600],
     link: colors.blue[600]
   },
   link: colors.blue[800],
-  icon: colors.blueGrey[600],
+  icon: colors.grey[600],
   background: {
     default: '#F4F6F8',
     paper: white

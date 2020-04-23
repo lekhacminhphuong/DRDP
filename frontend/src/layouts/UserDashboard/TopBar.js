@@ -8,79 +8,33 @@ import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
 import {
   AppBar,
-  Badge,
   Button,
   IconButton,
   Toolbar,
   Hidden,
-  Input,
   colors,
-  Popper,
-  Paper,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  ClickAwayListener
 } from '@material-ui/core';
 
 import InputIcon from '@material-ui/icons/Input';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
 import axios from 'src/utils/axios';
 import { logout } from 'src/actions';
 import fire from '../../config/Fire';
+import img from 'src/imgs/logo.png';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
     boxShadow: 'none'
   },
+  logo: {
+    width: "250px",
+  },
   flexGrow: {
     flexGrow: 1
   },
-  search: {
-    backgroundColor: 'rgba(255,255,255, 0.1)',
-    borderRadius: 4,
-    flexBasis: 300,
-    height: 36,
-    padding: theme.spacing(0, 2),
-    display: 'flex',
-    alignItems: 'center'
-  },
-  searchIcon: {
-    marginRight: theme.spacing(2),
-    color: 'inherit'
-  },
-  searchInput: {
-    flexGrow: 1,
-    color: 'inherit',
-    '& input::placeholder': {
-      opacity: 1,
-      color: 'inherit'
-    }
-  },
-  searchPopper: {
-    zIndex: theme.zIndex.appBar + 100
-  },
-  searchPopperContent: {
-    marginTop: theme.spacing(1)
-  },
-  trialButton: {
-    marginLeft: theme.spacing(2),
-    color: theme.palette.common.white,
-    backgroundColor: colors.green[600],
-    '&:hover': {
-      backgroundColor: colors.green[900]
-    }
-  },
-  trialIcon: {
-    marginRight: theme.spacing(1)
-  },
   menuButton: {
     marginRight: theme.spacing(1)
-  },
-  chatButton: {
-    marginLeft: theme.spacing(1)
   },
   notificationsButton: {
     marginLeft: theme.spacing(1)
@@ -101,33 +55,12 @@ const popularSearches = ['search suggestions here'];
 function TopBar({ onOpenNavBarMobile, className, ...rest }) {
   const classes = useStyles();
   const history = useHistory();
-  const searchRef = useRef(null);
-  const dispatch = useDispatch();
-  const notificationsRef = useRef(null);
-  const [openSearchPopover, setOpenSearchPopover] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
   const [notifications, setNotifications] = useState([]);
 
   const handleLogout = () => {
     //history.push('/auth/login');
     // dispatch(logout());
     fire.auth().signOut();
-  };
-
-  const handleSearchChange = event => {
-    setSearchValue(event.target.value);
-
-    if (event.target.value) {
-      if (!openSearchPopover) {
-        setOpenSearchPopover(true);
-      }
-    } else {
-      setOpenSearchPopover(false);
-    }
-  };
-
-  const handleSearchPopverClose = () => {
-    setOpenSearchPopover(false);
   };
 
   useEffect(() => {
@@ -160,46 +93,8 @@ function TopBar({ onOpenNavBarMobile, className, ...rest }) {
             <MenuIcon />
           </IconButton>
         </Hidden>
-        <RouterLink to="/">{/* <img alt="Logo" src="" /> */}</RouterLink>
+        <RouterLink to="/"><img className={classes.logo} alt="Web Logo" src={img} /></RouterLink>
         <div className={classes.flexGrow} />
-        <Hidden smDown>
-          <div className={classes.search} ref={searchRef}>
-            {/* <SearchIcon className={classes.searchIcon} /> */}
-            {/* <Input
-              className={classes.searchInput}
-              disableUnderline
-              onChange={handleSearchChange}
-              placeholder="Search people &amp; places"
-              value={searchValue}
-            /> */}
-          </div>
-          <Popper
-            anchorEl={searchRef.current}
-            className={classes.searchPopper}
-            open={openSearchPopover}
-            transition
-          >
-            <ClickAwayListener onClickAway={handleSearchPopverClose}>
-              <Paper className={classes.searchPopperContent} elevation={3}>
-                <List>
-                  {popularSearches.map(search => (
-                    <ListItem
-                      button
-                      key={search}
-                      onClick={handleSearchPopverClose}
-                    >
-                      <ListItemIcon>
-                        <SearchIcon />
-                      </ListItemIcon>
-                      <ListItemText primary={search} />
-                    </ListItem>
-                  ))}
-                </List>
-              </Paper>
-            </ClickAwayListener>
-          </Popper>
-        </Hidden>
-
         <Hidden mdDown>
           <Button
             className={classes.logoutButton}

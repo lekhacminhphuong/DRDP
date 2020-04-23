@@ -27,7 +27,7 @@ function DataPage() {
   const classes = useStyles();
 
   return (
-    <Page className={classes.root} title="Home">
+    <Page className={classes.root} title="DRDP - Current Report">
       <Container maxWidth="lg">
         <DescriptionSpace />
         <FilterSpace />

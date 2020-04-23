@@ -9,7 +9,7 @@ export default [
     items: [
       {
         title: 'Overview',
-        href: '/home',
+        href: '/overview',
         icon: HomeIcon
       },
       {

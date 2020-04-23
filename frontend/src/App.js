@@ -19,7 +19,7 @@ import './mixins/moment';
 import './mixins/validate';
 import './mixins/prismjs';
 import './assets/scss/main.scss';
-import Login from './views/Login/Login';
+import Login from './views/LoginPage';
 import {db} from './config/Fire';
 import firebase from './config/Fire';
 import adminRoutes from './adminRoutes';

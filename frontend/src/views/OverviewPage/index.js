@@ -19,7 +19,7 @@ function OverviewPage() {
   const classes = useStyles();
 
   return (
-    <Page className={classes.root} title="Home">
+    <Page className={classes.root} title="DRDP - Overview">
       <Container maxWidth="lg">
         <Main />
         <Statistics className={classes.statistics} />

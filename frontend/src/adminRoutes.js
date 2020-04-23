@@ -6,14 +6,14 @@ export default [
   {
     path: '/',
     exact: true,
-    component: () => <Redirect to="/home" />
+    component: () => <Redirect to="/overview" />
   },
   {
     route: '*',
     component: DashboardLayout,
     routes: [
       {
-        path: '/home',
+        path: '/overview',
         exact: true,
         component: lazy(() => import('src/views/OverviewPage')),
       },

@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
-import img1 from '../imgs/barchart.png';
-import img2 from '../imgs/linechart.png';
+import img1 from 'src/imgs/barchart.png';
+import img2 from 'src/imgs/linechart.png';
 import { GalleryCard } from './GalleryCard';
 
 
@@ -30,7 +30,7 @@ function GalleryPage() {
   const imgs = [img2, img1]
 
   return (
-    <Page className={classes.root} title="Home">
+    <Page className={classes.root} title="DRDP - Gallery">
       <Container maxWidth="lg">
            <div id='gallerySpace'>
               <GalleryCard title={titles[0]} desc={descriptions[0]} img={imgs[0]} />
