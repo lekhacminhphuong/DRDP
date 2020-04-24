@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function AdminPage() {
+function FavoritesPage() {
   const classes = useStyles();
 
   return (
@@ -31,4 +31,4 @@ function AdminPage() {
   );
 }
 
-export default AdminPage;
+export default FavoritesPage;

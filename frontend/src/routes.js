@@ -29,6 +29,16 @@ export default [
         exact: true,
         component: lazy(() => import('src/views/GalleryPage')),
       },
+      {
+        path: '/favorites',
+        exact: true,
+        component: lazy(() => import('src/views/FavoritesPage')),
+      },
+      {
+        path: '/reportentry',
+        exact: true,
+        component: lazy(() => import('src/views/ReportEntryPage')),
+      }
     ],
   },
 ];
