@@ -108,8 +108,8 @@ function App() {
                 <ScrollReset />
                 <GoogleAnalytics />
                 <CookiesNotification />
-                {/* {user ? ( renderRoutes(adminRoutes) ) : (<Login/>)} */}
-                {renderRoutes(routes)}
+                {user ? ( renderRoutes(adminRoutes) ) : (<LoginPage/>)}
+                {/* {renderRoutes(routes)} */}
                 {/* <button onClick={logState}>button</button>  */}
               </Router>
             </MuiPickersUtilsProvider>
@@ -127,8 +127,8 @@ function App() {
                 <ScrollReset />
                 <GoogleAnalytics />
                 <CookiesNotification />
-                {/* {user ? ( renderRoutes(routes)  ) : (<Login/>)} */}
-                {renderRoutes(routes)}
+                {user ? ( renderRoutes(routes)  ) : (<LoginPage/>)}
+                {/* {renderRoutes(routes)} */}
                 {/* <button onClick={logState}>button</button>  */}
               </Router>
             </MuiPickersUtilsProvider>

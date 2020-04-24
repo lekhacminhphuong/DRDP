@@ -1,46 +1,38 @@
-import React, { useState } from 'react';
-import fire from '../../config/Fire';
-
+import React from 'react';
+import { makeStyles } from '@material-ui/styles';
+import {
+  Grid
+} from '@material-ui/core';
+import Page from 'src/components/Page';
+import LoginForm from './LoginForm';
+import image from 'src/imgs/login_image.png'
 
 function LoginPage() {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    function login(e){
-        e.preventDefault();
-        fire.auth().signInWithEmailAndPassword(email, password).then( (u)=>{
-        }).catch((error)=>{
-            console.log(error);
-        })
-    }
-
-    function handleEmail(e){
-        setEmail(e.target.value);
-    }
-
-    function handlePassword(e){
-        setPassword(e.target.value);
-    }
-
-    return (
-        <form>
-            <h1>Hello</h1>
-            <p>Enter email: user@user.com</p>
-            <input
-                type="text"
-                value={email}
-                onChange={handleEmail}
-            />
-            <p>Enter password: useruser</p>
-            <input
-                type="text"
-                value={password}
-                onChange={handlePassword}
-            />
-            <button onClick={login}>Login</button>
-        </form>
-    );
+  return (
+    <Page title="Login">
+        <Grid
+          alignItems="center"
+          container
+          style={{ minHeight: "100vh" }}
+        >
+          <Grid
+            item
+            xs={12}
+            sm={6}
+          >
+            <LoginForm />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+          >
+            <img src={image} height="500px"/>
+          </Grid>
+        </Grid>
+    </Page>
+  );
 }
 
 export default LoginPage;
