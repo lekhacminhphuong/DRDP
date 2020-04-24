@@ -9,6 +9,9 @@ import {
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: "#FFD171"
+  },
   item: {
     padding: theme.spacing(3),
     textAlign: 'center',

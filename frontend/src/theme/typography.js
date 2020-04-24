@@ -9,15 +9,15 @@ export default {
     lineHeight: '40px'
   },
   h2: {
-    color: palette.text.primary,
-    fontWeight: 500,
+    color: palette.text.content,
+    fontWeight: 700,
     fontSize: '29px',
     letterSpacing: '-0.24px',
     lineHeight: '32px'
   },
   h3: {
-    color: palette.text.primary,
-    fontWeight: 500,
+    color: palette.text.content,
+    fontWeight: 600,
     fontSize: '24px',
     letterSpacing: '-0.06px',
     lineHeight: '28px'
@@ -44,8 +44,9 @@ export default {
     lineHeight: '20px'
   },
   subtitle1: {
-    color: palette.text.primary,
-    fontSize: '16px',
+    color: palette.text.content,
+    fontWeight: 500,
+    fontSize: '15px',
     letterSpacing: '-0.05px',
     lineHeight: '25px'
   },
@@ -79,7 +80,7 @@ export default {
     lineHeight: '13px'
   },
   overline: {
-    color: palette.text.secondary,
+    color: palette.text.content,
     fontSize: '11px',
     fontWeight: 500,
     letterSpacing: '0.33px',

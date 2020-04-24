@@ -6,14 +6,18 @@ import {
     Card,
     Divider
 } from '@material-ui/core';
-import clsx from 'clsx';
 
 const useStyles = makeStyles(theme => ({
     card: {
         marginTop: theme.spacing(3)
     },
-    item: {
+    item1: {
         margin: theme.spacing(3),
+        textAlign: 'left',
+    },
+    item2: {
+        margin: theme.spacing(3),
+        textAlign: 'right',
     },
     content: {
         marginTop: theme.spacing(4)
@@ -28,18 +32,17 @@ function OverviewPage(className) {
     const classes = useStyles();
 
     return (
-        <div
-            className={clsx(classes.root, className)}
-        >
+        <div>
             <Card>
                 <Grid
                     alignItems="center"
                     container
                     justify="space-between"
+                    flexDirection="row"
                     spacing={3}
                 >
                     <Grid
-                        className={classes.item}
+                        className={classes.item1}
                         item
                         md={6}
                         xs={12}
@@ -81,10 +84,11 @@ function OverviewPage(className) {
                     alignItems="center"
                     container
                     justify="space-between"
+                    flexDirection="row-reverse"
                     spacing={3}
-                >
+                >.
                     <Grid
-                        className={classes.item}
+                        className={classes.item2}
                         item
                         md={6}
                         xs={12}
