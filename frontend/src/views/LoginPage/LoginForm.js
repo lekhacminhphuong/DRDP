@@ -100,6 +100,17 @@ function LoginForm({ className, ...rest }) {
       >
         Don&apos;t have an account?
       </Link>
+      <br />
+      <Link
+        align="center"
+        color="secondary"
+        component={RouterLink}
+        to="/auth/register"
+        underline="always"
+        variant="subtitle2"
+      >
+        Forget Password?
+      </Link>
     </form>
   );
 }
