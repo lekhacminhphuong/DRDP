@@ -12,9 +12,6 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
   },
-  header: {
-    marginBottom: theme.spacing(3),
-  },
   filter: {
     marginTop: theme.spacing(3),
   },
@@ -32,10 +29,8 @@ function GalleryPage() {
   return (
     <Page className={classes.root} title="DRDP - Gallery">
       <Container maxWidth="lg">
-           <div id='gallerySpace'>
-              <GalleryCard title={titles[0]} desc={descriptions[0]} img={imgs[0]} />
-              <GalleryCard title={titles[1]} desc={descriptions[1]} img={imgs[1]}  />
-            </div>
+          <GalleryCard title={titles[0]} desc={descriptions[0]} img={imgs[0]} />
+          <GalleryCard title={titles[1]} desc={descriptions[1]} img={imgs[1]}  />
       </Container>
     </Page>
   );

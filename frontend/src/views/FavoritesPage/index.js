@@ -23,7 +23,7 @@ function FavoritesPage() {
   const classes = useStyles();
 
   return (
-    <Page className={classes.root} title="Home">
+    <Page className={classes.root} title="DRDP - Favorites">
       <Container maxWidth="lg">
         <p>This is Favorites Page</p>
       </Container>
