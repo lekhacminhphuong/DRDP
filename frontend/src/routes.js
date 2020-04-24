@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
 import { Redirect } from 'react-router-dom';
 import DashboardLayout from './layouts/UserDashboard';
-import DataPage from './views/DataPage';
+import DataPage from './views/CurrentReportPage';
 
 
 export default [
@@ -20,9 +20,9 @@ export default [
         component: lazy(() => import('src/views/OverviewPage')),
       },
       {
-        path: '/data',
+        path: '/currentreport',
         exact: true,
-        component: lazy(() => import('src/views/DataPage')),
+        component: lazy(() => import('src/views/CurrentReportPage')),
       },
       {
         path: '/gallery',

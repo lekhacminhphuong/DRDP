@@ -16,8 +16,8 @@ export default [
         icon: HomeIcon
       },
       {
-        title: 'Data',
-        href: '/data',
+        title: 'Current Report',
+        href: '/currentreport',
         icon: BarChartIcon
       },
       {

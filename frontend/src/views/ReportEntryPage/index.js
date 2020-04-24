@@ -25,7 +25,7 @@ function ReportEntryPage() {
   return (
     <Page className={classes.root} title="Home">
       <Container maxWidth="lg">
-        <p>This is Admin Page</p>
+        <p>This is Report Entry Page</p>
       </Container>
     </Page>
   );

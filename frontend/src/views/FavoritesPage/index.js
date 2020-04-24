@@ -25,7 +25,7 @@ function FavoritesPage() {
   return (
     <Page className={classes.root} title="Home">
       <Container maxWidth="lg">
-        <p>This is Admin Page</p>
+        <p>This is Favorites Page</p>
       </Container>
     </Page>
   );
