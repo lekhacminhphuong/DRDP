@@ -54,12 +54,12 @@ export function GraphTab(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        {/* <GraphSpace dat={props.dat}/> */}
-        <GraphSpace />
+        <GraphSpace mockdata={props.mockdata}/>
+        {/* <GraphSpace /> */}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {/* < TableSpace dat={props.dat}/> */}
-        < TableSpace />
+        < TableSpace mockdata={props.mockdata}/>
+        {/* < TableSpace /> */}
       </TabPanel>
     </div>
   )
