@@ -27,8 +27,7 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(1, 1, 1, 2),
     },
     formControl: {
-        marginTop: 20,
-        marginLeft: 30
+        margin: 20
     }
 }));
 
@@ -53,7 +52,7 @@ export function FilterSpace() {
     };
 
     return (
-        <div id='filterSpace'>
+        <div>
             {/* HIDDEN for MVP
             <div className={classes.search}>
                 <InputBase
@@ -86,7 +85,7 @@ export function FilterSpace() {
                     <option value={30}>Arizona</option>
                     <option value={30}>Arkansas</option>
                 </Select>
-            </FormControl><br />
+            </FormControl>
             <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel ref={inputLabel} htmlFor="outlined-age-native-simple">
                     Year
@@ -110,6 +109,25 @@ export function FilterSpace() {
                     <option value={30}>2016</option>
                     <option value={10}>2017</option>
                     <option value={20}>2018</option>
+                </Select>
+            </FormControl>
+            <FormControl variant="outlined" className={classes.formControl}>
+                <InputLabel ref={inputLabel} htmlFor="outlined-age-native-simple">
+                    Report
+                </InputLabel>
+                <Select
+                    native
+                    value={state.age}
+                    onChange={handleChange('age')}
+                    labelWidth={labelWidth}
+                    inputProps={{
+                        name: 'age',
+                        id: 'outlined-age-native-simple',
+                    }}
+                >
+                    <option value="" />
+                    <option value={10}>One PPR</option>
+                    <option value={20}>Census</option>
                 </Select>
             </FormControl>
         </div>

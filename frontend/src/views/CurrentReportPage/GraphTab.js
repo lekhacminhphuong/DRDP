@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { GraphSpace } from './GraphSpace';
 import { TableSpace } from './TableSpace';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
@@ -31,35 +30,28 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
 export function GraphTab(props) {
-  const [value, setValue] = React.useState(0);
+  const [currentTab, setCurrentTab] = useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleChangeTab = (event, newTab) => {
+    setCurrentTab(newTab);
   };
 
   return (
     <div>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Graph" {...a11yProps(0)} />
-          <Tab label="Data" {...a11yProps(1)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        <GraphSpace mockdata={props.mockdata}/>
-        {/* <GraphSpace /> */}
+      <Tabs
+        value={currentTab}
+        onChange={handleChangeTab}
+        indicatorColor="primary"
+      >
+        <Tab label="Graph" />
+        <Tab label="Data" />
+      </Tabs>
+      <TabPanel value={currentTab} index={0}>
+        <GraphSpace mockdata={props.mockdata} />
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        < TableSpace mockdata={props.mockdata}/>
-        {/* < TableSpace /> */}
+      <TabPanel value={currentTab} index={1}>
+        <TableSpace mockdata={props.mockdata} />
       </TabPanel>
     </div>
   )
