@@ -48,7 +48,7 @@ export function GraphTab(props) {
         <Tab label="Data" />
       </Tabs>
       <TabPanel value={currentTab} index={0}>
-        <GraphSpace mockdata={props.mockdata} />
+        <GraphSpace mockdata={props.mockdata} jurisdiction={props.jurisdiction}/>
       </TabPanel>
       <TabPanel value={currentTab} index={1}>
         <TableSpace mockdata={props.mockdata} />

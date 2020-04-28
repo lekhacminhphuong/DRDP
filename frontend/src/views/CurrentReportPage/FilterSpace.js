@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export function FilterSpace() {
+export function FilterSpace(props) {
     const classes = useStyles();
     const [state, setState] = React.useState({
         age: '',
@@ -70,20 +70,20 @@ export function FilterSpace() {
                 </InputLabel>
                 <Select
                     native
-                    value={state.age}
-                    onChange={handleChange('age')}
+                    value={state.jurisdiction}
+                    onChange={props.handleChange('jurisdiction')}
                     labelWidth={labelWidth}
                     inputProps={{
-                        name: 'age',
+                        name: 'jurisdiction',
                         id: 'outlined-age-native-simple',
                     }}
                 >
                     <option value="" />
-                    <option value={10}>Alabama</option>
-                    <option value={10}>Alaska</option>
-                    <option value={20}>American Samoa</option>
-                    <option value={30}>Arizona</option>
-                    <option value={30}>Arkansas</option>
+                    <option value={'Alabama'}>Alabama</option>
+                   <option value={'Alaska'}>Alaska</option>
+                   <option value={'American Samoa'}>American Samoa</option>
+                   <option value={'Arizona'}>Arizona</option>
+                   <option value={'Arkansas'}>Arkansas</option>
                 </Select>
             </FormControl>
             <FormControl variant="outlined" className={classes.formControl}>
@@ -93,22 +93,24 @@ export function FilterSpace() {
                 <Select
                     native
                     value={state.age}
-                    onChange={handleChange('age')}
+                    onChange={props.handleChange('year')}
                     labelWidth={labelWidth}
                     inputProps={{
-                        name: 'age',
+                        name: 'year',
                         id: 'outlined-age-native-simple',
                     }}
                 >
                     <option value="" />
-                    <option value={10}>2011</option>
-                    <option value={20}>2012</option>
-                    <option value={30}>2013</option>
-                    <option value={10}>2014</option>
-                    <option value={20}>2015</option>
-                    <option value={30}>2016</option>
-                    <option value={10}>2017</option>
-                    <option value={20}>2018</option>
+                    <option value={2011}>2011</option>
+                   <option value={2012}>2012</option>
+                   <option value={2013}>2013</option>
+                   <option value={2014}>2014</option>
+                   <option value={2015}>2015</option>
+                   <option value={2016}>2016</option>
+                   <option value={2017}>2017</option>
+                   <option value={2018}>2018</option>
+                   <option value={2019}>2019</option>
+                   <option value={2020}>2020</option>
                 </Select>
             </FormControl>
             <FormControl variant="outlined" className={classes.formControl}>
@@ -118,16 +120,16 @@ export function FilterSpace() {
                 <Select
                     native
                     value={state.age}
-                    onChange={handleChange('age')}
+                    onChange={handleChange('report')}
                     labelWidth={labelWidth}
                     inputProps={{
-                        name: 'age',
+                        name: 'report',
                         id: 'outlined-age-native-simple',
                     }}
                 >
                     <option value="" />
-                    <option value={10}>One PPR</option>
-                    <option value={20}>Census</option>
+                    <option value={'One PPR'}>One PPR</option>
+                    <option value={'Census'}>Census</option>
                 </Select>
             </FormControl>
         </div>
