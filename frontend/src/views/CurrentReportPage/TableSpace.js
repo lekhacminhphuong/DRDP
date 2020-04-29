@@ -1,74 +1,79 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DataTable from 'react-data-table-component';
 
 export function TableSpace(props) {
+
     const columns = [
         {
-            name: 'Answer ID',
-            selector: 'AnswerID',
-            sortable: true,
-        },
-        {
-            name: 'Organization Name',
-            selector: 'OrganizationName',
-            sortable: true,
-        },
-        {
-            name: 'Organization Description',
-            selector: 'OrganizationDesc',
-            sortable: true,
-        },
-        {
-            name: 'Report Name',
-            selector: 'ReportName',
-            sortable: true,
-        },
-        {
-            name: 'Report Description',
-            selector: 'ReportDesc',
-            sortable: true,
-        },
-        {
             name: 'Year',
-            selector: 'ReportInstanceYear',
+            selector: 'year',
             sortable: true,
         },
         {
             name: 'Jurisdiction',
-            selector: 'JurisdictionName',
+            selector: 'jurisdiction',
             sortable: true,
         },
         {
-            name: 'Question Code',
-            selector: 'QuestionCode',
-            sortable: true,
-        },
-        {
-            name: 'Question Description',
-            selector: 'QuestionDesc',
-            sortable: true,
-        },
-        {
-            name: 'Question Type',
-            selector: 'QuestionType',
-            sortable: true,
-        },
-        {
-            name: 'Count',
-            selector: 'IntAnswerValue',
+            name: 'Total Served',
+            selector: 'Total Served',
             sortable: true,
         }
     ];
 
-    console.log(props.mockdata)
+    const tableData = []
 
-    return (
-        <div id='tableSpace'>
-            <DataTable
-                columns={columns}
-                data={props.mockdata}
-                pagination
-            />
-        </div>
-    )
+    if (props.data != undefined) {
+
+        //format data for use in chart
+        let years = []
+        let totalVals = []
+        let jur = []
+
+        for (let j = 0; j < 11; j++) {
+            
+            years.push(props.data[j].year)
+            jur.push(props.data[j].jurisdiction)
+
+            if (props.subReport == 'One PPR') {
+                totalVals.push(props.data[j].PAAT.A3.val + props.data[j].PADD.A3.val + props.data[j].PATBI.A3.val + props.data[j].PAVA.A3.val)
+            }  
+            if (props.subReport == 'PAAT') {
+                totalVals.push(props.data[j].PAAT.A3.val)
+            }  
+            if (props.subReport == 'PADD') {
+                totalVals.push(props.data[j].PADD.A3.val)
+            }  
+            if (props.subReport == 'PATBI') {
+                totalVals.push(props.data[j].PATBI.A3.val)
+            }  
+            if (props.subReport == 'PAVA') {
+                totalVals.push(props.data[j].PAVA.A3.val)
+            }
+        }
+
+        for (let i = 0; i < years.length; i++) {
+            tableData.push({
+                year: years[i],
+                ['Total Served']: totalVals[i],
+                jurisdiction: jur[i]
+            })
+        }
+
+        return (
+            <div id='tableSpace'>
+                <DataTable
+                    columns={columns}
+                    data={tableData}
+                    pagination
+                />
+            </div>
+        )
+    } else {
+        return(
+            <div>loading</div>
+        )
+    }    
+    
 }
+

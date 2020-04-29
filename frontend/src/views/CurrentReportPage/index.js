@@ -30,49 +30,68 @@ const useStyles = makeStyles(theme => ({
 function DataPage() {
 
   const { state, actions } = useContext(Context);
-  const [filterState, setFilterState] = useState({});
+  const [filterState, setFilterState] = useState({
+    jurisdiction: 'Alabama',
+    subReport: 'One PPR'
+  });
+  const [filteredData, setFilteredData] = useState();
+  const [propLength, setPropLength] = useState();
   const classes = useStyles();
 
   // useEffect(() => {
- //   if (state == null) {
- //     console.log('Data page says global state is null');
- //     const dat = []
- //     db.collection('test3oneppr')
- //       .get()
- //       .then((snapshot) => {
- //         snapshot.docs.forEach(doc => {
- //           dat.push(doc.data())
- //         })
- //       })
- //       .then(() => {
- //         // set the global state
- //         actions({ type: 'setState', payload: { dat } })
- //       })
- //       .then(() => {
- //         console.log('global state set');
- //       })
- //   } else {
- //     console.log('no data pull')
- //   }
- // }, [])
- 
- //function for the filters
- const handleChange = name => event => {
-  setFilterState({
+  //   if (state == null) {
+  //     console.log('Data page says global state is null');
+  //     const dat = []
+  //     db.collection('test3oneppr')
+  //       .get()
+  //       .then((snapshot) => {
+  //         snapshot.docs.forEach(doc => {
+  //           dat.push(doc.data())
+  //         })
+  //       })
+  //       .then(() => {
+  //         // set the global state
+  //         actions({ type: 'setState', payload: { dat } })
+  //       })
+  //       .then(() => {
+  //         console.log('global state set');
+  //       })
+  //   } else {
+  //     console.log('no data pull')
+  //   }
+  // }, [])
+
+  //function for the filters
+  const handleChange = name => event => {
+    setFilterState({
       ...filterState,
       [name]: event.target.value,
-  });
-  console.log(filterState);
-};
+    })
+  };
 
+  function filterData() {
+    let filtData = []
+    for (let i = 0; i < mockdata.length; i++) {
+      if (mockdata[i].jurisdiction == filterState.jurisdiction) {
+        filtData.push(mockdata[i])
+      }
+    }
+    setFilteredData(filtData)
+    setPropLength(filtData.length)
+  }
+
+  useEffect(() => {
+    filterData();
+  }, [filterState])
+  
 
   return (
     <Page className={classes.root} title="DRDP - Current Report">
       <Container maxWidth="lg">
         <DescriptionSpace />
-        <FilterSpace handleChange={handleChange}/>
+        <FilterSpace handleChange={handleChange} />
         <div id='tabSpace'>
-          <GraphTab mockdata={mockdata} jurisdiction={filterState.jurisdiction}/>
+          <GraphTab data={filteredData} jurisdiction={filterState.jurisdiction} subReport={filterState.subReport} length={propLength}/>
         </div>
       </Container>
     </Page>

@@ -48,10 +48,10 @@ export function GraphTab(props) {
         <Tab label="Data" />
       </Tabs>
       <TabPanel value={currentTab} index={0}>
-        <GraphSpace mockdata={props.mockdata} jurisdiction={props.jurisdiction}/>
+        <GraphSpace data={props.data} jurisdiction={props.jurisdiction} subReport={props.subReport} length={props.length} />
       </TabPanel>
       <TabPanel value={currentTab} index={1}>
-        <TableSpace mockdata={props.mockdata} />
+        <TableSpace data={props.data} jurisdiction={props.jurisdiction} subReport={props.subReport} length={props.length}/>
       </TabPanel>
     </div>
   )
