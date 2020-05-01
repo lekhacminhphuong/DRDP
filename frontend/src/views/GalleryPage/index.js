@@ -19,7 +19,6 @@ import img1 from 'src/imgs/barchart.png';
 import img2 from 'src/imgs/linechart.png';
 import { GalleryCard } from './GalleryCard';
 import SearchIcon from '@material-ui/icons/Search';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 
 const popularSearches = [
