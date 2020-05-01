@@ -32,9 +32,9 @@ export function GalleryCard(props) {
   }
 
   if (!favStatus) {
-    favorite = <FavoriteBorderIcon onClick={handleFavorite} />
+    favorite = <FavoriteBorderIcon onClick={handleFavorite} style={{ cursor: "pointer" }} />
   } else {
-    favorite = <FavoriteIcon onClick={handleFavorite} style={{ color: "#bd574e" }} />
+    favorite = <FavoriteIcon onClick={handleFavorite} style={{ color: "#bd574e", cursor: "pointer" }} />
   }
 
   return (
@@ -44,25 +44,25 @@ export function GalleryCard(props) {
           className={classes.media}>
           <img src={props.img} height="150" width="345" alt="card"></img>
         </CardMedia>
-        </CardActionArea>
-        <CardContent>
-          <Grid
-            container
-            justify="space-between"
-          >
-            <Grid item>
-              <Typography gutterBottom variant="h5" component="h2">
-                {props.title}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {props.desc}
-              </Typography>
-            </Grid>
-            <Grid item>
-              {favorite}
-            </Grid>
+      </CardActionArea>
+      <CardContent>
+        <Grid
+          container
+          justify="space-between"
+        >
+          <Grid item>
+            <Typography gutterBottom variant="h5" component="h2">
+              {props.title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {props.desc}
+            </Typography>
           </Grid>
-        </CardContent>
+          <Grid item>
+            {favorite}
+          </Grid>
+        </Grid>
+      </CardContent>
     </Card>
   );
 }
