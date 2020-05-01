@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
-import { DescriptionSpace } from './DescriptionSpace';
+import Header from './Header';
 import { FilterSpace } from './FilterSpace';
 import { GraphTab } from './GraphTab';
 import { db } from '../../config/Fire';
@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(3),
   },
   header: {
-    marginBottom: theme.spacing(3),
+    marginBottom: theme.spacing(2),
   },
   filter: {
     marginTop: theme.spacing(3),
@@ -88,7 +88,7 @@ function DataPage() {
   return (
     <Page className={classes.root} title="DRDP - Current Report">
       <Container maxWidth="lg">
-        <DescriptionSpace />
+        <Header className={classes.header} />
         <FilterSpace handleChange={handleChange} />
         <div id='tabSpace'>
           <GraphTab data={filteredData} jurisdiction={filterState.jurisdiction} subReport={filterState.subReport} length={propLength}/>

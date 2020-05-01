@@ -25,7 +25,7 @@ let favorite;
 
 export function GalleryCard(props) {
   const classes = useStyles();
-  const [favStatus, setFavStatus] = useState(false);
+  const [favStatus, setFavStatus] = useState(true);
 
   const handleFavorite = () => {
     setFavStatus(!favStatus)
@@ -39,7 +39,7 @@ export function GalleryCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea to="/gallery/cardname" component={RouterLink} >
+      <CardActionArea to="/gallery/data" component={RouterLink} >
         <CardMedia
           className={classes.media}>
           <img src={props.img} height="150" width="345" alt="card"></img>

@@ -20,7 +20,7 @@ export default [
         component: lazy(() => import('src/views/OverviewPage')),
       },
       {
-        path: '/currentreport',
+        path: '/gallery/cardname',
         exact: true,
         component: lazy(() => import('src/views/CurrentReportPage')),
       },

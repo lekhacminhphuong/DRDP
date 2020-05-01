@@ -16,11 +16,6 @@ export default [
         icon: HomeIcon
       },
       {
-        title: 'Current Report',
-        href: '/currentreport',
-        icon: BarChartIcon
-      },
-      {
         title: 'Gallery',
         href: '/gallery',
         icon: Apps
