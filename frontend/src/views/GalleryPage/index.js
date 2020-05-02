@@ -91,10 +91,10 @@ function GalleryPage() {
     <Page className={classes.root} title="DRDP - Gallery">
       <Container maxWidth="lg">
 
-        <Grid 
-          container         
+        <Grid
+          container
           justify="space-between"
-        > 
+        >
           <Grid item>
             <Hidden smDown>
               <div
@@ -161,27 +161,6 @@ function GalleryPage() {
           </Grid>
           <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
             <GalleryCard title={titles[1]} desc={descriptions[1]} img={imgs[1]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
           </Grid>
         </Grid>
       </Container>
