@@ -7,11 +7,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { Typography, Button } from '@material-ui/core';
 import formData from './data';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(6),
-    paddingTop: theme.spacing(10)
+    paddingTop: theme.spacing(8)
   },
   header: {
     marginBottom: theme.spacing(8),
@@ -22,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     paddingRight: theme.spacing(10)
   },
   button: {
-    paddingTop: theme.spacing(3)
+    paddingTop: theme.spacing(2)
   }
 }));
 
@@ -48,6 +49,13 @@ function ReportEntryPage() {
     <Page className={classes.root} title="DRDP - Report Entry">
       <Container maxWidth="lg">
         <div className={classes.header}>
+          <Typography
+            component="h2"
+            gutterBottom
+            variant="overline"
+          >
+            Report Entry
+          </Typography>
           <Typography
             component="h1"
             gutterBottom
@@ -105,9 +113,11 @@ function ReportEntryPage() {
         </TextField>
         <div className={classes.button}>
           <Button
+            component={RouterLink}
             variant="outlined"
             color="primary"
             endIcon={<ArrowForwardIosIcon />}
+            to="/reportentry/oneppr"
           >
             Next
         </Button>
