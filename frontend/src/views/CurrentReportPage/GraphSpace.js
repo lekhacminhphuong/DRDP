@@ -32,10 +32,8 @@ export function GraphSpace(props) {
             graphData.push({ Year: years[i], ['Total Served']: vals[i] })
         }
 
-
         return (
             <div id='graphSpace'>
-
                 <LineChart
                     width={900}
                     height={500}
@@ -48,7 +46,7 @@ export function GraphSpace(props) {
                     <XAxis dataKey="Year" />
                     <YAxis />
                     <Tooltip />
-                    <Line type="monotone" dataKey="Total Served" stroke="#8884d8" activeDot={{ r: 8 }} />
+                    <Line type="monotone" dataKey="Total Served" stroke="#12384E" activeDot={{ r: 8 }} />
                 </LineChart>
             </div>
         )
