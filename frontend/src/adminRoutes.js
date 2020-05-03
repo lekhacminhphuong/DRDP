@@ -46,6 +46,11 @@ export default [
         path: '/reportentry/oneppr',
         exact: true,
         component: lazy(() => import('src/views/ReportEntryPage/OnePPRReport')),
+      },
+      {
+        path: '/aboutus',
+        exact: true,
+        component: lazy(() => import('src/views/AboutUsPage')),
       }
     ]
   },
