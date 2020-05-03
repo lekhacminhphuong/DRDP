@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
 import { Grid } from '@material-ui/core';
-import { GalleryCard } from './GalleryCard';
+import { GalleryCard } from '../GalleryPage/GalleryCard';
 
 const useStyles = makeStyles(theme => ({
   root: {

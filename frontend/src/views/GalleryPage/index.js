@@ -62,8 +62,8 @@ const useStyles = makeStyles(theme => ({
 
 function GalleryPage() {
   const classes = useStyles();
-  const descriptions = ["Total Served from 2011-2018 (by jurisdiction)", "Ethnicity Ratios for CAP (all years)", "No description"];
-  const titles = ["Total Served", "Ethnicity Ratios", "No Name"];
+  const descriptions = ["Total Served from 2011-2018 (by jurisdiction)", "Ethnicity Ratios for CAP (all years)"];
+  const titles = ["Total Served", "Ethnicity Ratios"];
   const imgs = [img2, img1]
   const searchRef = useRef(null);
   const [openSearchPopover, setOpenSearchPopover] = useState(false);
@@ -90,7 +90,6 @@ function GalleryPage() {
   return (
     <Page className={classes.root} title="DRDP - Gallery">
       <Container maxWidth="lg">
-
         <Grid
           container
           justify="space-between"

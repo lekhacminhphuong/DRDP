@@ -51,6 +51,11 @@ export default [
         path: '/aboutus',
         exact: true,
         component: lazy(() => import('src/views/AboutUsPage')),
+      },
+      {
+        path: '/profile',
+        exact: true,
+        component: lazy(() => import('src/views/ProfilePage')),
       }
     ]
   },

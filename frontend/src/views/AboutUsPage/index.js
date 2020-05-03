@@ -15,7 +15,7 @@ function AboutUsPage() {
   const classes = useStyles();
 
   return (
-    <Page className={classes.root} title="Home">
+    <Page className={classes.root} title="DRDP - About Us">
       <Container maxWidth="lg">
         <img src={img} height="400"/>
       </Container>
