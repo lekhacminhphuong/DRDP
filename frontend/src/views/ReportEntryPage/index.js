@@ -25,7 +25,7 @@ function ReportEntryPage() {
   return (
     <Page className={classes.root} title="DRDP - Report Entry">
       <Container maxWidth="lg">
-        <p>This is Report Entry Page</p>
+        
       </Container>
     </Page>
   );
