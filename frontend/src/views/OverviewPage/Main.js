@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     },
     item2: {
         margin: theme.spacing(3),
-        textAlign: 'right',
+        textAlign: 'left',
     },
     content: {
         marginTop: theme.spacing(4)
@@ -52,7 +52,7 @@ function OverviewPage(className) {
                             gutterBottom
                             variant="h3"
                         >
-                            CURRENT REPORT
+                            CHALLENGE
                         </Typography>
                         <Divider className={classes.divider} />
                         <div className={classes.content}>
@@ -60,19 +60,7 @@ function OverviewPage(className) {
                                 gutterBottom
                                 variant="subtitle1"
                             >
-                                Centralized, consistent data organization, stored in a secure database.
-                            </Typography>
-                            <Typography
-                                gutterBottom
-                                variant="subtitle1"
-                            >
-                                Referential integrity provided by a relational structure supports dynamic queries, ease of comparison, and ease of analysis.
-                            </Typography>
-                            <Typography
-                                gutterBottom
-                                variant="subtitle1"
-                            >
-                                Our solution centralizes the data and makes it easier to access and investigate.
+                                People want to answer questions with data, but they don’t have the skills to process or harness the data themselves.
                             </Typography>
                         </div>
                     </Grid>
@@ -84,9 +72,9 @@ function OverviewPage(className) {
                     alignItems="center"
                     container
                     justify="space-between"
-                    flexDirection="row-reverse"
+                    flexDirection="row"
                     spacing={3}
-                >.
+                >
                     <Grid
                         className={classes.item2}
                         item
@@ -98,7 +86,7 @@ function OverviewPage(className) {
                             gutterBottom
                             variant="h3"
                         >
-                            VISUALIZATION GALLERY
+                            APPROACH
                         </Typography>
                         <Divider className={classes.divider} />
                         <div className={classes.content}>
@@ -106,23 +94,43 @@ function OverviewPage(className) {
                                 gutterBottom
                                 variant="subtitle1"
                             >
-                                Harnessing the power of data and visual storytelling to bring insight to the questions that NDRN wants to answer.
-                            </Typography>
-                            <Typography
-                                gutterBottom
-                                variant="subtitle1"
-                            >
-                                Easy to access and understand visualizations to provide context and insight into NDRN’s raw data.
-                            </Typography>
-                            <Typography
-                                gutterBottom
-                                variant="subtitle1"
-                            >
-                                We are working to provide a library of visualizations ready to go for use by NDRN, so that less time is spent searching the data for answers, and more time is spent understanding the data and making valuable decisions.
+                                Pilot the format with data and users from the National Disability Rights Network (NDRN)
                             </Typography>
                         </div>
                     </Grid>
-
+                </Grid>
+            </Card>
+            <Card className={classes.card}>
+                <Grid
+                    alignItems="center"
+                    container
+                    justify="space-between"
+                    flexDirection="row"
+                    spacing={3}
+                >
+                    <Grid
+                        className={classes.item2}
+                        item
+                        md={6}
+                        xs={12}
+                    >
+                        <Typography
+                            component="h1"
+                            gutterBottom
+                            variant="h3"
+                        >
+                            SOLUTION
+                        </Typography>
+                        <Divider className={classes.divider} />
+                        <div className={classes.content}>
+                            <Typography
+                                gutterBottom
+                                variant="subtitle1"
+                            >
+                                An easy to use format with a tailored interface for answering specific questions, without data skills. Any question we’ve built into the website can be answered in less than three mouse clicks. 
+                            </Typography>
+                        </div>
+                    </Grid>
                 </Grid>
             </Card>
         </div>

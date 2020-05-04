@@ -1,11 +1,11 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/display-name */
 import HomeIcon from '@material-ui/icons/HomeOutlined';
-import BarChartIcon from '@material-ui/icons/BarChart';
 import Apps from '@material-ui/icons/Apps';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import GroupIcon from '@material-ui/icons/Group';
 
 export default [
   {
@@ -14,11 +14,6 @@ export default [
         title: 'Overview',
         href: '/overview',
         icon: HomeIcon
-      },
-      {
-        title: 'Current Report',
-        href: '/currentreport',
-        icon: BarChartIcon
       },
       {
         title: 'Gallery',
@@ -34,6 +29,11 @@ export default [
         title: 'Report Entry',
         href: '/reportentry',
         icon: AddCircleOutlineIcon
+      },
+      {
+        title: 'About Us',
+        href: '/aboutus',
+        icon: GroupIcon
       },
       {
         title: 'Admin',

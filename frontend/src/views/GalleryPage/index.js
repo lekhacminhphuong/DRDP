@@ -62,8 +62,8 @@ const useStyles = makeStyles(theme => ({
 
 function GalleryPage() {
   const classes = useStyles();
-  const descriptions = ["Total Served from 2011-2018 (by jurisdiction)", "Ethnicity Ratios for CAP (all years)", "No description"];
-  const titles = ["Total Served", "Ethnicity Ratios", "No Name"];
+  const descriptions = ["Total Served from 2011-2018 (by jurisdiction)", "Ethnicity Ratios for CAP (all years)"];
+  const titles = ["Total Served", "Ethnicity Ratios"];
   const imgs = [img2, img1]
   const searchRef = useRef(null);
   const [openSearchPopover, setOpenSearchPopover] = useState(false);
@@ -90,11 +90,10 @@ function GalleryPage() {
   return (
     <Page className={classes.root} title="DRDP - Gallery">
       <Container maxWidth="lg">
-
-        <Grid 
-          container         
+        <Grid
+          container
           justify="space-between"
-        > 
+        >
           <Grid item>
             <Hidden smDown>
               <div
@@ -161,27 +160,6 @@ function GalleryPage() {
           </Grid>
           <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
             <GalleryCard title={titles[1]} desc={descriptions[1]} img={imgs[1]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
-          </Grid>
-          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[2]} desc={descriptions[2]} />
           </Grid>
         </Grid>
       </Container>

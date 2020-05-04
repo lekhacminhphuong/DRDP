@@ -11,8 +11,7 @@ import {
   Button,
   IconButton,
   Toolbar,
-  Hidden,
-  colors,
+  Hidden
 } from '@material-ui/core';
 
 import InputIcon from '@material-ui/icons/Input';
@@ -36,12 +35,6 @@ const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(1)
   },
-  notificationsButton: {
-    marginLeft: theme.spacing(1)
-  },
-  notificationsBadge: {
-    backgroundColor: colors.orange[600]
-  },
   logoutButton: {
     marginLeft: theme.spacing(1)
   },
@@ -50,7 +43,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const popularSearches = ['search suggestions here'];
 
 function TopBar({ onOpenNavBarMobile, className, ...rest }) {
   const classes = useStyles();

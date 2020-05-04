@@ -32,7 +32,8 @@ function DataPage() {
   const { state, actions } = useContext(Context);
   const [filterState, setFilterState] = useState({
     jurisdiction: 'Alabama',
-    subReport: 'One PPR'
+    subReport: 'One PPR', 
+    year: 2010
   });
   const [filteredData, setFilteredData] = useState();
   const [propLength, setPropLength] = useState();
@@ -72,7 +73,8 @@ function DataPage() {
   function filterData() {
     let filtData = []
     for (let i = 0; i < mockdata.length; i++) {
-      if (mockdata[i].jurisdiction == filterState.jurisdiction) {
+      if (mockdata[i].jurisdiction == filterState.jurisdiction 
+          && mockdata[i].year == filterState.year) {
         filtData.push(mockdata[i])
       }
     }

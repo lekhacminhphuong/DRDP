@@ -14,12 +14,10 @@ import {
   ListSubheader,
   Typography,
   Hidden,
-  IconButton,
   Badge,
   Link,
   colors
 } from '@material-ui/core';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import NavItem from 'src/components/NavItem';
 import navConfig from './navConfig';
 
@@ -211,7 +209,7 @@ function NavBar({
         <div className={classes.details}>
           <Link
             component={RouterLink}
-            to="/profile/1/timeline"
+            to="/profile"
             variant="h5"
             color="textPrimary"
             underline="none"
@@ -220,12 +218,6 @@ function NavBar({
           </Link>
           <Typography variant="body2">{session.user.bio}</Typography>
         </div>
-        <IconButton
-          className={classes.moreButton}
-          size="small"
-        >
-          <MoreIcon />
-        </IconButton>
       </div>
     </div>
   );

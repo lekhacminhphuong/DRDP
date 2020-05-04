@@ -10,7 +10,7 @@ import image from 'src/imgs/login_image.png'
 function LoginPage() {
 
   return (
-    <Page title="Login">
+    <Page title="DRDP - Login">
         <Grid
           alignItems="center"
           container

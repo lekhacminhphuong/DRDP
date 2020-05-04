@@ -5,6 +5,7 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import Apps from '@material-ui/icons/Apps';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import GroupIcon from '@material-ui/icons/Group';
 
 export default [
   {
@@ -13,11 +14,6 @@ export default [
         title: 'Overview',
         href: '/overview',
         icon: HomeIcon
-      },
-      {
-        title: 'Current Report',
-        href: '/currentreport',
-        icon: BarChartIcon
       },
       {
         title: 'Gallery',
@@ -33,6 +29,11 @@ export default [
         title: 'Report Entry',
         href: '/reportentry',
         icon: AddCircleOutlineIcon 
+      },
+      {
+        title: 'About Us',
+        href: '/aboutus',
+        icon: GroupIcon
       },
     ]
   }

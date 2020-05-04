@@ -18,14 +18,14 @@ export default [
         component: lazy(() => import('src/views/OverviewPage')),
       },
       {
-        path: '/currentreport',
-        exact: true,
-        component: lazy(() => import('src/views/CurrentReportPage')),
-      },
-      {
         path: '/gallery',
         exact: true,
         component: lazy(() => import('src/views/GalleryPage')),
+      },
+      {
+        path: '/gallery/cardname',
+        exact: true,
+        component: lazy(() => import('src/views/CurrentReportPage')),
       },
       {
         path: '/admin',
@@ -41,7 +41,22 @@ export default [
         path: '/reportentry',
         exact: true,
         component: lazy(() => import('src/views/ReportEntryPage')),
+      },
+      {
+        path: '/reportentry/oneppr',
+        exact: true,
+        component: lazy(() => import('src/views/ReportEntryPage/OnePPRReport')),
+      },
+      {
+        path: '/aboutus',
+        exact: true,
+        component: lazy(() => import('src/views/AboutUsPage')),
+      },
+      {
+        path: '/profile',
+        exact: true,
+        component: lazy(() => import('src/views/ProfilePage')),
       }
-    ],
+    ]
   },
 ];
