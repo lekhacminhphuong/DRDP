@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -9,6 +9,10 @@ import { Link as RouterLink } from 'react-router-dom';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { Grid } from '@material-ui/core';
+import useGlobal from '../../globalStore/useGlobal';
+import Context from '../../globalStore/context';
+import { db } from '../../config/Fire';
+import firebase from '../../config/Fire';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,10 +28,15 @@ const useStyles = makeStyles(theme => ({
 let favorite;
 
 export function GalleryCard(props) {
+  const { state, actions } = useContext(Context);
   const classes = useStyles();
   const [favStatus, setFavStatus] = useState(false);
 
-  const handleFavorite = () => {
+  const handleFavorite = (event) => {
+    //set favorites in global state
+    console.log(state);
+    //actions({ type: 'setState', payload: 'something' });
+    //set favorites in firebase
     setFavStatus(!favStatus)
   }
 
@@ -39,7 +48,7 @@ export function GalleryCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea to="/gallery/cardname" component={RouterLink} >
+      <CardActionArea to={props.link} component={RouterLink} >
         <CardMedia
           className={classes.media}>
           <img src={props.img} height="150" width="345" alt="card"></img>

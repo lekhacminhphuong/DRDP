@@ -23,7 +23,12 @@ export default [
         component: lazy(() => import('src/views/GalleryPage')),
       },
       {
-        path: '/gallery/cardname',
+        path: '/gallery/totalserved',
+        exact: true,
+        component: lazy(() => import('src/views/CurrentReportPage')),
+      },
+      {
+        path: '/gallery/ethnicity',
         exact: true,
         component: lazy(() => import('src/views/EthnicityReport1')),
       },

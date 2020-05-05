@@ -3,8 +3,9 @@ import {useState} from 'react';
 const useGlobal = () => {
 
     const [state, setState] = useState(null);
+    const [favorites, setFavorites] = useState(null);
 
-    const actions = (action) => {
+    function actions(action) {
         const {type, payload} = action;
         switch (type) {
             case 'setState':

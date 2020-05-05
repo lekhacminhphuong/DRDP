@@ -4,6 +4,10 @@ import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
 import { Grid } from '@material-ui/core';
 import { GalleryCard } from '../GalleryPage/GalleryCard';
+import useGlobal from '../../globalStore/useGlobal';
+import Context from '../../globalStore/context';
+import { db } from '../../config/Fire';
+import firebase from '../../config/Fire';
 
 const useStyles = makeStyles(theme => ({
   root: {

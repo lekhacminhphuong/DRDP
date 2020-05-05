@@ -65,6 +65,7 @@ function GalleryPage() {
   const descriptions = ["Total Served from 2011-2018 (by jurisdiction)", "Ethnicity Ratios for CAP (all years)"];
   const titles = ["Total Served", "Ethnicity Ratios"];
   const imgs = [img2, img1]
+  const links =['/gallery/totalserved', '/gallery/ethnicity']
   const searchRef = useRef(null);
   const [openSearchPopover, setOpenSearchPopover] = useState(false);
   const [searchValue, setSearchValue] = useState('');
@@ -156,10 +157,10 @@ function GalleryPage() {
 
         <Grid container spacing={1}>
           <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[0]} desc={descriptions[0]} img={imgs[0]} />
+            <GalleryCard title={titles[0]} desc={descriptions[0]} img={imgs[0]} link={links[0]}/>
           </Grid>
           <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
-            <GalleryCard title={titles[1]} desc={descriptions[1]} img={imgs[1]} />
+            <GalleryCard title={titles[1]} desc={descriptions[1]} img={imgs[1]} link={links[1]}/>
           </Grid>
         </Grid>
       </Container>

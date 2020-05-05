@@ -1,9 +1,11 @@
 import React from 'react';
 import {
-    PieChart,Pie, Tooltip,
+    PieChart, Pie, Tooltip, Cell
 } from 'recharts';
 
 export function GraphSpace(props) {
+
+    let COLORS = ['#031D44', '#0E6BA8', '#92140C', '#FF6700', '#204B57', '#119DA4']
 
     if (props.data != undefined) {
 
@@ -66,12 +68,12 @@ export function GraphSpace(props) {
         }
 
         const graphData = [
-            {name: 'Hispanic/Latino', val : dataObj[0].hispanic_latino},
-            {name: 'American Indian/Alaskan Native', val : dataObj[0].amer_indian_alaskan},
-            {name: 'Asian', val: dataObj[0].asian},
-            {name: 'Black/African American', val: dataObj[0].black_afr_american},
-            {name: 'Native Hawaiian/Other Pacific Islander', val: dataObj[0].hawaiian_pac_islander},
-            {name: 'White', val: dataObj[0].white}
+            { name: 'Hispanic/Latino', val: dataObj[0].hispanic_latino },
+            { name: 'American Indian/Alaskan Native', val: dataObj[0].amer_indian_alaskan },
+            { name: 'Asian', val: dataObj[0].asian },
+            { name: 'Black/African American', val: dataObj[0].black_afr_american },
+            { name: 'Native Hawaiian/Other Pacific Islander', val: dataObj[0].hawaiian_pac_islander },
+            { name: 'White', val: dataObj[0].white }
         ]
 
         console.log(graphData)
@@ -79,7 +81,11 @@ export function GraphSpace(props) {
         return (
             <div id='graphSpace'>
                 <PieChart width={400} height={400}>
-                    <Pie dataKey="val" isAnimationActive={true} data={graphData} cx={200} cy={200} outerRadius={160} fill="#8884d8" label />
+                    <Pie dataKey="val" isAnimationActive={true} data={graphData} cx={200} cy={200} outerRadius={160} fill="#8884d8" label >
+                        {
+                            graphData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)
+                        }
+                    </Pie>/>
                     <Tooltip />
                 </PieChart>
             </div>
