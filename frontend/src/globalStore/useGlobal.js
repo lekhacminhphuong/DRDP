@@ -10,11 +10,13 @@ const useGlobal = () => {
         switch (type) {
             case 'setState':
                 return setState(payload)
+            case 'setFavorites':
+                return setFavorites(payload)
             default:
                 return state
         }
     }
-    return {state, actions}
+    return {state, favorites, actions}
 }
 
 export default useGlobal;

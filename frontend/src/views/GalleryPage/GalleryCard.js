@@ -28,14 +28,26 @@ const useStyles = makeStyles(theme => ({
 let favorite;
 
 export function GalleryCard(props) {
-  const { state, actions } = useContext(Context);
+  const { state, favorites, actions } = useContext(Context);
   const classes = useStyles();
   const [favStatus, setFavStatus] = useState(false);
+  
 
   const handleFavorite = (event) => {
-    //set favorites in global state
-    console.log(state);
-    //actions({ type: 'setState', payload: 'something' });
+    // IF FAV IS NOT IN GLOBAL FAVS: put favorite in global favorites
+    if(favorites == null){
+      actions({ type: 'setFavorites', payload: [props] });
+    } else {
+      //create a new array arr
+      let arr =[]
+      //deconstruct previous favorites array and push into new arr
+      arr.push(...favorites)
+      // MAKE A CHECK IF PROPS is already in the favorites, if not add it into arr
+      arr.push(props)
+      // update favorites
+      actions({ type: 'setFavorites', payload: arr });
+    }
+    console.log(favorites);
     //set favorites in firebase
     setFavStatus(!favStatus)
   }
