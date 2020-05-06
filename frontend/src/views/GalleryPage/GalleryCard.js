@@ -43,11 +43,26 @@ export function GalleryCard(props) {
       //deconstruct previous favorites array and push into new arr
       arr.push(...favorites)
       // MAKE A CHECK IF PROPS is already in the favorites, if not add it into arr
-      arr.push(props)
-      // update favorites
-      actions({ type: 'setFavorites', payload: arr });
+      let arrContains = false;
+      //iterate thru arr
+      for(let i=0; i < arr.length; i++){
+        //if props is in arr...
+        if (arr[i].desc == props.desc){
+          arrContains = true;
+          //remove it from arr
+          arr = arr.filter((el)=>{return el.desc != props.desc})
+          break;
+        }
+      }
+      if(arrContains == false){
+        arr.push(props)
+        actions({ type: 'setFavorites', payload: arr });
+      }
+      if(arrContains == true){
+        actions({ type: 'setFavorites', payload: arr });
+      }
     }
-    console.log(favorites);
+    
     //set favorites in firebase
     setFavStatus(!favStatus)
   }

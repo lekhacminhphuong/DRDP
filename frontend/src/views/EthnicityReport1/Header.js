@@ -42,9 +42,8 @@ export default function Header({ className, ...rest }) {
             Ethnicity Ratios
           </Typography>
           <Typography variant="subtitle1">
-            This report shows number of people served by ethnicity in the selected state for the selected year.
-            Select a state using the State filter.
-            Select years with the Year filter.
+            This report shows number of people served by ethnicity breakdown in the selected state for the selected year.<br/>
+            The data comes from Part 1 Section I of the One PPR Report, dealing with Racial and Ethnic Diversity of Individuals Served.<br/>
           </Typography>
         </Grid>
         <Grid item>

@@ -39,12 +39,11 @@ export default function Header({ className, ...rest }) {
             gutterBottom
             variant="h3"
           >
-            Card Name
+            Total Population Served
           </Typography>
           <Typography variant="subtitle1">
-            This graph shows the total number of people served in the selected state for the selected years.
-            Select a state using the State filter.
-            Select years with the Year filter.
+            This report shows the total number of people served by P&amp;As in the selected state for the selected years.<br/>
+            The data comes from Part 1 Section A of the One PPR Report, dealing with Individuals Served.<br/>
           </Typography>
         </Grid>
         <Grid item>
