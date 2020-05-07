@@ -18,8 +18,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function TextFields() {
+function TextFields(props) {
     const classes = useStyles();
+
+    const logField = (e) => {
+        console.log(e.target.name)
+    }
 
     return (
         <div>
@@ -35,16 +39,16 @@ function TextFields() {
                         variant="h4">
                         PADD
                     </Typography>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-A1' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
                     <Typography
                         className={classes.subheader}
                         gutterBottom
                         variant="h4">
-                        PATT
+                        PAAT
                     </Typography>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-A1' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
                     <Typography
@@ -53,7 +57,7 @@ function TextFields() {
                         variant="h4">
                         PATBI
                     </Typography>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-A1' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
                     <Typography
@@ -62,7 +66,7 @@ function TextFields() {
                         variant="h4">
                         PAVA
                     </Typography>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-A1' onChange={props.handleReport}/>
                 </Grid>
             </Grid>
             <Grid
@@ -70,33 +74,16 @@ function TextFields() {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-A2' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-A2' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-A2' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-            </Grid>
-            <Grid
-                container
-                spacing={4}
-            >
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-A2' onChange={props.handleReport}/>
                 </Grid>
             </Grid>
             <Grid
@@ -104,16 +91,16 @@ function TextFields() {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-A3' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-A3' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-A3' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-A3' onChange={props.handleReport}/>
                 </Grid>
             </Grid>
             <Grid
@@ -121,16 +108,33 @@ function TextFields() {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-A4' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-A4' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-A4' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-A4' onChange={props.handleReport}/>
+                </Grid>
+            </Grid>
+            <Grid
+                container
+                spacing={4}
+            >
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-A5' onChange={props.handleReport}/>
+                </Grid>
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-A5' onChange={props.handleReport}/>
+                </Grid>
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-A5' onChange={props.handleReport}/>
+                </Grid>
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-A5' onChange={props.handleReport}/>
                 </Grid>
             </Grid>
 
@@ -146,7 +150,7 @@ function TextFields() {
                         variant="h4">
                         PADD
                     </Typography>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-I1' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
                     <Typography
@@ -155,7 +159,7 @@ function TextFields() {
                         variant="h4">
                         PATT
                     </Typography>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-I1' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
                     <Typography
@@ -164,7 +168,7 @@ function TextFields() {
                         variant="h4">
                         PATBI
                     </Typography>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-I1' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
                     <Typography
@@ -173,7 +177,7 @@ function TextFields() {
                         variant="h4">
                         PAVA
                     </Typography>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-I1' onChange={props.handleReport}/>
                 </Grid>
             </Grid>
             <Grid
@@ -181,33 +185,16 @@ function TextFields() {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-I2' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-I2' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-I2' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-            </Grid>
-            <Grid
-                container
-                spacing={4}
-            >
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-I2' onChange={props.handleReport}/>
                 </Grid>
             </Grid>
             <Grid
@@ -215,33 +202,16 @@ function TextFields() {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-I3' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-I3' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-I3' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-            </Grid>
-            <Grid
-                container
-                spacing={4}
-            >
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
-                </Grid>
-                <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-I3' onChange={props.handleReport}/>
                 </Grid>
             </Grid>
             <Grid
@@ -249,16 +219,50 @@ function TextFields() {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-I4' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-I4' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-I4' onChange={props.handleReport}/>
                 </Grid>
                 <Grid item>
-                    <TextField className={classes.input} id="outlined-basic" variant="outlined" />
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-I4' onChange={props.handleReport}/>
+                </Grid>
+            </Grid>
+            <Grid
+                container
+                spacing={4}
+            >
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-I5' onChange={props.handleReport}/>
+                </Grid>
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-I5' onChange={props.handleReport}/>
+                </Grid>
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-I5' onChange={props.handleReport}/>
+                </Grid>
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-I5' onChange={props.handleReport}/>
+                </Grid>
+            </Grid>
+            <Grid
+                container
+                spacing={4}
+            >
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PADD-I6' onChange={props.handleReport}/>
+                </Grid>
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAAT-I6' onChange={props.handleReport}/>
+                </Grid>
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PATBI-I6' onChange={props.handleReport}/>
+                </Grid>
+                <Grid item>
+                    <TextField className={classes.input} id="outlined-basic" variant="outlined" name='PAVA-I6' onChange={props.handleReport}/>
                 </Grid>
             </Grid>
         </div>

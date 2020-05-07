@@ -48,7 +48,7 @@ function ReportEntryPage() {
         break
       case 'jurisdiction':
         //setReport({...report, [key]: val});
-        report[key] = {'PADD': {'name': val}};
+        report[key] = val;
         setReportState(val);
         break
     }

@@ -37,12 +37,8 @@ function OnePPRReport() {
   function handleReport(e){
     let val = e.target.value;
     let key = e.target.name;
-    switch(key){
-      case 'year':
-        
-      case 'jurisdiction':
-        
-    }
+    report[key] = val;
+    console.log(report)
   }
 
   return (
@@ -75,7 +71,7 @@ function OnePPRReport() {
             <Questions />
           </Grid>
           <Grid item>
-            <TextFields />
+            <TextFields handleReport={handleReport}/>
           </Grid>
         </Grid>
 
