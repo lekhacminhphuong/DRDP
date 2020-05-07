@@ -3,11 +3,11 @@ export default {
       {
         value: 'One PPR',
         label: 'One PPR',
-      },
-      {
-        value: 'CENSUS',
-        label: 'CENSUS',
-      }
+      }//,
+      // {
+      //   value: 'CENSUS',
+      //   label: 'CENSUS',
+      // }
     ],
     reportYear: [
       // {
@@ -65,10 +65,6 @@ export default {
       {
         value: '2023',
         label: '2023',
-      },
-      {
-        value: '2024',
-        label: '2024',
       },
       {
         value: '2024',

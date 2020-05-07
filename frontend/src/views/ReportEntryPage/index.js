@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState, useContext} from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
@@ -8,6 +8,7 @@ import { Typography, Button } from '@material-ui/core';
 import formData from './data';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { Link as RouterLink } from 'react-router-dom';
+import Context from '../../globalStore/context';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,21 +30,29 @@ const useStyles = makeStyles(theme => ({
 
 function ReportEntryPage() {
   const classes = useStyles();
+
+  const { report, actions } = useContext(Context);
+
   const [reportName, setReportName] = React.useState('One PPR');
   const [reportYear, setReportYear] = React.useState('2020');
   const [reportState, setReportState] = React.useState('Alabama');
 
-  const handleReportName = (event) => {
-    setReportName(event.target.value);
-  };
-
-  const handleReportYear = (event) => {
-    setReportYear(event.target.value);
-  };
-
-  const handleReportState = (event) => {
-    setReportState(event.target.value);
-  };
+  function handleReport(e){
+    let val = e.target.value;
+    let key = e.target.name;
+    switch(key){
+      case 'year':
+        //setReport({...report, [key]: val});
+        report[key] = val;
+        setReportYear(val);
+        break
+      case 'jurisdiction':
+        //setReport({...report, [key]: val});
+        report[key] = {'PADD': {'name': val}};
+        setReportState(val);
+        break
+    }
+  }
 
   return (
     <Page className={classes.root} title="DRDP - Report Entry">
@@ -74,7 +83,8 @@ function ReportEntryPage() {
           required
           label="Report Name"
           value={reportName}
-          onChange={handleReportName}
+          onChange={handleReport}
+          name='reportName'
           helperText="Please select report name"
         >
           {formData.reportName.map((option) => (
@@ -87,8 +97,9 @@ function ReportEntryPage() {
           select
           className={classes.dropdown}
           label="Report Year"
+          name='year'
           value={reportYear}
-          onChange={handleReportYear}
+          onChange={handleReport}
           helperText="Please select report year"
         >
           {formData.reportYear.map((option) => (
@@ -101,8 +112,9 @@ function ReportEntryPage() {
           select
           className={classes.dropdown}
           label="Jurisdiction Name"
+          name='jurisdiction'
           value={reportState}
-          onChange={handleReportState}
+          onChange={handleReport}
           helperText="Please select jurisdiction name"
         >
           {formData.reportState.map((option) => (

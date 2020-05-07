@@ -4,6 +4,7 @@ const useGlobal = () => {
 
     const [state, setState] = useState(null);
     const [favorites, setFavorites] = useState(null);
+    const [report, setReport] = useState({})
 
     function actions(action) {
         const {type, payload} = action;
@@ -12,11 +13,13 @@ const useGlobal = () => {
                 return setState(payload)
             case 'setFavorites':
                 return setFavorites(payload)
+            case 'setReport':
+                return setReport(payload)
             default:
                 return state
         }
     }
-    return {state, favorites, actions}
+    return {state, favorites, report, actions}
 }
 
 export default useGlobal;

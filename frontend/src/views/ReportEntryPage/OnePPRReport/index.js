@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container, Grid } from '@material-ui/core';
 import Page from 'src/components/Page';
@@ -8,6 +8,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import { Link as RouterLink } from 'react-router-dom';
 import Questions from './Questions';
 import TextFields from './TextFields'
+import Context from '../../../globalStore/context';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,6 +30,20 @@ const useStyles = makeStyles(theme => ({
 
 function OnePPRReport() {
   const classes = useStyles();
+  const { report, actions } = useContext(Context);
+
+  console.log(report)
+
+  function handleReport(e){
+    let val = e.target.value;
+    let key = e.target.name;
+    switch(key){
+      case 'year':
+        
+      case 'jurisdiction':
+        
+    }
+  }
 
   return (
     <Page className={classes.root} title="DRDP - Cencus Report">

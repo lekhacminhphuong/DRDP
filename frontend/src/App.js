@@ -68,14 +68,11 @@ function App() {
   function getRole(uid) {
     db.collection('users')
       .get().then(snapshot => {
-        //console.log('snap')
         snapshot.forEach(doc => {
           if (doc.id === uid) {
-            //console.log(doc.data().isAdmin);
             setIsAdmin(doc.data().isAdmin);
           }
         })
-        //console.log('/snap')
       })
       .catch(error => console.log(error));
   }
@@ -83,7 +80,6 @@ function App() {
   function authListener() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        //console.log(user.uid);
         getRole(user.uid);
         setUser(user);
       } else {
@@ -96,7 +92,7 @@ function App() {
     console.log(data1);
   }
 
-  console.log('is admin:' + isAdmin)
+  //console.log('is admin:' + isAdmin)
 
   if (isAdmin) {
     return (
