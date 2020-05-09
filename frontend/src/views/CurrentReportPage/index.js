@@ -90,7 +90,7 @@ function DataPage() {
       <Container maxWidth="lg">
         <Header className={classes.header} />
         <FilterSpace handleChange={handleChange} />
-        <div id='tabSpace'>
+        <div>
           <GraphTab data={filteredData} jurisdiction={filterState.jurisdiction} subReport={filterState.subReport} length={propLength}/>
         </div>
       </Container>
