@@ -32,7 +32,7 @@ export default function Header({ className, ...rest }) {
             gutterBottom
             variant="overline"
           >
-            Gallery/CardName
+            Gallery / Total Population Served
           </Typography>
           <Typography
             component="h1"
