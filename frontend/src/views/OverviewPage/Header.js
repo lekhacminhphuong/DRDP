@@ -2,15 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
-import {
-  Card, 
-  Typography, 
-  Grid
-} from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "#FFD171"
+    backgroundColor: theme.palette.common.white
+  },
+  header: {
+    backgroundImage: 'url("src/imgs/overview.jpg")',
+    width: theme.breakpoints.values.md,
+    maxWidth: '100%',
+    margin: '0 auto',
+    padding: '80px 24px',
+    [theme.breakpoints.up('md')]: {
+      padding: '160px 24px'
+    }
+  },
+  mediaContainer: {
+    margin: '0 auto',
+    maxWidth: 1600,
+    padding: theme.spacing(0, 2),
+    overflow: 'hidden'
+  },
+  media: {
+    width: '100%'
+  },
+  stats: {
+    backgroundColor: "#FFD171",
+    color: theme.palette.primary.contrastText,
+    padding: theme.spacing(1)
   },
   item: {
     padding: theme.spacing(3),
@@ -33,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Statistics({ className, ...rest }) {
+function Header({ className, ...rest }) {
   const classes = useStyles();
   const numbers = {
     year: '2020',
@@ -43,15 +63,39 @@ function Statistics({ className, ...rest }) {
   };
 
   return (
-    <Card
+    <div
       {...rest}
       className={clsx(classes.root, className)}
     >
-      <Grid
-        alignItems="center"
-        container
-        justify="space-between"
-      >
+      <div className={classes.header}>
+        <Typography
+          align="left"
+          gutterBottom
+          variant="h1"
+        >
+          Disability Rights Data Portal - DRDP
+        </Typography>
+        <Typography
+          align="left"
+          component="h2"
+          variant="subtitle1"
+        >
+          We dealt with a classic information problem: “how to convert data into information?”. 
+          We built a portal in which the end-users could consume visualizations 
+          that clearly addressed each high-level “question” in the form of a report. This portal was tailored for 
+          those with the most rudimentary data skills, and a very few, but highly designed, use cases. 
+          The portal also has a data entry page, designed with similarly strict usability standards, 
+          that allows low friction loading into the consolidated database. 
+        </Typography>
+      </div>
+      <div className={classes.stats}>
+        <Grid
+          alignItems="center"
+          className={classes.statsInner}
+          container
+          justify="center"
+          spacing={3}
+        >
         <Grid
           className={classes.item}
           item
@@ -132,13 +176,14 @@ function Statistics({ className, ...rest }) {
             </Typography>
           </div>
         </Grid>
-      </Grid>
-    </Card>
+        </Grid>
+      </div>
+    </div>
   );
 }
 
-Statistics.propTypes = {
+Header.propTypes = {
   className: PropTypes.string
 };
 
-export default Statistics;
+export default Header;
