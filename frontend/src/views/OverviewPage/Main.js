@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     },
     item2: {
         margin: theme.spacing(3),
-        textAlign: 'left',
+        textAlign: 'right',
     },
     content: {
         marginTop: theme.spacing(4)
@@ -72,9 +72,9 @@ function OverviewPage(className) {
                     alignItems="center"
                     container
                     justify="space-between"
-                    flexDirection="row"
+                    flexDirection="row-reverse"
                     spacing={3}
-                >
+                >.
                     <Grid
                         className={classes.item2}
                         item
@@ -109,7 +109,7 @@ function OverviewPage(className) {
                     spacing={3}
                 >
                     <Grid
-                        className={classes.item2}
+                        className={classes.item1}
                         item
                         md={6}
                         xs={12}
