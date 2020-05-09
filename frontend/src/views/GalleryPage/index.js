@@ -15,7 +15,7 @@ import {
   Select
 } from '@material-ui/core';
 import Page from 'src/components/Page';
-import img1 from 'src/imgs/barchart.png';
+import img1 from 'src/imgs/piechart.png';
 import img2 from 'src/imgs/linechart.png';
 import { GalleryCard } from './GalleryCard';
 import SearchIcon from '@material-ui/icons/Search';
