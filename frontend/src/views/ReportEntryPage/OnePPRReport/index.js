@@ -41,6 +41,65 @@ function OnePPRReport() {
     console.log(report)
   }
 
+
+
+  function constructReportSubmission(){
+    return({
+      'year': report.year,
+      'jurisdiction': report.jurisdiction,
+      "PADD": 
+        {"A1": {"name": "Individuals served as of October 1 (carried over from previous FY).", "val": report['PADD-A1']}, 
+          "A2": {"name": "Additional individuals served during the year.", "val": report['PADD-A2']}, 
+          "A3": {"name": "Total individuals served during the year (A1 + A2).", "val": report['PADD-A3']}, 
+          "A4": {"name": "Individuals with more than one (1) intervention opened/closed FY.", "val": report['PADD-A4']}, 
+          "A5": {"name": "Individuals served as of September 30 (Carry over to next FY; <= A3)", "val": report['PAAD-A5']}, 
+          "I1": {"name": "Hispanic/Latino", "val": report['PADD-I1']}, 
+          "I2": {"name": "American Indian/Alaskan Native", "val": report['PADD-I2']}, 
+          "I3": {"name": "Asian", "val": report['PADD-I3']}, 
+          "I4": {"name": "Black/African American", "val": report['PADD-I4']}, 
+          "I5": {"name": "Native Hawaiian/Other Pacific Islander", "val": report['PADD-I5']}, 
+          "I6": {"name": "White", "val": report['PADD-I6']}}, 
+      "PAAT": 
+        {"A1": {"name": "Individuals served as of October 1 (carried over from previous FY).", "val": report['PAAT-A1']}, 
+          "A2": {"name": "Additional individuals served during the year.", "val": report['PAAT-A2']}, 
+          "A3": {"name": "Total individuals served during the year (A1 + A2).", "val": report['PAAT-A3']}, 
+          "A4": {"name": "Individuals with more than one (1) intervention opened/closed FY.", "val": report['PAAT-A4']}, 
+          "A5": {"name": "Individuals served as of September 30 (Carry over to next FY; <= A3)", "val": report['PAAT-A5']}, 
+          "I1": {"name": "Hispanic/Latino", "val": report['PAAT-I1']}, 
+          "I2": {"name": "American Indian/Alaskan Native", "val": report['PAAT-I2']}, 
+          "I3": {"name": "Asian", "val": report['PAAT-I3']}, 
+          "I4": {"name": "Black/African American", "val": report['PAAT-I4']}, 
+          "I5": {"name": "Native Hawaiian/Other Pacific Islander", "val": report['PAAT-I5']}, 
+          "I6": {"name": "White", "val": report['PAAT-I6']}}, 
+      "PATBI": 
+        {"A1": {"name": "Individuals served as of October 1 (carried over from previous FY).", "val": report['PATBI-A1']}, 
+          "A2": {"name": "Additional individuals served during the year.", "val": report['PATBI-A2']},
+          "A3": {"name": "Total individuals served during the year (A1 + A2).", "val": report['PATBI-A3']}, 
+          "A4": {"name": "Individuals with more than one (1) intervention opened/closed FY.", "val": report['PATBI-A4']}, 
+          "A5": {"name": "Individuals served as of September 30 (Carry over to next FY; <= A3)", "val": report['PATBI-A5']}, 
+          "I1": {"name": "Hispanic/Latino", "val": report['PATBI-I1']}, 
+          "I2": {"name": "American Indian/Alaskan Native", "val": report['PATBI-I2']}, 
+          "I3": {"name": "Asian", "val": report['PATBI-I3']}, 
+          "I4": {"name": "Black/African American", "val": report['PATBI-I4']}, 
+          "I5": {"name": "Native Hawaiian/Other Pacific Islander", "val": report['PATBI-I5']}, 
+          "I6": {"name": "White", "val": report['PATBI-I6']}}, 
+      "PAVA": 
+        {"A1": {"name": "Individuals served as of October 1 (carried over from previous FY).", "val": report['PAVA-A1']}, 
+          "A2": {"name": "Additional individuals served during the year.", "val": report['PAVA-A2']}, 
+          "A3": {"name": "Total individuals served during the year (A1 + A2).", "val": report['PAVA-A3']},  
+          "A4": {"name": "Individuals with more than one (1) intervention opened/closed FY.", "val": report['PAVA-A4']}, 
+          "A5": {"name": "Individuals served as of September 30 (Carry over to next FY; <= A3)", "val": report['PAVA-A5']}, 
+          "I1": {"name": "Hispanic/Latino", "val": report['PAVA-I1']}, 
+          "I2": {"name": "American Indian/Alaskan Native", "val": report['PAVA-I2']}, 
+          "I3": {"name": "Asian", "val": report['PAVA-I3']}, 
+          "I4": {"name": "Black/African American", "val": report['PAVA-I4']}, 
+          "I5": {"name": "Native Hawaiian/Other Pacific Islander", "val": report['PAVA-I5']}, 
+          "I6": {"name": "White", "val": report['PAVA-I6']}
+        }
+      }
+    )
+  }
+
   return (
     <Page className={classes.root} title="DRDP - Cencus Report">
       <Container maxWidth="lg">
@@ -92,11 +151,12 @@ function OnePPRReport() {
           </Grid>
           <Grid item>
             <Button
-              component={RouterLink}
+              onClick={()=>{console.log(constructReportSubmission())}}
+              //component={RouterLink}
               variant="outlined"
               color="primary"
               endIcon={<CheckIcon />}
-              to="/reportentry"
+              //to="/reportentry"
             >
               Submit
             </Button>

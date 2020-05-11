@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -31,39 +31,50 @@ export function GalleryCard(props) {
   const { state, favorites, actions } = useContext(Context);
   const classes = useStyles();
   const [favStatus, setFavStatus] = useState(false);
-  
+
+  //check if card is in favorites
+  useEffect(() => {
+    if (favorites != null) {
+      for (let i = 0; i < favorites.length; i++) {
+        if (props.desc == favorites[i].desc) {
+          console.log('found')
+          setFavStatus(true)
+        }
+      }
+    }
+  }, [])
 
   const handleFavorite = (event) => {
     // IF FAV IS NOT IN GLOBAL FAVS: put favorite in global favorites
-    if(favorites == null){
+    if (favorites == null) {
       actions({ type: 'setFavorites', payload: [props] });
     } else {
       //create a new array arr
-      let arr =[]
+      let arr = []
       //deconstruct previous favorites array and push into new arr
       arr.push(...favorites)
       // MAKE A CHECK IF PROPS is already in the favorites, if not add it into arr
       let arrContains = false;
       //iterate thru arr
-      for(let i=0; i < arr.length; i++){
+      for (let i = 0; i < arr.length; i++) {
         //if props is in arr...
-        if (arr[i].desc == props.desc){
+        if (arr[i].desc == props.desc) {
           arrContains = true;
           //remove it from arr
-          arr = arr.filter((el)=>{return el.desc != props.desc})
+          arr = arr.filter((el) => { return el.desc != props.desc })
           break;
         }
       }
-      if(arrContains == false){
+      if (arrContains == false) {
         arr.push(props)
         actions({ type: 'setFavorites', payload: arr });
       }
-      if(arrContains == true){
+      if (arrContains == true) {
         actions({ type: 'setFavorites', payload: arr });
       }
     }
-    
-    //set favorites in firebase
+
+    //todo: set favorites in firebase
     setFavStatus(!favStatus)
   }
 
