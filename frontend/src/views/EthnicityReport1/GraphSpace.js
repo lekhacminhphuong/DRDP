@@ -76,8 +76,6 @@ export function GraphSpace(props) {
             { name: 'White', val: dataObj[0].white }
         ]
 
-        console.log(graphData)
-
         return (
             <div id='graphSpace'>
                 <PieChart width={400} height={400}>
@@ -85,7 +83,7 @@ export function GraphSpace(props) {
                         {
                             graphData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)
                         }
-                    </Pie>/>
+                    </Pie>
                     <Tooltip />
                 </PieChart>
             </div>

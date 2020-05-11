@@ -1,29 +1,29 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
-import Main from './Main';
-import Statistics from './Statistics'
+import Header from './Header';
+import FAQ from './FAQ';
+import Approach from './Approach';
+import Solution from './Solution';
+import Challenge from './Challenge';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-  },
-  statistics: {
-    marginTop: theme.spacing(3),
-  }
+const useStyles = makeStyles(() => ({
+  root: {}
 }));
 
 function OverviewPage() {
   const classes = useStyles();
 
   return (
-    <Page className={classes.root} title="DRDP - Overview">
-      <Container maxWidth="lg">
-        <Main />
-        <Statistics className={classes.statistics} />
-      </Container>
+    <Page
+      className={classes.root}
+      title="DRDP - Overview"
+    >
+      <Header />
+      <Challenge />
+      <Approach />
+      <Solution />
+      <FAQ />
     </Page>
   );
 }

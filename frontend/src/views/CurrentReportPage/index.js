@@ -86,11 +86,11 @@ function DataPage() {
   
 
   return (
-    <Page className={classes.root} title="DRDP - Current Report">
+    <Page className={classes.root} title="DRDP - Total Population Served">
       <Container maxWidth="lg">
         <Header className={classes.header} />
         <FilterSpace handleChange={handleChange} />
-        <div id='tabSpace'>
+        <div>
           <GraphTab data={filteredData} jurisdiction={filterState.jurisdiction} subReport={filterState.subReport} length={propLength}/>
         </div>
       </Container>
