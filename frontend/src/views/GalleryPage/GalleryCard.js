@@ -37,7 +37,6 @@ export function GalleryCard(props) {
     if (favorites != null) {
       for (let i = 0; i < favorites.length; i++) {
         if (props.desc == favorites[i].desc) {
-          console.log('found')
           setFavStatus(true)
         }
       }
@@ -48,6 +47,13 @@ export function GalleryCard(props) {
     // IF FAV IS NOT IN GLOBAL FAVS: put favorite in global favorites
     if (favorites == null) {
       actions({ type: 'setFavorites', payload: [props] });
+      db.collection('favorites')
+          .doc(props.title)
+          .set({
+            desc: props.desc,
+            title: props.title,
+            img: props.img
+          })
     } else {
       //create a new array arr
       let arr = []
@@ -68,13 +74,26 @@ export function GalleryCard(props) {
       if (arrContains == false) {
         arr.push(props)
         actions({ type: 'setFavorites', payload: arr });
+        //add to firebase
+        db.collection('favorites')
+          .doc(props.title)
+          .set({
+            desc: props.desc,
+            title: props.title,
+            img: props.img
+          })
       }
       if (arrContains == true) {
         actions({ type: 'setFavorites', payload: arr });
+        //remove from firebase
+        var query = db.collection('favorites').where('desc', '==', props.desc);
+        query.get().then(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            doc.ref.delete();
+          });
+        });
       }
     }
-
-    //todo: set favorites in firebase
     setFavStatus(!favStatus)
   }
 

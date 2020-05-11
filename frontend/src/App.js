@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { createBrowserHistory } from 'history';
@@ -23,12 +23,14 @@ import LoginPage from './views/LoginPage';
 import { db } from './config/Fire';
 import firebase from './config/Fire';
 import adminRoutes from './adminRoutes';
+import Context from './globalStore/context';
 
 const history = createBrowserHistory();
 const store = configureStore();
 
 function App() {
 
+  const { state, favorites, actions } = useContext(Context);
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [data1, setData] = useState();
@@ -57,6 +59,22 @@ function App() {
   //       console.log(data1)
   //     })
   // }, [])
+
+  //pull in the favorites from firebase
+  useEffect(() => {
+      const favData = []
+      db.collection('favorites')
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach(doc => {
+            favData.push(doc.data())
+            //console.log(doc.data())
+          })
+        })
+        .then(() => {
+          actions({ type: 'setFavorites', payload: favData });
+        })
+  }, [])
 
   useEffect(() => {
     if (user == null) {
@@ -88,7 +106,7 @@ function App() {
     })
   }
 
-  function logState(){
+  function logState() {
     console.log(data1);
   }
 
@@ -104,7 +122,7 @@ function App() {
                 <ScrollReset />
                 <GoogleAnalytics />
                 <CookiesNotification />
-                {user ? ( renderRoutes(adminRoutes) ) : (<LoginPage/>)}
+                {user ? (renderRoutes(adminRoutes)) : (<LoginPage />)}
                 {/* {renderRoutes(routes)} */}
                 {/* <button onClick={logState}>button</button>  */}
               </Router>
@@ -123,7 +141,7 @@ function App() {
                 <ScrollReset />
                 <GoogleAnalytics />
                 <CookiesNotification />
-                {user ? ( renderRoutes(routes)  ) : (<LoginPage/>)}
+                {user ? (renderRoutes(routes)) : (<LoginPage />)}
                 {/* {renderRoutes(routes)} */}
                 {/* <button onClick={logState}>button</button>  */}
               </Router>
