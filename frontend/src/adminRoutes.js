@@ -15,7 +15,7 @@ export default [
       {
         path: '/overview',
         exact: true,
-        component: lazy(() => import('src/views/OverviewPage1')),
+        component: lazy(() => import('src/views/OverviewPage')),
       },
       {
         path: '/gallery',

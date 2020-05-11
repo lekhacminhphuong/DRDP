@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import { Container, Grid, Typography } from '@material-ui/core';
+import img from '../../imgs/approach.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     '& img': {
-      width: '100%',
+      width: '60%',
       height: 'auto'
     }
   }
@@ -56,8 +57,8 @@ function Approach({ className, ...rest }) {
             xs={12}
           >
             <img
-              alt="User flows"
-              src="/images/presentation/plugins_support.png"
+              alt="approach"
+              src={img}
             />
           </Grid>
         </Grid>
