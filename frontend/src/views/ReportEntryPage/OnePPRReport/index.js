@@ -9,6 +9,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import Questions from './Questions';
 import TextFields from './TextFields'
 import Context from '../../../globalStore/context';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,9 +31,7 @@ const useStyles = makeStyles(theme => ({
 
 function OnePPRReport() {
   const classes = useStyles();
-  const { report, actions } = useContext(Context);
-
-  console.log(report)
+  const { report, submission, actions } = useContext(Context);
 
   function handleReport(e){
     let val = e.target.value;
@@ -41,9 +40,7 @@ function OnePPRReport() {
     console.log(report)
   }
 
-
-
-  function constructReportSubmission(){
+  function constructSubmissionObject(){
     return({
       'year': report.year,
       'jurisdiction': report.jurisdiction,
@@ -52,7 +49,7 @@ function OnePPRReport() {
           "A2": {"name": "Additional individuals served during the year.", "val": report['PADD-A2']}, 
           "A3": {"name": "Total individuals served during the year (A1 + A2).", "val": report['PADD-A3']}, 
           "A4": {"name": "Individuals with more than one (1) intervention opened/closed FY.", "val": report['PADD-A4']}, 
-          "A5": {"name": "Individuals served as of September 30 (Carry over to next FY; <= A3)", "val": report['PAAD-A5']}, 
+          "A5": {"name": "Individuals served as of September 30 (Carry over to next FY; <= A3)", "val": report['PADD-A5']}, 
           "I1": {"name": "Hispanic/Latino", "val": report['PADD-I1']}, 
           "I2": {"name": "American Indian/Alaskan Native", "val": report['PADD-I2']}, 
           "I3": {"name": "Asian", "val": report['PADD-I3']}, 
@@ -98,6 +95,10 @@ function OnePPRReport() {
         }
       }
     )
+  }
+
+  function createSubmission(){
+    actions({ type: 'setSubmission', payload: constructSubmissionObject() });
   }
 
   return (
@@ -151,14 +152,14 @@ function OnePPRReport() {
           </Grid>
           <Grid item>
             <Button
-              onClick={()=>{console.log(constructReportSubmission())}}
-              //component={RouterLink}
+              onClick={createSubmission}
+              component={RouterLink}
               variant="outlined"
               color="primary"
-              endIcon={<CheckIcon />}
-              //to="/reportentry"
+              endIcon={<ArrowForwardIosIcon />}
+              to="/reportentry/confirmation"
             >
-              Submit
+              Confirm
             </Button>
           </Grid>
         </Grid>

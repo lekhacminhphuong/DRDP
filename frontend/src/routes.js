@@ -48,6 +48,16 @@ export default [
         component: lazy(() => import('src/views/ReportEntryPage/OnePPRReport')),
       },
       {
+        path: '/reportentry/confirmation',
+        exact: true,
+        component: lazy(() => import('src/views/ReportEntryPage/OnePPRReport/EntryConfirmation')),
+      },
+      {
+        path: '/reportentry/success',
+        exact: true,
+        component: lazy(() => import('src/views/ReportEntryPage/OnePPRReport/EntrySuccess')),
+      },
+      {
         path: '/aboutus',
         exact: true,
         component: lazy(() => import('src/views/AboutUsPage')),

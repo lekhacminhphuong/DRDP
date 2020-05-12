@@ -76,6 +76,10 @@ export default {
       }
     ],
     reportState: [
+      // {
+      //   value: '',
+      //   label: '',
+      // },
       {
         value: 'Alabama',
         label: 'Alabama',

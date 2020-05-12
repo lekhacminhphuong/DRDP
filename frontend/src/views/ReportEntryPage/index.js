@@ -34,24 +34,50 @@ function ReportEntryPage() {
   const { report, actions } = useContext(Context);
 
   const [reportName, setReportName] = React.useState('One PPR');
-  const [reportYear, setReportYear] = React.useState('2020');
-  const [reportState, setReportState] = React.useState('Alabama');
+  const [reportYear, setReportYear] = React.useState('');
+  const [reportState, setReportState] = React.useState('');
 
   function handleReport(e){
     let val = e.target.value;
     let key = e.target.name;
     switch(key){
       case 'year':
-        //setReport({...report, [key]: val});
         report[key] = val;
         setReportYear(val);
         break
       case 'jurisdiction':
-        //setReport({...report, [key]: val});
         report[key] = val;
         setReportState(val);
         break
     }
+  }
+
+  //alert if jurisdiction or year is empty
+  function alertEmptyField() {
+    alert('Please select a Jurisdiction and/or Year to continue')
+  }
+
+  //error handling to prevent empty jurisdiction and year fields
+  let button;
+  if (reportYear == '' || reportState == '') {      
+    button = <Button
+            variant="outlined"
+            color="primary"
+            endIcon={<ArrowForwardIosIcon />}
+            onClick={alertEmptyField}
+          >
+            Next
+        </Button> 
+  } else {      
+    button = <Button
+            component={RouterLink}
+            variant="outlined"
+            color="primary"
+            endIcon={<ArrowForwardIosIcon />}
+            to="/reportentry/oneppr"
+          >
+            Next
+        </Button>  
   }
 
   return (
@@ -124,15 +150,7 @@ function ReportEntryPage() {
           ))}
         </TextField>
         <div className={classes.button}>
-          <Button
-            component={RouterLink}
-            variant="outlined"
-            color="primary"
-            endIcon={<ArrowForwardIosIcon />}
-            to="/reportentry/oneppr"
-          >
-            Next
-        </Button>
+          {button}
         </div>
       </Container>
     </Page>
