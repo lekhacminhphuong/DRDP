@@ -26,20 +26,15 @@ const useStyles = makeStyles((theme) => ({
 
 const faqs = [
   {
-    title: 'What is data from?',
+    title: 'Where is the data from?',
     description:
-      'Data is from ...'
+      'The data in its current state is modeled off of data which would be found in the One PPR report, which our pilot organization, NDRN, uses to track their impact. For security reasons, the dataset used for this this project is currently mock data, however the format is the same as what NDRN uses and could easily be filled in with their actual use data.'
   },
   {
     title:
       'What is Report Entry used for?',
     description:
-      'Report Entry is ...'
-  },
-  {
-    title: 'Can I change password?',
-    description:
-      'Yes, you can change password in the Profile page.'
+      'Report Entry is a straightforward tool for adding subsequent One PPR yearly reports to the dataset. This allows the visualized data and tables to reflect the most up to date data available. In future iterations we hope to add a quick CSV upload feature, to make the process even easier.'
   }
 ];
 
