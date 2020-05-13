@@ -46,8 +46,11 @@ function Approach({ className, ...rest }) {
               Approach
             </Typography>
             <Typography variant="subtitle2">
-              Pilot the format with data and users from the National Disability Rights Network(NDRN)
-            </Typography>
+              Pilot the format with data and users from 
+            </Typography>   
+            <Typography variant="subtitle2">
+              <a href="https://www.ndrn.org/">National Disability Rights Network (NDRN)</a>
+            </Typography>   
           </Grid>
           <Grid
             className={classes.media}
