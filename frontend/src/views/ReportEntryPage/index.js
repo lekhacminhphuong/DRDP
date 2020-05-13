@@ -121,6 +121,7 @@ function ReportEntryPage() {
         </TextField>
         <TextField
           select
+          required
           className={classes.dropdown}
           label="Report Year"
           name='year'
@@ -136,6 +137,7 @@ function ReportEntryPage() {
         </TextField>
         <TextField
           select
+          required
           className={classes.dropdown}
           label="Jurisdiction Name"
           name='jurisdiction'
