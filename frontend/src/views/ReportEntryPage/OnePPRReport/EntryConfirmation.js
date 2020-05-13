@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container, Grid } from '@material-ui/core';
 import Page from 'src/components/Page';
@@ -11,7 +11,7 @@ import TextFields from './TextFields'
 import Context from '../../../globalStore/context';
 import ConfirmationValues from './ConfirmationValues';
 import { db } from '../../../config/Fire';
-
+import { Beforeunload } from 'react-beforeunload';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,16 +33,24 @@ const useStyles = makeStyles(theme => ({
 
 function EntryConfirmation() {
   const classes = useStyles();
-  const { report, submission } = useContext(Context);
+  const { report, submission, actions } = useContext(Context);
 
-  console.log(submission)
+  //remove entered data in global state on leaving the page
+  useEffect( () => () => {
+    actions({ type: 'setReport', payload: {} });
+    actions({ type: 'setSubmission', payload: null });
+  }, [] );
 
   const handleSubmit = (e) => {
     db.collection('testy23423')
       .add(submission);
+    //remove entered data in global state on submitting
+    actions({ type: 'setReport', payload: {} });
+    actions({ type: 'setSubmission', payload: null });
   }
 
   return (
+    <Beforeunload onBeforeunload={() => "Unsubmitted data will be lost"}>
     <Page className={classes.root} title="DRDP - Cencus Report">
       <Container maxWidth="lg">
         <div className={classes.header}>
@@ -112,6 +120,7 @@ function EntryConfirmation() {
         </Grid>
       </Container>
     </Page>
+    </Beforeunload>
   );
 }
 
