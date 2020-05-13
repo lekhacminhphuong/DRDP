@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import { Typography, Grid } from '@material-ui/core';
-import img from 'src/imgs/overview.png'
+import img from 'src/imgs/overview.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,25 +50,7 @@ function Header({ className, ...rest }) {
       {...rest}
       className={clsx(classes.root, className)}
     >
-      {/* <Typography
-          align="left"
-          variant="h1"
-        >
-          Disability Rights Data Portal - DRDP
-        </Typography>
-        <Typography
-          align="left"
-          component="h2"
-          variant="subtitle2"
-        >
-          We dealt with a classic information problem: “how to convert data into information?”. 
-          We built a portal in which the end-users could consume visualizations 
-          that clearly addressed each high-level “question” in the form of a report. This portal was tailored for 
-          those with the most rudimentary data skills, and a very few, but highly designed, use cases. 
-          The portal also has a data entry page, designed with similarly strict usability standards, 
-          that allows low friction loading into the consolidated database. 
-        </Typography> */}
-      <img src={img} width="1184" height="500" />
+      <img src={img} width="1185" height="523" />
       <div className={classes.stats}>
         <Grid
           alignItems="center"
