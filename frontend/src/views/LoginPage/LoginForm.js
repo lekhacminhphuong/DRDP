@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import fire from '../../config/Fire';
 import clsx from 'clsx';
 import validate from 'validate.js';
@@ -49,6 +50,7 @@ function LoginForm({ className, ...rest }) {
   });
   const [errorMessage, setErrorMessage] = useState("")
   const [showError, setShowError] = useState(false)
+  const history = useHistory();
 
   const hasError = (field) => (!!(formState.touched[field] && formState.errors[field]));
 
@@ -88,6 +90,7 @@ function LoginForm({ className, ...rest }) {
       setErrorMessage(error.message)
       setShowError(true)
     })
+    history.push('/');
   }
   
   let alert;
