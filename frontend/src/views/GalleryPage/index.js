@@ -17,6 +17,7 @@ import {
 import Page from 'src/components/Page';
 import img1 from 'src/imgs/piechart.png';
 import img2 from 'src/imgs/linechart.png';
+import img3 from 'src/imgs/barchart2.png';
 import { GalleryCard } from './GalleryCard';
 import SearchIcon from '@material-ui/icons/Search';
 import FormControl from '@material-ui/core/FormControl';
@@ -62,10 +63,10 @@ const useStyles = makeStyles(theme => ({
 
 function GalleryPage() {
   const classes = useStyles();
-  const descriptions = ["Total Served from 2011-2018 (by jurisdiction)", "Ethnicity Ratios for CAP (all years)"];
-  const titles = ["Total Served", "Ethnicity Ratios"];
-  const imgs = [img2, img1]
-  const links =['/gallery/totalserved', '/gallery/ethnicity']
+  const descriptions = ["Total Served from 2011-2018 (by jurisdiction)", "Ethnicity Ratios for CAP (all years)", 'Total served, by ethnicity for all reported years'];
+  const titles = ["Total Served", "Ethnicity Ratios", 'Ethnicity Over Time'];
+  const imgs = [img2, img1, img3]
+  const links =['/gallery/totalserved', '/gallery/ethnicity', '/gallery/ethnicity2']
   const searchRef = useRef(null);
   const [openSearchPopover, setOpenSearchPopover] = useState(false);
   const [searchValue, setSearchValue] = useState('');
@@ -161,6 +162,9 @@ function GalleryPage() {
           </Grid>
           <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
             <GalleryCard title={titles[1]} desc={descriptions[1]} img={imgs[1]} link={links[1]}/>
+          </Grid>
+          <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
+            <GalleryCard title={titles[2]} desc={descriptions[2]} img={imgs[2]} link={links[2]}/>
           </Grid>
         </Grid>
       </Container>

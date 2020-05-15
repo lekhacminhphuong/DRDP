@@ -33,6 +33,11 @@ export default [
         component: lazy(() => import('src/views/EthnicityReport1')),
       },
       {
+        path: '/gallery/ethnicity2',
+        exact: true,
+        component: lazy(() => import('src/views/EthnicityReport2')),
+      },
+      {
         path: '/favorites',
         exact: true,
         component: lazy(() => import('src/views/FavoritesPage')),

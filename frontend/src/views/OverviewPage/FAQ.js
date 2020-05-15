@@ -74,6 +74,9 @@ function FAQ({ className, ...rest }) {
             </ListItem>
           ))}
         </List>
+        <br/>
+        <br/>
+        <h6>Disclaimer: This website was created for UW iSchool Capstone 2020, and will be shut down effective June 13th, 2020</h6>
       </Container>
     </div>
   );
