@@ -35,7 +35,7 @@ function EntrySuccess() {
     const [mode] = useState('grid');
 
     return (
-        <Page className={classes.root} title="DRDP - Favorites">
+        <Page className={classes.root} title="DRDP - Entry Success">
           <Container maxWidth="lg">
             <div className={classes.empty}>
               <img src={img} height="400" />

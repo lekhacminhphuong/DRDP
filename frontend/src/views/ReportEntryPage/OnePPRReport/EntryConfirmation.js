@@ -12,7 +12,7 @@ import Context from '../../../globalStore/context';
 import ConfirmationValues from './ConfirmationValues';
 import { db } from '../../../config/Fire';
 import { Beforeunload } from 'react-beforeunload';
-import { withStyles, lighten } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,6 +37,7 @@ const CustomTypography = withStyles(theme => ({
     color: '#990000'
   },
   h5: {
+    fontSize: "18px",
     color: "#427996",
     marginBottom: theme.spacing(1)
   }
@@ -62,7 +63,7 @@ function EntryConfirmation() {
 
   return (
     <Beforeunload onBeforeunload={() => "Unsubmitted data will be lost"}>
-    <Page className={classes.root} title="DRDP - Cencus Report">
+    <Page className={classes.root} title="DRDP - Entry Confirm">
       <Container maxWidth="lg">
         <div className={classes.header}>
           <Typography
@@ -83,10 +84,10 @@ function EntryConfirmation() {
             Please ensure all values are correctly entered<br/><br/>
           </CustomTypography>
           <CustomTypography variant="h5">
-            Jurisdiction: {report.jurisdiction}
+            Jurisdiction: <b>{report.jurisdiction}</b>
           </CustomTypography>
           <CustomTypography variant="h5">
-            Year: {report.year}
+            Year: <b>{report.year}</b>
           </CustomTypography>
         </div>
 
