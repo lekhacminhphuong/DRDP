@@ -12,6 +12,7 @@ import Context from '../../../globalStore/context';
 import ConfirmationValues from './ConfirmationValues';
 import { db } from '../../../config/Fire';
 import { Beforeunload } from 'react-beforeunload';
+import { withStyles, lighten } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,6 +31,16 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(2)
   }
 }));
+
+const CustomTypography = withStyles(theme => ({
+  h6: {
+    color: '#990000'
+  },
+  h5: {
+    color: "#427996",
+    marginBottom: theme.spacing(1)
+  }
+}))(Typography);
 
 function EntryConfirmation() {
   const classes = useStyles();
@@ -68,15 +79,15 @@ function EntryConfirmation() {
           >
             Part 1: Demographics
           </Typography>
-          <Typography variant="h6">
+          <CustomTypography variant="h6">
             Please ensure all values are correctly entered<br/><br/>
-          </Typography>
-          <Typography variant="h4">
+          </CustomTypography>
+          <CustomTypography variant="h5">
             Jurisdiction: {report.jurisdiction}
-          </Typography>
-          <Typography variant="h4">
+          </CustomTypography>
+          <CustomTypography variant="h5">
             Year: {report.year}
-          </Typography>
+          </CustomTypography>
         </div>
 
         <Grid
