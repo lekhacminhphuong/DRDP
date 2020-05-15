@@ -1,26 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import {
   Container,
-  Hidden,
-  Input,
-  Popper,
-  Paper,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Grid,
-  ClickAwayListener,
-  Select
+  Grid
 } from '@material-ui/core';
 import Page from 'src/components/Page';
 import img1 from 'src/imgs/piechart.png';
 import img2 from 'src/imgs/linechart.png';
 import img3 from 'src/imgs/barchart2.png';
 import { GalleryCard } from './GalleryCard';
-import SearchIcon from '@material-ui/icons/Search';
-import FormControl from '@material-ui/core/FormControl';
 
 const popularSearches = [
   'Total Served',
@@ -67,95 +55,11 @@ function GalleryPage() {
   const titles = ["Total Served", "Ethnicity Ratios", 'Ethnicity Over Time'];
   const imgs = [img2, img1, img3]
   const links =['/gallery/totalserved', '/gallery/ethnicity', '/gallery/ethnicity2']
-  const searchRef = useRef(null);
-  const [openSearchPopover, setOpenSearchPopover] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
   const [mode] = useState('grid');
-
-
-  const handleSearchChange = (event) => {
-    setSearchValue(event.target.value);
-
-    if (event.target.value) {
-      if (!openSearchPopover) {
-        setOpenSearchPopover(true);
-      }
-    } else {
-      setOpenSearchPopover(false);
-    }
-  };
-
-  const handleSearchPopverClose = () => {
-    setOpenSearchPopover(false);
-  };
 
   return (
     <Page className={classes.root} title="DRDP - Gallery">
       <Container maxWidth="lg">
-        <Grid
-          container
-          justify="space-between"
-        >
-          <Grid item>
-            <Hidden smDown>
-              <div
-                className={classes.search}
-                ref={searchRef}
-              >
-                <SearchIcon className={classes.searchIcon} />
-                <Input
-                  className={classes.searchInput}
-                  disableUnderline
-                  onChange={handleSearchChange}
-                  placeholder="Search visualization"
-                  value={searchValue}
-                />
-              </div>
-              <Popper
-                anchorEl={searchRef.current}
-                className={classes.searchPopper}
-                open={openSearchPopover}
-                placement="bottom-start"
-                transition
-              >
-                <ClickAwayListener onClickAway={handleSearchPopverClose}>
-                  <Paper
-                    className={classes.searchPopperContent}
-                    elevation={3}
-                  >
-                    <List>
-                      {popularSearches.map((search) => (
-                        <ListItem
-                          button
-                          key={search}
-                          onClick={handleSearchPopverClose}
-                        >
-                          <ListItemIcon>
-                            <SearchIcon />
-                          </ListItemIcon>
-                          <ListItemText primary={search} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </Paper>
-                </ClickAwayListener>
-              </Popper>
-            </Hidden>
-          </Grid>
-          <Grid item>
-            <FormControl variant="outlined" className={classes.formControl}>
-              <Select
-                native
-              >
-                <option value={'Most Recent'}>Most Recent</option>
-                <option value={'Most Views'}>Most Views</option>
-                <option value={'A-Z'}>A-Z</option>
-                <option value={'Z-A'}>Z-A</option>
-              </Select>
-            </FormControl>
-          </Grid>
-        </Grid>
-
         <Grid container spacing={1}>
           <Grid item md={mode === 'grid' ? 4 : 12} sm={mode === 'grid' ? 6 : 12} xs={12}>
             <GalleryCard title={titles[0]} desc={descriptions[0]} img={imgs[0]} link={links[0]}/>
