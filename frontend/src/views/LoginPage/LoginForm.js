@@ -109,7 +109,7 @@ function LoginForm({ className, ...rest }) {
         Sign in
       </Typography>
       <div className={classes.fields}>
-        <p>(Enter email: user@user.com; Enter password: useruser)</p>
+        <p>To login to our demo. Please Enter email: <b>user@user.com</b> and Enter password: <b>useruser</b></p>
         {alert}
         <TextField
           error={hasError('email')}
