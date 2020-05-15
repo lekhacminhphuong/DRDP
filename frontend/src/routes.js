@@ -6,7 +6,7 @@ export default [
   {
     path: '/',
     exact: true,
-    component: () => <Redirect to="/overview" />
+    component: lazy(() => import('src/views/OverviewPage'))
   },
   {
     route: '*',
@@ -28,7 +28,7 @@ export default [
         component: lazy(() => import('src/views/GalleryPage')),
       },
       {
-        path: '/gallery/totalserved',
+        path: '/totalserved',
         exact: true,
         component: lazy(() => import('src/views/CurrentReportPage')),
       },
