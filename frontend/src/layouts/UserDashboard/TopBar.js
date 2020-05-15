@@ -50,7 +50,7 @@ function TopBar({ onOpenNavBarMobile, className, ...rest }) {
   const [notifications, setNotifications] = useState([]);
 
   const handleLogout = () => {
-    //history.push('/auth/login');
+    history.push('/login');
     // dispatch(logout());
     fire.auth().signOut();
   };

@@ -10,11 +10,6 @@ import img2 from 'src/imgs/linechart.png';
 import img3 from 'src/imgs/barchart2.png';
 import { GalleryCard } from './GalleryCard';
 
-const popularSearches = [
-  'Total Served',
-  'Ethnicity Ratios',
-];
-
 const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: theme.spacing(3),

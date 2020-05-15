@@ -13,6 +13,11 @@ export default [
     component: DashboardLayout,
     routes: [
       {
+        path: '/login',
+        exact: true,
+        component: lazy(() => import('src/views/LoginPage')),
+      },
+      {
         path: '/overview',
         exact: true,
         component: lazy(() => import('src/views/OverviewPage')),
