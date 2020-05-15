@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a8e39d7cc817b41c4af30f7f8092df7f",
+    "revision": "0bdfa258436f7e8dfd83e15e0e954317",
     "url": "/DRDP/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DRDP/static/css/12.18fb2ca0.chunk.css"
   },
   {
-    "revision": "5a0c6508bf7ba762b4ea",
+    "revision": "605324af4d09ed51685f",
     "url": "/DRDP/static/css/main.a40ac9f3.chunk.css"
   },
   {
@@ -84,8 +84,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DRDP/static/js/9.f9f1f4b8.chunk.js"
   },
   {
-    "revision": "5a0c6508bf7ba762b4ea",
-    "url": "/DRDP/static/js/main.b995f318.chunk.js"
+    "revision": "605324af4d09ed51685f",
+    "url": "/DRDP/static/js/main.57da88e4.chunk.js"
   },
   {
     "revision": "9ac8f3988c204c87106d",
