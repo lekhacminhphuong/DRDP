@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f79269b66134655af0869f6ec4fd1fe8",
+    "revision": "7523d38255fd6bc6759822496f1a6c56",
     "url": "/DRDP/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DRDP/static/css/12.18fb2ca0.chunk.css"
   },
   {
-    "revision": "c771552968d475b6ca5d",
+    "revision": "d15071f12ac65906d5d5",
     "url": "/DRDP/static/css/main.a40ac9f3.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DRDP/static/js/0.b7860f25.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d3834f88c130cec3f252",
-    "url": "/DRDP/static/js/1.822d4748.chunk.js"
+    "revision": "edadcfe0875f7d51f66b",
+    "url": "/DRDP/static/js/1.4da5dc24.chunk.js"
   },
   {
     "revision": "3a6611559942cb6965b1",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DRDP/static/js/17.66b808b8.chunk.js"
   },
   {
-    "revision": "f3a2a92eb280f37e2413",
-    "url": "/DRDP/static/js/2.81550517.chunk.js"
+    "revision": "58a973281ad4cbf5964b",
+    "url": "/DRDP/static/js/2.29a49331.chunk.js"
   },
   {
     "revision": "e9c181cc630e8c7ffcf9",
@@ -84,12 +84,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DRDP/static/js/9.f9f1f4b8.chunk.js"
   },
   {
-    "revision": "c771552968d475b6ca5d",
-    "url": "/DRDP/static/js/main.d3585e54.chunk.js"
+    "revision": "d15071f12ac65906d5d5",
+    "url": "/DRDP/static/js/main.489bed10.chunk.js"
   },
   {
-    "revision": "28d7d14511602d54b9aa",
-    "url": "/DRDP/static/js/runtime-main.d789312a.js"
+    "revision": "4b1a33a0d685ebcb2d5d",
+    "url": "/DRDP/static/js/runtime-main.12c00fba.js"
   },
   {
     "revision": "3e5c767d5f6ff3e43996823bfa4c201c",
