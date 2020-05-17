@@ -2,7 +2,7 @@
   "name": "project-dashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://lekhacminhphuong.github.io/DRDP",
+  "homepage": "https://lekhacminhphuong.github.io/DRDP",
   "dependencies": {
     "@date-io/core": "^1.3.11",
     "@date-io/moment": "^1.3.11",

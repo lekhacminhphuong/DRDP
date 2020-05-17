@@ -124,7 +124,6 @@ function App() {
                 <CookiesNotification />
                 {user ? (renderRoutes(adminRoutes)) : (<LoginPage />)}
                 {/* {renderRoutes(routes)} */}
-                {/* <button onClick={logState}>button</button>  */}
               </Router>
             </MuiPickersUtilsProvider>
           </StylesProvider>

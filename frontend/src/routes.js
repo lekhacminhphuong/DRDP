@@ -1,12 +1,26 @@
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Redirect } from 'react-router-dom';
 import DashboardLayout from './layouts/UserDashboard';
+
+const Overview = lazy(() => import('src/views/OverviewPage'));
+const Login = lazy(() => import('src/views/LoginPage'));
+const Gallery = lazy(() => import('src/views/GalleryPage'));
+const TotalServed = lazy(() => import('src/views/CurrentReportPage'));
+const Ethnicity1 = lazy(() => import('src/views/EthnicityReport1'));
+const Ethnicity2 = lazy(() => import('src/views/EthnicityReport2'));
+const Favorites = lazy(() => import('src/views/FavoritesPage'));
+const ReportEntry = lazy(() => import('src/views/ReportEntryPage'));
+const ReportEntry_OnePPR = lazy(() => import('src/views/ReportEntryPage/OnePPRReport'));
+const ReportEntry_Confirmation = lazy(() => import('src/views/ReportEntryPage/OnePPRReport/EntryConfirmation'));
+const ReportEntry_Success =  lazy(() => import('src/views/ReportEntryPage/OnePPRReport/EntrySuccess'))
+const AboutUs = lazy(() => import('src/views/AboutUsPage'));
+const Profile =  lazy(() => import('src/views/ProfilePage'));
 
 export default [
   {
     path: '/',
     exact: true,
-    component: lazy(() => import('src/views/OverviewPage'))
+    component: () => <Redirect to="/overview" />
   },
   {
     route: '*',
@@ -15,67 +29,72 @@ export default [
       {
         path: '/login',
         exact: true,
-        component: lazy(() => import('src/views/LoginPage')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><Login/></Suspense>,
       },
       {
         path: '/overview',
         exact: true,
-        component: lazy(() => import('src/views/OverviewPage')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><Overview/></Suspense>,
+      },
+      {
+        path: '/DRDP',
+        exact: true,
+        component: () => <Suspense fallback={<div>Loading...</div>}><Overview/></Suspense>,
       },
       {
         path: '/gallery',
         exact: true,
-        component: lazy(() => import('src/views/GalleryPage')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><Gallery/></Suspense>,
       },
       {
-        path: '/totalserved',
+        path: '/gallery/totalserved',
         exact: true,
-        component: lazy(() => import('src/views/CurrentReportPage')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><TotalServed/></Suspense>,
       },
       {
         path: '/gallery/ethnicity',
         exact: true,
-        component: lazy(() => import('src/views/EthnicityReport1')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><Ethnicity1/></Suspense>,
       },
       {
         path: '/gallery/ethnicity2',
         exact: true,
-        component: lazy(() => import('src/views/EthnicityReport2')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><Ethnicity2/></Suspense>,
       },
       {
         path: '/favorites',
         exact: true,
-        component: lazy(() => import('src/views/FavoritesPage')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><Favorites/></Suspense>,
       },
       {
         path: '/reportentry',
         exact: true,
-        component: lazy(() => import('src/views/ReportEntryPage')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry/></Suspense>,
       },
       {
         path: '/reportentry/oneppr',
         exact: true,
-        component: lazy(() => import('src/views/ReportEntryPage/OnePPRReport')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry_OnePPR/></Suspense>,
       },
       {
         path: '/reportentry/confirmation',
         exact: true,
-        component: lazy(() => import('src/views/ReportEntryPage/OnePPRReport/EntryConfirmation')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry_Confirmation/></Suspense>,
       },
       {
         path: '/reportentry/success',
         exact: true,
-        component: lazy(() => import('src/views/ReportEntryPage/OnePPRReport/EntrySuccess')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry_Success/></Suspense>,
       },
       {
         path: '/aboutus',
         exact: true,
-        component: lazy(() => import('src/views/AboutUsPage')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><AboutUs/></Suspense>,
       },
       {
         path: '/profile',
         exact: true,
-        component: lazy(() => import('src/views/ProfilePage')),
+        component: () => <Suspense fallback={<div>Loading...</div>}><Profile/></Suspense>,
       }
     ]
   }
