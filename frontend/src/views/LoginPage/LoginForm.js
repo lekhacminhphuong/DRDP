@@ -4,10 +4,9 @@ import { useHistory } from 'react-router';
 import fire from '../../config/Fire';
 import clsx from 'clsx';
 import validate from 'validate.js';
-import { Link as RouterLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { Button, TextField, Typography, Link } from '@material-ui/core';
+import { Button, TextField, Typography } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 
 const schema = {
@@ -147,27 +146,6 @@ function LoginForm({ className, ...rest }) {
       >
         Sign in
       </Button>
-      <Link
-        align="center"
-        color="secondary"
-        component={RouterLink}
-        to="/auth/register"
-        underline="always"
-        variant="subtitle2"
-      >
-        Don&apos;t have an account?
-      </Link>
-      <br />
-      <Link
-        align="center"
-        color="secondary"
-        component={RouterLink}
-        to="/auth/register"
-        underline="always"
-        variant="subtitle2"
-      >
-        Forget Password?
-      </Link>
     </form>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Typography, Grid, TextField } from '@material-ui/core';
 
@@ -20,8 +20,6 @@ const useStyles = makeStyles((theme) => ({
 
 function TextFields(props) {
     const classes = useStyles();
-
-    console.log(props)
 
     return (
         <div>

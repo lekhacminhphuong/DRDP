@@ -2,8 +2,9 @@ import React, { lazy, Suspense } from 'react';
 import { Redirect } from 'react-router-dom';
 import DashboardLayout from './layouts/UserDashboard';
 
-const Overview = lazy(() => import('src/views/OverviewPage'));
 const Login = lazy(() => import('src/views/LoginPage'));
+const SignUp = lazy(() => import('src/views/SignUpPage'));
+const Overview = lazy(() => import('src/views/OverviewPage'));
 const Gallery = lazy(() => import('src/views/GalleryPage'));
 const TotalServed = lazy(() => import('src/views/CurrentReportPage'));
 const Ethnicity1 = lazy(() => import('src/views/EthnicityReport1'));
@@ -30,6 +31,11 @@ export default [
         path: '/login',
         exact: true,
         component: () => <Suspense fallback={<div>Loading...</div>}><Login/></Suspense>,
+      },
+      {
+        path: '/signup',
+        exact: true,
+        component: () => <Suspense fallback={<div>Loading...</div>}><SignUp/></Suspense>,
       },
       {
         path: '/overview',
