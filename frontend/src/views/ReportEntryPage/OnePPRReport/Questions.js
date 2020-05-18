@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: theme.spacing(4)
     },
     content: {
-        paddingBottom: theme.spacing(6)
+        paddingBottom: theme.spacing(8)
     }
 }));
 
