@@ -55,8 +55,6 @@ function OnePPRReport() {
     checkIfAllFieldsFilled(fields)
   }
 
-  console.log(allFilled)
-
   function constructSubmissionObject() {
     return ({
       'year': report.year,

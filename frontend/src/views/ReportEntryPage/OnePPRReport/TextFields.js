@@ -45,8 +45,8 @@ function TextFields(props) {
                         name='PADD-A1'
                         onChange={props.handleReport}
                         error={props.fields['PADD-A1'] === '' || props.fields['PADD-A1'][0] === ''}
-                        helperText={props.fields['PADD-A1'] === '' || props.fields['PADD-A1'][0] === '' ? 'Required' : ' '}
-                        required />
+                        helperText={props.fields['PADD-A1'] === '' || props.fields['PADD-A1'][0] === '' ? 'Required' : ''}
+                     />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -64,7 +64,7 @@ function TextFields(props) {
                         onChange={props.handleReport}
                         error={props.fields['PAAT-A1'] === '' || props.fields['PAAT-A1'][0] === ''}
                         helperText={props.fields['PAAT-A1'] === '' || props.fields['PAAT-A1'][0] === '' ? 'Required' : ' '}
-                        required />
+                     />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -82,7 +82,7 @@ function TextFields(props) {
                         onChange={props.handleReport}
                         error={props.fields['PATBI-A1'] === '' || props.fields['PATBI-A1'][0] === ''}
                         helperText={props.fields['PATBI-A1'] === '' || props.fields['PAAT-A1'][0] === '' ? 'Required' : ' '}
-                        required />
+                     />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -100,7 +100,7 @@ function TextFields(props) {
                         onChange={props.handleReport}
                         error={props.fields['PAVA-A1'] === '' || props.fields['PAVA-A1'][0] === ''}
                         helperText={props.fields['PAVA-A1'] === '' || props.fields['PAVA-A1'][0] === '' ? 'Required' : ' '}
-                        required />
+                     />
                 </Grid>
             </Grid>
             <Grid
@@ -116,7 +116,7 @@ function TextFields(props) {
                         onChange={props.handleReport}
                         error={props.fields['PADD-A2'] === '' || props.fields['PADD-A2'][0] === ''}
                         helperText={props.fields['PADD-A2'] === '' || props.fields['PADD-A2'][0] === '' ? 'Required' : ' '}
-                        required />
+                     />
                 </Grid>
                 <Grid item>
                     <TextField
@@ -128,7 +128,7 @@ function TextFields(props) {
                         onChange={props.handleReport}
                         error={props.fields['PAAT-A2'] === '' || props.fields['PAAT-A2'][0] === ''}
                         helperText={props.fields['PAAT-A2'] === '' || props.fields['PAAT-A2'][0] === '' ? 'Required' : ' '}
-                        required />
+                     />
                 </Grid>
                 <Grid item>
                     <TextField
@@ -140,7 +140,7 @@ function TextFields(props) {
                         onChange={props.handleReport}
                         error={props.fields['PATBI-A2'] === '' || props.fields['PATBI-A2'][0] === ''}
                         helperText={props.fields['PATBI-A2'] === '' || props.fields['PATBI-A2'][0] === '' ? 'Required' : ' '}
-                        required />
+                        />
                 </Grid>
                 <Grid item>
                     <TextField
@@ -152,7 +152,7 @@ function TextFields(props) {
                         onChange={props.handleReport}
                         error={props.fields['PAVA-A2'] === '' || props.fields['PAVA-A2'][0] === ''}
                         helperText={props.fields['PAVA-A2'] === '' || props.fields['PAVA-A2'][0] === '' ? 'Required' : ' '}
-                        required />
+                     />
                 </Grid>
             </Grid>
             <Grid
@@ -197,6 +197,7 @@ function TextFields(props) {
                 </Grid>
                 <Grid item>
                     <TextField
+                        type="number"
                         className={classes.input}
                         id="outlined-basic"
                         variant="outlined"
@@ -450,49 +451,49 @@ function TextFields(props) {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PADD-I3' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PADD-I3'
+                        onChange={props.handleReport}
                         error={props.fields['PADD-I3'] === '' || props.fields['PADD-I3'][0] === ''}
                         helperText={props.fields['PADD-I3'] === '' || props.fields['PADD-I3'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PAAT-I3' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PAAT-I3'
+                        onChange={props.handleReport}
                         error={props.fields['PAAT-I3'] === '' || props.fields['PAAT-I3'][0] === ''}
                         helperText={props.fields['PAAT-I3'] === '' || props.fields['PAAT-I3'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PATBI-I3' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PATBI-I3'
+                        onChange={props.handleReport}
                         error={props.fields['PATBI-I3'] === '' || props.fields['PATBI-I3'][0] === ''}
                         helperText={props.fields['PATBI-I3'] === '' || props.fields['PATBI-I3'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PAVA-I3' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PAVA-I3'
+                        onChange={props.handleReport}
                         error={props.fields['PAVA-I3'] === '' || props.fields['PAVA-I3'][0] === ''}
                         helperText={props.fields['PAVA-I3'] === '' || props.fields['PAVA-I3'][0] === '' ? 'Required' : ' '}
                         required />
@@ -503,49 +504,49 @@ function TextFields(props) {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PADD-I4' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PADD-I4'
+                        onChange={props.handleReport}
                         error={props.fields['PADD-I4'] === '' || props.fields['PADD-I4'][0] === ''}
                         helperText={props.fields['PADD-I4'] === '' || props.fields['PADD-I4'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PAAT-I4' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PAAT-I4'
+                        onChange={props.handleReport}
                         error={props.fields['PAAT-I4'] === '' || props.fields['PAAT-I4'][0] === ''}
                         helperText={props.fields['PAAT-I4'] === '' || props.fields['PAAT-I4'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PATBI-I4' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PATBI-I4'
+                        onChange={props.handleReport}
                         error={props.fields['PATBI-I4'] === '' || props.fields['PATBI-I4'][0] === ''}
                         helperText={props.fields['PATBI-I4'] === '' || props.fields['PATBI-I4'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PAVA-I4' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PAVA-I4'
+                        onChange={props.handleReport}
                         error={props.fields['PAVA-I4'] === '' || props.fields['PAVA-I4'][0] === ''}
                         helperText={props.fields['PAVA-I4'] === '' || props.fields['PAVA-I4'][0] === '' ? 'Required' : ' '}
                         required />
@@ -556,49 +557,49 @@ function TextFields(props) {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PADD-I5' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PADD-I5'
+                        onChange={props.handleReport}
                         error={props.fields['PADD-I5'] === '' || props.fields['PADD-I5'][0] === ''}
                         helperText={props.fields['PADD-I5'] === '' || props.fields['PADD-I5'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PAAT-I5' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PAAT-I5'
+                        onChange={props.handleReport}
                         error={props.fields['PAAT-I5'] === '' || props.fields['PAAT-I5'][0] === ''}
                         helperText={props.fields['PAAT-I5'] === '' || props.fields['PAAT-I5'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PATBI-I5' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PATBI-I5'
+                        onChange={props.handleReport}
                         error={props.fields['PATBI-I5'] === '' || props.fields['PATBI-I5'][0] === ''}
                         helperText={props.fields['PATBI-I5'] === '' || props.fields['PATBI-I5'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PAVA-I5' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PAVA-I5'
+                        onChange={props.handleReport}
                         error={props.fields['PAVA-I5'] === '' || props.fields['PAVA-I5'][0] === ''}
                         helperText={props.fields['PAVA-I5'] === '' || props.fields['PAVA-I5'][0] === '' ? 'Required' : ' '}
                         required />
@@ -609,51 +610,51 @@ function TextFields(props) {
                 spacing={4}
             >
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PADD-I6' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PADD-I6'
+                        onChange={props.handleReport}
                         error={props.fields['PADD-I6'] === '' || props.fields['PADD-I6'][0] === ''}
                         helperText={props.fields['PADD-I6'] === '' || props.fields['PADD-I6'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PAAT-I6' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PAAT-I6'
+                        onChange={props.handleReport}
                         error={props.fields['PAAT-I6'] === '' || props.fields['PAAT-I6'][0] === ''}
                         helperText={props.fields['PAAT-I6'] === '' || props.fields['PAAT-I6'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PATBI-I6' 
-                        onChange={props.handleReport} 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PATBI-I6'
+                        onChange={props.handleReport}
                         error={props.fields['PATBI-I6'] === '' || props.fields['PATBI-I6'][0] === ''}
                         helperText={props.fields['PATBI-I6'] === '' || props.fields['PATBI-I6'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
                 <Grid item>
-                    <TextField 
-                        type="number" 
-                        className={classes.input} 
-                        id="outlined-basic" 
-                        variant="outlined" 
-                        name='PAVA-I6' 
+                    <TextField
+                        type="number"
+                        className={classes.input}
+                        id="outlined-basic"
+                        variant="outlined"
+                        name='PAVA-I6'
                         onChange={props.handleReport}
                         error={props.fields['PAVA-I6'] === '' || props.fields['PAVA-I6'][0] === ''}
-                        helperText={props.fields['PAVA-I6'] === '' || props.fields['PAVA-I6'][0] === '' ? 'Required' : ' '} 
+                        helperText={props.fields['PAVA-I6'] === '' || props.fields['PAVA-I6'][0] === '' ? 'Required' : ' '}
                         required />
                 </Grid>
             </Grid>
