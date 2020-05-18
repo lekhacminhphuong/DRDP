@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Router } from 'react-router-dom';
+import React, { lazy, Suspense, useState, useEffect, useContext } from 'react';
+import { Route, Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { createBrowserHistory } from 'history';
 import MomentUtils from '@date-io/moment';
@@ -20,13 +20,18 @@ import './mixins/validate';
 import './mixins/prismjs';
 import './assets/scss/main.scss';
 import LoginPage from './views/LoginPage';
+import SignUpPage from './views/SignUpPage';
 import { db } from './config/Fire';
 import firebase from './config/Fire';
 import adminRoutes from './adminRoutes';
 import Context from './globalStore/context';
+import { Switch } from '@material-ui/core';
 
 const history = createBrowserHistory();
 const store = configureStore();
+
+const SignUp = lazy(() => import('src/views/SignUpPage'));
+const Login = lazy(() => import('src/views/LoginPage'));
 
 function App() {
 
@@ -34,6 +39,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [data1, setData] = useState();
+  const [signupClicked, setSignupClicked] = useState(false);
 
   // // BELOW is what pulls the data in from firebase
   // // this is where we currently want to pull the data to and then pass down in props
@@ -62,18 +68,18 @@ function App() {
 
   //pull in the favorites from firebase
   useEffect(() => {
-      const favData = []
-      db.collection('favorites')
-        .get()
-        .then((snapshot) => {
-          snapshot.docs.forEach(doc => {
-            favData.push(doc.data())
-            //console.log(doc.data())
-          })
+    const favData = []
+    db.collection('favorites')
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+          favData.push(doc.data())
+          //console.log(doc.data())
         })
-        .then(() => {
-          actions({ type: 'setFavorites', payload: favData });
-        })
+      })
+      .then(() => {
+        actions({ type: 'setFavorites', payload: favData });
+      })
   }, [])
 
   useEffect(() => {
@@ -106,11 +112,12 @@ function App() {
     })
   }
 
-  function logState() {
-    console.log(data1);
+  let login;
+  if (signupClicked) {
+    login =  <SignUpPage setSignupClicked={setSignupClicked} />
+  } else {
+    login = <LoginPage setSignupClicked={setSignupClicked} />
   }
-
-  //console.log('is admin:' + isAdmin)
 
   if (isAdmin) {
     return (
@@ -122,8 +129,7 @@ function App() {
                 <ScrollReset />
                 <GoogleAnalytics />
                 <CookiesNotification />
-                {user ? (renderRoutes(adminRoutes)) : (<LoginPage />)}
-                {/* {renderRoutes(routes)} */}
+                {user ? (renderRoutes(routes)) : (login)}
               </Router>
             </MuiPickersUtilsProvider>
           </StylesProvider>
@@ -140,9 +146,7 @@ function App() {
                 <ScrollReset />
                 <GoogleAnalytics />
                 <CookiesNotification />
-                {user ? (renderRoutes(routes)) : (<LoginPage />)}
-                {/* {renderRoutes(routes)} */}
-                {/* <button onClick={logState}>button</button>  */}
+                {user ? (renderRoutes(routes)) : (login)}
               </Router>
             </MuiPickersUtilsProvider>
           </StylesProvider>

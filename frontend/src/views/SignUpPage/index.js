@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function SignUpPage() {
+function SignUpPage(props) {
   const classes = useStyles();
 
   return (
@@ -104,6 +104,7 @@ function SignUpPage() {
             to="/login"
             underline="always"
             variant="subtitle2"
+            onClick={() => props.setSignupClicked(false)}
           >
             Have an account?
           </Link>
