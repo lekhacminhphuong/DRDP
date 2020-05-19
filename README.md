@@ -12,7 +12,7 @@ Click [me](https://lekhacminhphuong.github.io/DRDP/) to visit _DRDP_
 - [Contact Information](#contact-information)
 
 ## Problem Statement
-The National Disability Rights Network must achieve consolidated data processes and insight so that they can improve the services and advocacy provided to people with disabilities
+The [National Disability Rights Network](https://www.ndrn.org/) must achieve consolidated data processes and insight so that they can improve the services and advocacy provided to people with disabilities
 
 
 ## Getting Started
