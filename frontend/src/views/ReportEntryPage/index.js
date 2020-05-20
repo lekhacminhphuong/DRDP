@@ -1,4 +1,4 @@
-import React,{useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
 import Page from 'src/components/Page';
@@ -31,16 +31,17 @@ const useStyles = makeStyles(theme => ({
 function ReportEntryPage() {
   const classes = useStyles();
 
-  const { report, actions } = useContext(Context);
+  const { state, report, actions } = useContext(Context);
 
   const [reportName, setReportName] = React.useState('One PPR');
   const [reportYear, setReportYear] = React.useState('');
   const [reportState, setReportState] = React.useState('');
+  const [buttonDisabled, setButtonDisabled] = React.useState(true)
 
-  function handleReport(e){
+  function handleReport(e) {
     let val = e.target.value;
     let key = e.target.name;
-    switch(key){
+    switch (key) {
       case 'year':
         report[key] = val;
         setReportYear(val);
@@ -57,19 +58,52 @@ function ReportEntryPage() {
     alert('Please select a Jurisdiction and/or Year to continue')
   }
 
-  //error handling to prevent empty jurisdiction and year fields
+  //error handling on button to prevent empty jurisdiction and year fields
   let button;
-  if (reportYear == '' || reportState == '') {      
+  if (reportState == '') {
     button = <Button
+      variant="outlined"
+      color="primary"
+      endIcon={<ArrowForwardIosIcon />}
+      onClick={alertEmptyField}
+      disabled
+    >
+      Next
+        </Button>
+  } 
+
+  if (reportYear == '') {
+    button = <Button
+      variant="outlined"
+      color="primary"
+      endIcon={<ArrowForwardIosIcon />}
+      onClick={alertEmptyField}
+      disabled
+    >
+      Next
+        </Button>
+  } 
+
+  // error message if duplicate report exists
+  let duplicateError = '';
+
+  if (state != null) {
+    if (reportYear != '' && reportState != '') {
+      for (let i = 0; i < state.length; i++) {
+        if (state[i].year == reportYear && state[i].jurisdiction == reportState) {
+          duplicateError = <h5 style={{ color: 'red' }}>Error: Duplicate report entry, please select a different Year and/or Jurisdiction</h5>;
+          button = <Button
             variant="outlined"
             color="primary"
             endIcon={<ArrowForwardIosIcon />}
             onClick={alertEmptyField}
+            disabled
           >
             Next
-        </Button> 
-  } else {      
-    button = <Button
+            </Button>
+          break;
+        } else {
+          button = <Button
             component={RouterLink}
             variant="outlined"
             color="primary"
@@ -77,7 +111,10 @@ function ReportEntryPage() {
             to="/reportentry/oneppr"
           >
             Next
-        </Button>  
+        </Button>
+        }
+      }
+    }
   }
 
   return (
@@ -151,6 +188,7 @@ function ReportEntryPage() {
             </MenuItem>
           ))}
         </TextField>
+        {duplicateError}
         <div className={classes.button}>
           {button}
         </div>

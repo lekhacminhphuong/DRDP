@@ -37,33 +37,29 @@ function App() {
   const { state, favorites, actions } = useContext(Context);
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [data1, setData] = useState();
+  // const [data1, setData] = useState();
   const [signupClicked, setSignupClicked] = useState(false);
 
-  // // BELOW is what pulls the data in from firebase
-  // // this is where we currently want to pull the data to and then pass down in props
-  // // uncomment to use
-  // useEffect(() => {
-  //   const dat = []
-  //   db.collection('test3oneppr')
-  //     .get()
-  //     .then((snapshot) => {
-  //       //const dat = []
-  //       snapshot.docs.forEach(doc => {
-  //         dat.push(doc.data())
-  //         console.log(doc.data())
-  //       })
-  //       //setData(dat)
-  //       //console.log(data)
-  //     })
-  //     .then(() => {
-  //       setData(dat)
-  //     })
-  //     .then(() => {
-  //       console.log('use effect fired');
-  //       console.log(data1)
-  //     })
-  // }, [])
+  // BELOW is what pulls the data in from firebase
+  // this is where we currently want to pull the data to and then pass down in props
+  // uncomment to use
+  useEffect(() => {
+    const dat = []
+    db.collection('test3oneppr')
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+          dat.push(doc.data())
+        })
+      })
+      .then(() => {
+        actions({type: 'setState', payload: dat})
+      })
+      .then(() => {
+        console.log('data from fb loaded');
+        console.log(state)
+      })
+  }, [])
 
   //this function pulls in the favorites from firebase
   useEffect(() => {
@@ -73,35 +69,22 @@ function App() {
       .then((snapshot) => {
         snapshot.docs.forEach(doc => {
           favData.push(doc.data())
-          //console.log(doc.data())
         })
       })
       .then(() => {
         actions({ type: 'setFavorites', payload: favData });
       })
-  }, [])
+  }, []) 
 
-  // function keepOnPage(e) {
-  //   var message = 'Warning!\n\nNavigating away from this page will delete your text if you haven\'t already saved it.';
-  //   e.returnValue = message;
-  //   return message;
-  // }
-
-  // useEffect(() =>{
-  //   window.addEventListener('beforeunload', keepOnPage);
-  //   return () => {
-  //     window.removeEventListener('beforeunload', keepOnPage);
-  //   }
-  // })  
-
+  // this function keeps track of whether a user is logged in
   useEffect(() => {
     if (user == null) {
       setIsAdmin(false);
     }
     authListener();
-    //setUser(null)
   }, [user, authListener])
 
+  //this function keeps track of current user role and sets site priviledges accordingly
   function getRole(uid) {
     db.collection('users')
       .get().then(snapshot => {
@@ -114,6 +97,7 @@ function App() {
       .catch(error => console.log(error));
   }
 
+  // this function gets the user id and role from firebase and sets the role accordingly
   function authListener() {
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     firebase.auth().onAuthStateChanged((user) => {
@@ -126,6 +110,7 @@ function App() {
     })
   }
 
+  // the following lines patch a routing issue with the sign up page
   let login;
   if (signupClicked) {
     login = <SignUpPage setSignupClicked={setSignupClicked} />
