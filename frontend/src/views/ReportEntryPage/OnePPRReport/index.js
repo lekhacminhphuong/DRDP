@@ -45,16 +45,17 @@ function OnePPRReport() {
     'PADD-I5': '', 'PAAT-I5': '', 'PATBI-I5': '', 'PAVA-I5': '',
     'PADD-I6': '', 'PAAT-I6': '', 'PATBI-I6': '', 'PAVA-I6': ''
   });
-  const [allFilled, setAllFilled] = useState(false);
 
+  // This function handles adding values to the global state and to the object  
+  //   for validation of form completion
   function handleReport(e) {
     setFields({ ...fields, [e.target.name]: [e.target.value] })
     let val = e.target.value;
     let key = e.target.name;
     report[key] = val;
-    checkIfAllFieldsFilled(fields)
   }
 
+  // This function 
   function constructSubmissionObject() {
     return ({
       'year': report.year,
@@ -137,12 +138,11 @@ function OnePPRReport() {
         }
       }
     }
-    setAllFilled(res);
     return res;
   }
 
   let button;
-  if(allFilled){
+  if(checkIfAllFieldsFilled(fields)){
     button = <Button
             onClick={createSubmission}
             component={RouterLink}
