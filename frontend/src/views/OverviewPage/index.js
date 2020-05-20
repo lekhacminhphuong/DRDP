@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Page from 'src/components/Page';
 import Header from './Header';
@@ -15,16 +15,16 @@ function OverviewPage() {
   const classes = useStyles();
 
   return (
-    <Page
-      className={classes.root}
-      title="DRDP - Overview"
-    >
-      <Header />
-      <Challenge />
-      <Approach />
-      <Solution />
-      <FAQ />
-    </Page>
+      <Page
+        className={classes.root}
+        title="DRDP - Overview"
+      >
+        <Header />
+        <Challenge />
+        <Approach />
+        <Solution />
+        <FAQ />
+      </Page>
   );
 }
 

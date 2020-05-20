@@ -13,9 +13,9 @@ const Favorites = lazy(() => import('src/views/FavoritesPage'));
 const ReportEntry = lazy(() => import('src/views/ReportEntryPage'));
 const ReportEntry_OnePPR = lazy(() => import('src/views/ReportEntryPage/OnePPRReport'));
 const ReportEntry_Confirmation = lazy(() => import('src/views/ReportEntryPage/OnePPRReport/EntryConfirmation'));
-const ReportEntry_Success =  lazy(() => import('src/views/ReportEntryPage/OnePPRReport/EntrySuccess'))
+const ReportEntry_Success = lazy(() => import('src/views/ReportEntryPage/OnePPRReport/EntrySuccess'))
 const AboutUs = lazy(() => import('src/views/AboutUsPage'));
-const Profile =  lazy(() => import('src/views/ProfilePage'));
+const Profile = lazy(() => import('src/views/ProfilePage'));
 
 export default [
   {
@@ -30,77 +30,77 @@ export default [
       {
         path: '/login',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><Login/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><Login /></Suspense>,
       },
       {
         path: '/signup',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><SignUp/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><SignUp /></Suspense>,
       },
       {
         path: '/overview',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><Overview/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><Overview /></Suspense>,
       },
       {
         path: '/DRDP',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><Overview/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><Overview /></Suspense>,
       },
       {
         path: '/gallery',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><Gallery/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><Gallery /></Suspense>,
       },
       {
         path: '/gallery/totalserved',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><TotalServed/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><TotalServed /></Suspense>,
       },
       {
         path: '/gallery/ethnicity',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><Ethnicity1/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><Ethnicity1 /></Suspense>,
       },
       {
         path: '/gallery/ethnicity2',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><Ethnicity2/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><Ethnicity2 /></Suspense>,
       },
       {
         path: '/favorites',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><Favorites/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><Favorites /></Suspense>,
       },
       {
         path: '/reportentry',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry /></Suspense>,
       },
       {
         path: '/reportentry/oneppr',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry_OnePPR/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry_OnePPR /></Suspense>,
       },
       {
         path: '/reportentry/confirmation',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry_Confirmation/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry_Confirmation /></Suspense>,
       },
       {
         path: '/reportentry/success',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry_Success/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><ReportEntry_Success /></Suspense>,
       },
       {
         path: '/aboutus',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><AboutUs/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><AboutUs /></Suspense>,
       },
       {
         path: '/profile',
         exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><Profile/></Suspense>,
+        component: () => <Suspense fallback={<div>Loading...</div>}><Profile /></Suspense>,
       }
     ]
   }

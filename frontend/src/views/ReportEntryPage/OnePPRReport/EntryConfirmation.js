@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Container, Grid } from '@material-ui/core';
 import Page from 'src/components/Page';
@@ -48,10 +48,10 @@ function EntryConfirmation() {
   const { report, submission, actions } = useContext(Context);
 
   //remove entered data in global state on leaving the page
-  useEffect( () => () => {
+  useEffect(() => () => {
     actions({ type: 'setReport', payload: {} });
     actions({ type: 'setSubmission', payload: null });
-  }, [] );
+  }, []);
 
   const handleSubmit = (e) => {
     db.collection('testy23423')
@@ -63,75 +63,75 @@ function EntryConfirmation() {
 
   return (
     <Beforeunload onBeforeunload={() => "Unsubmitted data will be lost"}>
-    <Page className={classes.root} title="DRDP - Entry Confirm">
-      <Container maxWidth="lg">
-        <div className={classes.header}>
-          <Typography
-            component="h2"
-            gutterBottom
-            variant="overline"
-          >
-            Report Entry / One PPR / CONFIRM
-          </Typography>
-          <Typography
-            component="h1"
-            gutterBottom
-            variant="h3"
-          >
-            Part 1: Demographics
-          </Typography>
-          <CustomTypography variant="h6">
-            Please ensure all values are correctly entered<br/><br/>
-          </CustomTypography>
-          <CustomTypography variant="h5">
-            Jurisdiction: <b>{report.jurisdiction}</b>
-          </CustomTypography>
-          <CustomTypography variant="h5">
-            Year: <b>{report.year}</b>
-          </CustomTypography>
-        </div>
-
-        <Grid
-          container
-          spacing={10}>
-          <Grid item>
-            <Questions />
-          </Grid>
-          <Grid item>
-            <ConfirmationValues/>
-          </Grid>
-        </Grid>
-
-        <Grid
-          className={classes.button}
-          container
-          spacing={3}>
-          <Grid item>
-            <Button
-              component={RouterLink}
-              variant="outlined"
-              color="primary"
-              endIcon={<ArrowBackIosIcon />}
-              to="/reportentry"
+      <Page className={classes.root} title="DRDP - Entry Confirm">
+        <Container maxWidth="lg">
+          <div className={classes.header}>
+            <Typography
+              component="h2"
+              gutterBottom
+              variant="overline"
             >
-              Back
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              onClick={handleSubmit}
-              component={RouterLink}
-              variant="outlined"
-              color="primary"
-              endIcon={<CheckIcon />}
-              to="/reportentry/success"
+              Report Entry / One PPR / CONFIRM
+          </Typography>
+            <Typography
+              component="h1"
+              gutterBottom
+              variant="h3"
             >
-              Submit
-            </Button>
+              Part 1: Demographics
+          </Typography>
+            <CustomTypography variant="h6">
+              Please ensure all values are correctly entered<br /><br />
+            </CustomTypography>
+            <CustomTypography variant="h5">
+              Jurisdiction: <b>{report.jurisdiction}</b>
+            </CustomTypography>
+            <CustomTypography variant="h5">
+              Year: <b>{report.year}</b>
+            </CustomTypography>
+          </div>
+
+          <Grid
+            container
+            spacing={10}>
+            <Grid item>
+              <Questions />
+            </Grid>
+            <Grid item>
+              <ConfirmationValues />
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </Page>
+
+          <Grid
+            className={classes.button}
+            container
+            spacing={3}>
+            <Grid item>
+              <Button
+                component={RouterLink}
+                variant="outlined"
+                color="primary"
+                endIcon={<ArrowBackIosIcon />}
+                to="/reportentry"
+              >
+                Back
+            </Button>
+            </Grid>
+            <Grid item>
+              <Button
+                onClick={handleSubmit}
+                component={RouterLink}
+                variant="outlined"
+                color="primary"
+                endIcon={<CheckIcon />}
+                to="/reportentry/success"
+              >
+                Submit
+            </Button>
+            </Grid>
+          </Grid>
+        </Container>
+      </Page>
     </Beforeunload>
   );
 }

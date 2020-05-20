@@ -25,7 +25,6 @@ import { db } from './config/Fire';
 import firebase from './config/Fire';
 import adminRoutes from './adminRoutes';
 import Context from './globalStore/context';
-import { Switch } from '@material-ui/core';
 
 const history = createBrowserHistory();
 const store = configureStore();
@@ -66,7 +65,7 @@ function App() {
   //     })
   // }, [])
 
-  //pull in the favorites from firebase
+  //this function pulls in the favorites from firebase
   useEffect(() => {
     const favData = []
     db.collection('favorites')
@@ -82,11 +81,25 @@ function App() {
       })
   }, [])
 
+  // function keepOnPage(e) {
+  //   var message = 'Warning!\n\nNavigating away from this page will delete your text if you haven\'t already saved it.';
+  //   e.returnValue = message;
+  //   return message;
+  // }
+
+  // useEffect(() =>{
+  //   window.addEventListener('beforeunload', keepOnPage);
+  //   return () => {
+  //     window.removeEventListener('beforeunload', keepOnPage);
+  //   }
+  // })  
+
   useEffect(() => {
     if (user == null) {
       setIsAdmin(false);
     }
     authListener();
+    //setUser(null)
   }, [user, authListener])
 
   function getRole(uid) {
@@ -102,6 +115,7 @@ function App() {
   }
 
   function authListener() {
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         getRole(user.uid);
@@ -114,7 +128,7 @@ function App() {
 
   let login;
   if (signupClicked) {
-    login =  <SignUpPage setSignupClicked={setSignupClicked} />
+    login = <SignUpPage setSignupClicked={setSignupClicked} />
   } else {
     login = <LoginPage setSignupClicked={setSignupClicked} />
   }
