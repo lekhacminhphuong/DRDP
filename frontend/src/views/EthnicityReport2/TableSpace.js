@@ -311,6 +311,20 @@ export function TableSpace(props) {
             )
         }
 
+        function compare(obj1, obj2){
+            const a = obj1.Year;
+            const b = obj2.Year;
+            let comparison = 0;
+            if (a > b){
+                comparison = 1;
+            } else if (a < b){
+                comparison = -1;
+            }
+            return comparison;
+        }
+
+        graphData.sort(compare)
+
         return (
             <div id='tableSpace'>
                 <DataTable

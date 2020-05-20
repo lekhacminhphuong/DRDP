@@ -50,7 +50,7 @@ function OnePPRReport() {
   //   for validation of form completion
   function handleReport(e) {
     setFields({ ...fields, [e.target.name]: [e.target.value] })
-    let val = e.target.value;
+    let val = parseInt(e.target.value);
     let key = e.target.name;
     report[key] = val;
   }

@@ -47,6 +47,8 @@ function EntryConfirmation() {
   const classes = useStyles();
   const { report, submission, actions } = useContext(Context);
 
+  console.log(submission)
+
   //remove entered data in global state on leaving the page
   useEffect(() => () => {
     actions({ type: 'setReport', payload: {} });
@@ -54,7 +56,7 @@ function EntryConfirmation() {
   }, []);
 
   const handleSubmit = (e) => {
-    db.collection('testy23423')
+    db.collection('test3oneppr')
       .add(submission);
     //remove entered data in global state on submitting
     actions({ type: 'setReport', payload: {} });

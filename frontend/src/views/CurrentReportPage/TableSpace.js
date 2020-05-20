@@ -60,6 +60,20 @@ export function TableSpace(props) {
             })
         }
 
+        function compare(obj1, obj2){
+            const a = obj1.year;
+            const b = obj2.year;
+            let comparison = 0;
+            if (a > b){
+                comparison = 1;
+            } else if (a < b){
+                comparison = -1;
+            }
+            return comparison;
+        }
+
+        tableData.sort(compare)
+
         return (
             <div id='tableSpace'>
                 <DataTable

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useState, useEffect, useContext } from 'react';
-import { Route, Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { createBrowserHistory } from 'history';
 import MomentUtils from '@date-io/moment';
@@ -23,7 +23,6 @@ import LoginPage from './views/LoginPage';
 import SignUpPage from './views/SignUpPage';
 import { db } from './config/Fire';
 import firebase from './config/Fire';
-import adminRoutes from './adminRoutes';
 import Context from './globalStore/context';
 
 const history = createBrowserHistory();
@@ -40,9 +39,7 @@ function App() {
   // const [data1, setData] = useState();
   const [signupClicked, setSignupClicked] = useState(false);
 
-  // BELOW is what pulls the data in from firebase
-  // this is where we currently want to pull the data to and then pass down in props
-  // uncomment to use
+  // below pulls the data in from firebase
   useEffect(() => {
     const dat = []
     db.collection('test3oneppr')
@@ -53,10 +50,14 @@ function App() {
         })
       })
       .then(() => {
-        actions({type: 'setState', payload: dat})
+        actions({ type: 'setState', payload: dat })
       })
       .then(() => {
         console.log('data from fb loaded');
+        console.log(state)
+        //console.log(state.length)
+      })
+      .then(() => {
         console.log(state)
       })
   }, [])
@@ -74,7 +75,7 @@ function App() {
       .then(() => {
         actions({ type: 'setFavorites', payload: favData });
       })
-  }, []) 
+  }, [])
 
   // this function keeps track of whether a user is logged in
   useEffect(() => {
