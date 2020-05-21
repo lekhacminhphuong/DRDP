@@ -41,7 +41,7 @@ export function GalleryCard(props) {
         }
       }
     }
-  }, [])
+  },[favStatus])
 
   const handleFavorite = (event) => {
     // IF FAV IS NOT IN GLOBAL FAVS: put favorite in global favorites
