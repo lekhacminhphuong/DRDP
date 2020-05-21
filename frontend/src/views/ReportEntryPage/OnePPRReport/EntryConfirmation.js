@@ -6,8 +6,7 @@ import { Typography, Button } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import CheckIcon from '@material-ui/icons/Check';
 import { Link as RouterLink } from 'react-router-dom';
-import Questions from './Questions';
-import TextFields from './TextFields'
+import ConfirmQuestions from './ConfirmQuestions';
 import Context from '../../../globalStore/context';
 import ConfirmationValues from './ConfirmationValues';
 import { db } from '../../../config/Fire';
@@ -97,7 +96,7 @@ function EntryConfirmation() {
             container
             spacing={10}>
             <Grid item>
-              <Questions />
+              <ConfirmQuestions />
             </Grid>
             <Grid item>
               <ConfirmationValues />
