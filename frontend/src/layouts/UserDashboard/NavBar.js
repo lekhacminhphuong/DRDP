@@ -180,45 +180,6 @@ function NavBar({
         }))}
       </nav>
       <Divider className={classes.divider} />
-      <div className={classes.profile}>
-        <Badge
-          overlap="circle"
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'right',
-          }}
-          classes={{
-            dot: classes.badgeDot,
-            badge: clsx({
-              [classes.badge]: true,
-              [classes.onlineBadge]: status === 'online',
-              [classes.awayBadge]: status === 'away',
-              [classes.busyBadge]: status === 'busy',
-              [classes.offlineBadge]: status === 'offline'
-            })
-          }}
-          variant="dot"
-        >
-          <Avatar
-            alt="Person"
-            onClick={handleStatusToggle}
-            className={classes.avatar}
-            src={session.user.avatar}
-          />
-        </Badge>
-        <div className={classes.details}>
-          <Link
-            component={RouterLink}
-            to="/profile"
-            variant="h5"
-            color="textPrimary"
-            underline="none"
-          >
-            {`${session.user.first_name} ${session.user.last_name}`}
-          </Link>
-          <Typography variant="body2">{session.user.bio}</Typography>
-        </div>
-      </div>
     </div>
   );
 

@@ -96,11 +96,6 @@ export default [
         path: '/aboutus',
         exact: true,
         component: () => <Suspense fallback={<div>Loading...</div>}><AboutUs /></Suspense>,
-      },
-      {
-        path: '/profile',
-        exact: true,
-        component: () => <Suspense fallback={<div>Loading...</div>}><Profile /></Suspense>,
       }
     ]
   }
