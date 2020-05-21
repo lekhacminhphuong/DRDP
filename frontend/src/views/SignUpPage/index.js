@@ -1,77 +1,39 @@
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
-import {
-  Card,
-  CardContent,
-  Typography,
-  Divider,
-  Link,
-} from '@material-ui/core';
-import PersonAddIcon from '@material-ui/icons/PersonAddOutlined';
-import gradients from 'src/utils/gradients';
+import { Container, Typography, Link } from '@material-ui/core';
 import Page from 'src/components/Page';
-import SignUpForm from './SignUpForm';
+import img from 'src/imgs/working.svg'
+import { Link as RouterLink } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    height: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: theme.spacing(6, 2)
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
   },
-  card: {
-    width: theme.breakpoints.values.md,
-    maxWidth: '100%',
-    overflow: 'visible',
-    display: 'flex',
-    position: 'relative',
-    '& > *': {
-      flexGrow: 1,
-      flexBasis: '50%',
-      width: '50%'
-    }
+  header: {
+    marginBottom: theme.spacing(3),
   },
-  content: {
-    padding: theme.spacing(8, 4, 3, 4)
+  filter: {
+    marginTop: theme.spacing(3),
   },
-  media: {
-    borderTopRightRadius: 4,
-    borderBottomRightRadius: 4,
-    padding: theme.spacing(3),
-    color: theme.palette.common.white,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    [theme.breakpoints.down('md')]: {
-      display: 'none'
-    }
+  results: {
+    marginTop: theme.spacing(6),
   },
-  icon: {
-    backgroundImage: gradients.orange,
-    color: theme.palette.common.white,
-    borderRadius: theme.shape.borderRadius,
-    padding: theme.spacing(1),
-    position: 'absolute',
-    top: -32,
-    left: theme.spacing(3),
-    height: 64,
-    width: 64,
-    fontSize: 32
+  working: {
+    paddingTop: theme.spacing(10),
+    paddingLeft: theme.spacing(33)
   },
-  registerForm: {
-    marginTop: theme.spacing(3)
+  message1: {
+    paddingTop: theme.spacing(5),
+    paddingLeft: theme.spacing(22),
   },
-  divider: {
-    margin: theme.spacing(2, 0)
+  message2: {
+    paddingTop: theme.spacing(0.5),
+    paddingLeft: theme.spacing(22),
   },
-  person: {
-    marginTop: theme.spacing(2),
-    display: 'flex'
-  },
-  avatar: {
-    marginRight: theme.spacing(2)
+  login: {
+    paddingTop: theme.spacing(1),
+    paddingLeft: theme.spacing(22),
   }
 }));
 
@@ -83,33 +45,50 @@ function SignUpPage(props) {
       className={classes.root}
       title="DRDP - SignUp"
     >
-      <Card className={classes.card}>
-        <CardContent className={classes.content}>
-          <PersonAddIcon className={classes.icon} />
+      <Container maxWidth="lg">
+        <div className={classes.working}>
+          <img src={img} height="400" />
           <Typography
+            className={classes.message1}
             gutterBottom
-            variant="h3"
+            variant="subtitle1"
           >
-            Sign up
+            Sign Up feature is going to be introduced in the next version of DRDP
           </Typography>
-          <Typography variant="subtitle2">
-            Create an account with email address
+          <Typography
+            className={classes.message2}
+            gutterBottom
+            variant="subtitle1"
+          >
+            At present, if you want to create an account, <b>please email our developers:</b>
           </Typography>
-          <SignUpForm className={classes.registerForm} />
-          <Divider className={classes.divider} />
+          <Typography
+            className={classes.message2}
+            gutterBottom
+            variant="subtitle1"
+          >
+            1. lkmp@uw.edu
+          </Typography>
+          <Typography
+            className={classes.message2}
+            gutterBottom
+            variant="subtitle1"
+          >
+            2. jtcanton@gmail.com
+          </Typography>
           <Link
-            align="center"
-            color="secondary"
+            className={classes.login}
+            color="primary"
             component={RouterLink}
             to="/login"
             underline="always"
             variant="subtitle2"
             onClick={() => props.setSignupClicked(false)}
           >
-            Have an account?
-          </Link>
-        </CardContent>
-      </Card>
+            Back to login
+        </Link>
+        </div>
+      </Container>
     </Page>
   );
 }
